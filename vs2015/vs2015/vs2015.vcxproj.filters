@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="kernel.cu" />
+    <CudaCompile Include="..\..\src\activation_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\avgpool_layer_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\blas_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\col2im_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\convolutional_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\crop_layer_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\deconvolutional_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\dropout_layer_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\im2col_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\maxpool_layer_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\network_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+    <CudaCompile Include="..\..\src\depthwise_convolutional_kernels.cu">
+      <Filter>darknet</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="darknet">
+      <UniqueIdentifier>{3990e888-d98f-48c8-a47f-65e4c0434d0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="example">
+      <UniqueIdentifier>{6ccb4b9e-d6fa-4e97-adf3-1b0d243f71a2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\activation_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\activations.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\avgpool_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\batchnorm_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\blas.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\box.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\col2im.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\compare.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\connected_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\convolutional_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cost_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\crnn_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\crop_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cuda.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\data.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\deconvolutional_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\demo.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\detection_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\dropout_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gemm.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\gru_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\im2col.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\image.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\list.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\local_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\lstm_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\matrix.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\maxpool_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\network.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\normalization_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\option_list.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\parser.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\region_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\reorg_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\rnn_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\route_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\shortcut_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\softmax_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\tree.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\utils.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\captcha.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\cifar.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\classifier.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\coco.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\darknet.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\detector.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\dice.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\lsd.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\nightmare.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\super.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\tag.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\voxel.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\writing.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\yolo.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\depthwise_convolutional_layer.c">
+      <Filter>darknet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\activation_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\activations.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\avgpool_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\batchnorm_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\blas.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\box.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\classifier.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\col2im.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\connected_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\convolutional_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\cost_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crnn_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\crop_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\cuda.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\data.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\deconvolutional_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\demo.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\detection_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\dropout_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gemm.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\gru_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\im2col.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\image.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\list.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\local_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lstm_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\matrix.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\maxpool_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\network.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\normalization_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\option_list.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\parser.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\region_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\reorg_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\rnn_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\route_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\shortcut_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\softmax_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\stb_image.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\stb_image_write.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\tree.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\utils.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\depthwise_convolutional_layer.h">
+      <Filter>darknet</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

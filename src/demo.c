@@ -7,7 +7,15 @@
 #include "box.h"
 #include "image.h"
 #include "demo.h"
+#if defined (WINDOWS)
+#include <fstream.h>
+#include <time.h>
+#include <stdlib.h>
+#elif defined(UNIX) || defined(LINUX)
+#include <stream.h>
 #include <sys/time.h>
+#include <sys/file.h>
+#endif
 
 #define DEMO 1
 

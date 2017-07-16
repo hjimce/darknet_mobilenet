@@ -1,0 +1,1863 @@
+ pthread_dll
+
+ Timestamp is 59681eff (Fri Jul 14 09:31:43 2017)
+
+ Preferred load address is 0000000180000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000d8b0H .text$mn                CODE
+ 0001:0000d8b0 00000020H .text$mn$00             CODE
+ 0001:0000d8d0 00000280H .text$x                 CODE
+ 0002:00000000 000002c0H .idata$5                DATA
+ 0002:000002c0 00000010H .00cfg                  DATA
+ 0002:000002d0 00000008H .CRT$XCA                DATA
+ 0002:000002d8 00000008H .CRT$XCZ                DATA
+ 0002:000002e0 00000008H .CRT$XIA                DATA
+ 0002:000002e8 00000008H .CRT$XIZ                DATA
+ 0002:000002f0 00000008H .CRT$XPA                DATA
+ 0002:000002f8 00000008H .CRT$XPZ                DATA
+ 0002:00000300 00000008H .CRT$XTA                DATA
+ 0002:00000308 00000008H .CRT$XTZ                DATA
+ 0002:00000310 00002474H .rdata                  DATA
+ 0002:00002784 000002bcH .rdata$zzzdbg           DATA
+ 0002:00002a40 00000008H .rtc$IAA                DATA
+ 0002:00002a48 00000008H .rtc$IZZ                DATA
+ 0002:00002a50 00000008H .rtc$TAA                DATA
+ 0002:00002a58 00000008H .rtc$TZZ                DATA
+ 0002:00002a60 000008a0H .xdata                  DATA
+ 0002:00003300 00001134H .edata                  DATA
+ 0002:00004434 0000003cH .idata$2                DATA
+ 0002:00004470 00000018H .idata$3                DATA
+ 0002:00004488 000002c0H .idata$4                DATA
+ 0002:00004748 00000672H .idata$6                DATA
+ 0003:00000000 00000090H .data                   DATA
+ 0003:00000090 000006a8H .bss                    DATA
+ 0004:00000000 00000d2cH .pdata                  DATA
+ 0005:00000000 00000018H .gfids$y                DATA
+ 0006:00000000 000000a0H .rsrc$01                DATA
+ 0006:000000a0 00000540H .rsrc$02                DATA
+
+  Address         Publics by Value              Rva+Base               Lib:Object
+
+ 0000:00000000       __guard_fids_table         0000000000000000     <absolute>
+ 0000:00000000       __dynamic_value_reloc_table 0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_table          0000000000000000     <absolute>
+ 0000:00000000       __guard_iat_count          0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
+ 0000:00000000       __guard_fids_count         0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_count      0000000000000000     <absolute>
+ 0000:00000000       __guard_longjmp_table      0000000000000000     <absolute>
+ 0000:00000100       __guard_flags              0000000000000100     <absolute>
+ 0000:00000000       __ImageBase                0000000180000000     <linker-defined>
+ 0001:00000000       ptw32_pop_cleanup          0000000180001000 f   cleanup.obj
+ 0001:00000080       ptw32_push_cleanup         0000000180001080 f   cleanup.obj
+ 0001:000000f0       pthread_create             00000001800010f0 f   create.obj
+ 0001:00000490       DllMain                    0000000180001490 f   dll.obj
+ 0001:00000520       pthread_attr_destroy       0000000180001520 f   pthread_attr_destroy.obj
+ 0001:00000590       pthread_attr_getdetachstate 0000000180001590 f   pthread_attr_getdetachstate.obj
+ 0001:000005f0       pthread_attr_getinheritsched 00000001800015f0 f   pthread_attr_getinheritsched.obj
+ 0001:00000650       pthread_attr_getschedparam 0000000180001650 f   pthread_attr_getschedparam.obj
+ 0001:000006b0       pthread_attr_getschedpolicy 00000001800016b0 f   pthread_attr_getschedpolicy.obj
+ 0001:00000710       pthread_attr_getscope      0000000180001710 f   pthread_attr_getscope.obj
+ 0001:00000740       pthread_attr_getstackaddr  0000000180001740 f   pthread_attr_getstackaddr.obj
+ 0001:000007a0       pthread_attr_getstacksize  00000001800017a0 f   pthread_attr_getstacksize.obj
+ 0001:00000800       pthread_attr_init          0000000180001800 f   pthread_attr_init.obj
+ 0001:000008c0       pthread_attr_setdetachstate 00000001800018c0 f   pthread_attr_setdetachstate.obj
+ 0001:00000930       pthread_attr_setinheritsched 0000000180001930 f   pthread_attr_setinheritsched.obj
+ 0001:000009a0       pthread_attr_setschedparam 00000001800019a0 f   pthread_attr_setschedparam.obj
+ 0001:00000a30       pthread_attr_setschedpolicy 0000000180001a30 f   pthread_attr_setschedpolicy.obj
+ 0001:00000a80       pthread_attr_setscope      0000000180001a80 f   pthread_attr_setscope.obj
+ 0001:00000ae0       pthread_attr_setstackaddr  0000000180001ae0 f   pthread_attr_setstackaddr.obj
+ 0001:00000b40       pthread_attr_setstacksize  0000000180001b40 f   pthread_attr_setstacksize.obj
+ 0001:00000ba0       pthread_barrier_destroy    0000000180001ba0 f   pthread_barrier_destroy.obj
+ 0001:00000ce0       pthread_barrier_init       0000000180001ce0 f   pthread_barrier_init.obj
+ 0001:00000df0       pthread_barrier_wait       0000000180001df0 f   pthread_barrier_wait.obj
+ 0001:00000f50       pthread_mutexattr_destroy  0000000180001f50 f   pthread_mutexattr_destroy.obj
+ 0001:00000f50       pthread_barrierattr_destroy 0000000180001f50 f   pthread_barrierattr_destroy.obj
+ 0001:00000f50       pthread_rwlockattr_destroy 0000000180001f50 f   pthread_rwlockattr_destroy.obj
+ 0001:00000fd0       pthread_barrierattr_getpshared 0000000180001fd0 f   pthread_barrierattr_getpshared.obj
+ 0001:00000fd0       pthread_mutexattr_getpshared 0000000180001fd0 f   pthread_mutexattr_getpshared.obj
+ 0001:00000fd0       pthread_condattr_getpshared 0000000180001fd0 f   pthread_condattr_getpshared.obj
+ 0001:00000fd0       pthread_rwlockattr_getpshared 0000000180001fd0 f   pthread_rwlockattr_getpshared.obj
+ 0001:00001040       pthread_barrierattr_init   0000000180002040 f   pthread_barrierattr_init.obj
+ 0001:000010b0       pthread_rwlockattr_setpshared 00000001800020b0 f   pthread_rwlockattr_setpshared.obj
+ 0001:000010b0       pthread_barrierattr_setpshared 00000001800020b0 f   pthread_barrierattr_setpshared.obj
+ 0001:000010b0       pthread_condattr_setpshared 00000001800020b0 f   pthread_condattr_setpshared.obj
+ 0001:000010b0       pthread_mutexattr_setpshared 00000001800020b0 f   pthread_mutexattr_setpshared.obj
+ 0001:00001190       ptw32_RegisterCancellation 0000000180002190 f   pthread_cancel.obj
+ 0001:00001240       pthread_cancel             0000000180002240 f   pthread_cancel.obj
+ 0001:00001510       pthread_cond_destroy       0000000180002510 f   pthread_cond_destroy.obj
+ 0001:00001810       pthread_cond_init          0000000180002810 f   pthread_cond_init.obj
+ 0001:00001c70       pthread_cond_signal        0000000180002c70 f   pthread_cond_signal.obj
+ 0001:00001ca0       pthread_cond_broadcast     0000000180002ca0 f   pthread_cond_signal.obj
+ 0001:00002030       pthread_cond_wait          0000000180003030 f   pthread_cond_wait.obj
+ 0001:00002070       pthread_cond_timedwait     0000000180003070 f   pthread_cond_wait.obj
+ 0001:000020d0       pthread_condattr_destroy   00000001800030d0 f   pthread_condattr_destroy.obj
+ 0001:00002140       pthread_condattr_init      0000000180003140 f   pthread_condattr_init.obj
+ 0001:000021b0       pthread_delay_np           00000001800031b0 f   pthread_delay_np.obj
+ 0001:00002380       pthread_detach             0000000180003380 f   pthread_detach.obj
+ 0001:000024e0       pthread_equal              00000001800034e0 f   pthread_equal.obj
+ 0001:00002550       pthread_exit               0000000180003550 f   pthread_exit.obj
+ 0001:000025b0       pthread_getconcurrency     00000001800035b0 f   pthread_getconcurrency.obj
+ 0001:000025c0       pthread_getschedparam      00000001800035c0 f   pthread_getschedparam.obj
+ 0001:00002660       pthread_getspecific        0000000180003660 f   pthread_getspecific.obj
+ 0001:000026d0       pthread_getunique_np       00000001800036d0 f   pthread_getunique_np.obj
+ 0001:000026f0       pthread_getw32threadhandle_np 00000001800036f0 f   pthread_getw32threadhandle_np.obj
+ 0001:00002710       pthread_getw32threadid_np  0000000180003710 f   pthread_getw32threadhandle_np.obj
+ 0001:00002730       pthread_join               0000000180003730 f   pthread_join.obj
+ 0001:000028f0       pthread_key_create         00000001800038f0 f   pthread_key_create.obj
+ 0001:000029c0       pthread_key_delete         00000001800039c0 f   pthread_key_delete.obj
+ 0001:00002b30       pthread_kill               0000000180003b30 f   pthread_kill.obj
+ 0001:00002bf0       ptw32_robust_mutex_inherit 0000000180003bf0 f   pthread_mutex_consistent.obj
+ 0001:00002c90       ptw32_robust_mutex_add     0000000180003c90 f   pthread_mutex_consistent.obj
+ 0001:00002d70       ptw32_robust_mutex_remove  0000000180003d70 f   pthread_mutex_consistent.obj
+ 0001:00002e40       pthread_mutex_consistent   0000000180003e40 f   pthread_mutex_consistent.obj
+ 0001:00002ed0       pthread_mutex_destroy      0000000180003ed0 f   pthread_mutex_destroy.obj
+ 0001:00003090       pthread_mutex_init         0000000180004090 f   pthread_mutex_init.obj
+ 0001:00003260       pthread_mutex_lock         0000000180004260 f   pthread_mutex_lock.obj
+ 0001:00003830       pthread_mutex_timedlock    0000000180004830 f   pthread_mutex_timedlock.obj
+ 0001:00003db0       pthread_mutex_trylock      0000000180004db0 f   pthread_mutex_trylock.obj
+ 0001:000040e0       pthread_mutex_unlock       00000001800050e0 f   pthread_mutex_unlock.obj
+ 0001:000043f0       pthread_mutexattr_getkind_np 00000001800053f0 f   pthread_mutexattr_getkind_np.obj
+ 0001:00004430       pthread_mutexattr_getrobust 0000000180005430 f   pthread_mutexattr_getrobust.obj
+ 0001:000044a0       pthread_mutexattr_gettype  00000001800054a0 f   pthread_mutexattr_gettype.obj
+ 0001:00004510       pthread_mutexattr_init     0000000180005510 f   pthread_mutexattr_init.obj
+ 0001:000045a0       pthread_mutexattr_setkind_np 00000001800055a0 f   pthread_mutexattr_setkind_np.obj
+ 0001:000045e0       pthread_mutexattr_setrobust 00000001800055e0 f   pthread_mutexattr_setrobust.obj
+ 0001:00004660       pthread_mutexattr_settype  0000000180005660 f   pthread_mutexattr_settype.obj
+ 0001:000046e0       pthread_num_processors_np  00000001800056e0 f   pthread_num_processors_np.obj
+ 0001:00004770       pthread_once               0000000180005770 f   pthread_once.obj
+ 0001:00004860       pthread_rwlock_destroy     0000000180005860 f   pthread_rwlock_destroy.obj
+ 0001:00004af0       pthread_rwlock_init        0000000180005af0 f   pthread_rwlock_init.obj
+ 0001:00004c60       pthread_rwlock_rdlock      0000000180005c60 f   pthread_rwlock_rdlock.obj
+ 0001:00004dd0       pthread_rwlock_timedrdlock 0000000180005dd0 f   pthread_rwlock_timedrdlock.obj
+ 0001:00004f70       pthread_rwlock_timedwrlock 0000000180005f70 f   pthread_rwlock_timedwrlock.obj
+ 0001:000051c0       pthread_rwlock_tryrdlock   00000001800061c0 f   pthread_rwlock_tryrdlock.obj
+ 0001:00005330       pthread_rwlock_trywrlock   0000000180006330 f   pthread_rwlock_trywrlock.obj
+ 0001:000054f0       pthread_rwlock_unlock      00000001800064f0 f   pthread_rwlock_unlock.obj
+ 0001:00005640       pthread_rwlock_wrlock      0000000180006640 f   pthread_rwlock_wrlock.obj
+ 0001:00005870       pthread_rwlockattr_init    0000000180006870 f   pthread_rwlockattr_init.obj
+ 0001:000058e0       pthread_self               00000001800068e0 f   pthread_self.obj
+ 0001:00005c20       pthread_setaffinity_np     0000000180006c20 f   pthread_setaffinity.obj
+ 0001:00005da0       pthread_getaffinity_np     0000000180006da0 f   pthread_setaffinity.obj
+ 0001:00005ef0       pthread_setcancelstate     0000000180006ef0 f   pthread_setcancelstate.obj
+ 0001:00006070       pthread_setcanceltype      0000000180007070 f   pthread_setcanceltype.obj
+ 0001:000061f0       pthread_setconcurrency     00000001800071f0 f   pthread_setconcurrency.obj
+ 0001:00006220       pthread_setschedparam      0000000180007220 f   pthread_setschedparam.obj
+ 0001:000062d0       ptw32_setthreadpriority    00000001800072d0 f   pthread_setschedparam.obj
+ 0001:000063f0       pthread_setspecific        00000001800073f0 f   pthread_setspecific.obj
+ 0001:00006630       pthread_spin_destroy       0000000180007630 f   pthread_spin_destroy.obj
+ 0001:00006770       pthread_spin_init          0000000180007770 f   pthread_spin_init.obj
+ 0001:000068e0       pthread_spin_lock          00000001800078e0 f   pthread_spin_lock.obj
+ 0001:000069b0       pthread_spin_trylock       00000001800079b0 f   pthread_spin_trylock.obj
+ 0001:00006a90       pthread_spin_unlock        0000000180007a90 f   pthread_spin_unlock.obj
+ 0001:00006b50       pthread_testcancel         0000000180007b50 f   pthread_testcancel.obj
+ 0001:00006c50       pthread_timechange_handler_np 0000000180007c50 f   pthread_timechange_handler_np.obj
+ 0001:00006d20       pthread_timedjoin_np       0000000180007d20 f   pthread_timedjoin_np.obj
+ 0001:00006f20       pthread_tryjoin_np         0000000180007f20 f   pthread_tryjoin_np.obj
+ 0001:00007100       pthread_win32_process_attach_np 0000000180008100 f   pthread_win32_attach_detach_np.obj
+ 0001:000072b0       pthread_win32_process_detach_np 00000001800082b0 f   pthread_win32_attach_detach_np.obj
+ 0001:00007390       pthread_win32_thread_attach_np 0000000180008390 f   pthread_win32_attach_detach_np.obj
+ 0001:000073a0       pthread_win32_thread_detach_np 00000001800083a0 f   pthread_win32_attach_detach_np.obj
+ 0001:00007500       pthread_win32_test_features_np 0000000180008500 f   pthread_win32_attach_detach_np.obj
+ 0001:00007550       ptw32_callUserDestroyRoutines 0000000180008550 f   ptw32_callUserDestroyRoutines.obj
+ 0001:00007770       ptw32_cond_check_need_init 0000000180008770 f   ptw32_cond_check_need_init.obj
+ 0001:00007810       ptw32_getprocessors        0000000180008810 f   ptw32_getprocessors.obj
+ 0001:000078e0       ptw32_is_attr              00000001800088e0 f   ptw32_is_attr.obj
+ 0001:00007940       ptw32_mcs_flag_set         0000000180008940 f   ptw32_MCS_lock.obj
+ 0001:000079a0       ptw32_mcs_flag_wait        00000001800089a0 f   ptw32_MCS_lock.obj
+ 0001:00007a30       ptw32_mcs_lock_acquire     0000000180008a30 f   ptw32_MCS_lock.obj
+ 0001:00007ae0       ptw32_mcs_lock_release     0000000180008ae0 f   ptw32_MCS_lock.obj
+ 0001:00007b90       ptw32_mcs_lock_try_acquire 0000000180008b90 f   ptw32_MCS_lock.obj
+ 0001:00007c30       ptw32_mcs_node_transfer    0000000180008c30 f   ptw32_MCS_lock.obj
+ 0001:00007ce0       ptw32_mutex_check_need_init 0000000180008ce0 f   ptw32_mutex_check_need_init.obj
+ 0001:00007dd0       ptw32_new                  0000000180008dd0 f   ptw32_new.obj
+ 0001:00008000       ptw32_processInitialize    0000000180009000 f   ptw32_processInitialize.obj
+ 0001:00008070       ptw32_processTerminate     0000000180009070 f   ptw32_processTerminate.obj
+ 0001:00008170       ptw32_relmillisecs         0000000180009170 f   ptw32_relmillisecs.obj
+ 0001:000082b0       ptw32_threadReusePop       00000001800092b0 f   ptw32_reuse.obj
+ 0001:000083b0       ptw32_threadReusePush      00000001800093b0 f   ptw32_reuse.obj
+ 0001:000084c0       ptw32_rwlock_cancelwrwait  00000001800094c0 f   ptw32_rwlock_cancelwrwait.obj
+ 0001:00008530       ptw32_rwlock_check_need_init 0000000180009530 f   ptw32_rwlock_check_need_init.obj
+ 0001:000085d0       ptw32_semwait              00000001800095d0 f   ptw32_semwait.obj
+ 0001:000086e0       ptw32_spinlock_check_need_init 00000001800096e0 f   ptw32_spinlock_check_need_init.obj
+ 0001:00008780       ptw32_threadDestroy        0000000180009780 f   ptw32_threadDestroy.obj
+ 0001:00008980       ptw32_threadStart          0000000180009980 f   ptw32_threadStart.obj
+ 0001:00008b80       ptw32_throw                0000000180009b80 f   ptw32_throw.obj
+ 0001:00008cd0       ptw32_pop_cleanup_all      0000000180009cd0 f   ptw32_throw.obj
+ 0001:00008d10       ptw32_get_exception_services_code 0000000180009d10 f   ptw32_throw.obj
+ 0001:00008d20       ptw32_tkAssocCreate        0000000180009d20 f   ptw32_tkAssocCreate.obj
+ 0001:00008e30       ptw32_tkAssocDestroy       0000000180009e30 f   ptw32_tkAssocDestroy.obj
+ 0001:00008f70       sched_get_priority_max     0000000180009f70 f   sched_get_priority_max.obj
+ 0001:00008fc0       sched_get_priority_min     0000000180009fc0 f   sched_get_priority_min.obj
+ 0001:00009010       sched_getscheduler         000000018000a010 f   sched_getscheduler.obj
+ 0001:000090c0       sched_setaffinity          000000018000a0c0 f   sched_setaffinity.obj
+ 0001:00009260       sched_getaffinity          000000018000a260 f   sched_setaffinity.obj
+ 0001:00009390       _sched_affinitycpucount    000000018000a390 f   sched_setaffinity.obj
+ 0001:00009400       _sched_affinitycpuzero     000000018000a400 f   sched_setaffinity.obj
+ 0001:00009420       _sched_affinitycpuset      000000018000a420 f   sched_setaffinity.obj
+ 0001:00009480       _sched_affinitycpuclr      000000018000a480 f   sched_setaffinity.obj
+ 0001:000094e0       _sched_affinitycpuisset    000000018000a4e0 f   sched_setaffinity.obj
+ 0001:00009550       _sched_affinitycpuand      000000018000a550 f   sched_setaffinity.obj
+ 0001:00009580       _sched_affinitycpuor       000000018000a580 f   sched_setaffinity.obj
+ 0001:000095b0       _sched_affinitycpuxor      000000018000a5b0 f   sched_setaffinity.obj
+ 0001:000095e0       _sched_affinitycpuequal    000000018000a5e0 f   sched_setaffinity.obj
+ 0001:00009630       sched_setscheduler         000000018000a630 f   sched_setscheduler.obj
+ 0001:000096f0       sched_yield                000000018000a6f0 f   sched_yield.obj
+ 0001:00009720       sem_unlink                 000000018000a720 f   sem_unlink.obj
+ 0001:00009720       sem_close                  000000018000a720 f   sem_close.obj
+ 0001:00009760       sem_destroy                000000018000a760 f   sem_destroy.obj
+ 0001:000098a0       sem_getvalue               000000018000a8a0 f   sem_getvalue.obj
+ 0001:00009970       sem_init                   000000018000a970 f   sem_init.obj
+ 0001:00009ab0       sem_open                   000000018000aab0 f   sem_open.obj
+ 0001:00009b00       sem_post                   000000018000ab00 f   sem_post.obj
+ 0001:00009c30       sem_post_multiple          000000018000ac30 f   sem_post_multiple.obj
+ 0001:00009e40       sem_timedwait              000000018000ae40 f   sem_timedwait.obj
+ 0001:0000a000       sem_trywait                000000018000b000 f   sem_trywait.obj
+ 0001:0000a180       sem_wait                   000000018000b180 f   sem_wait.obj
+ 0001:0000a4e0       pthreadCancelableWait      000000018000b4e0 f   w32_CancelableWait.obj
+ 0001:0000a520       pthreadCancelableTimedWait 000000018000b520 f   w32_CancelableWait.obj
+ 0001:0000a556       SetThreadAffinityMask      000000018000b556 f   kernel32:KERNEL32.dll
+ 0001:0000a55c       ResumeThread               000000018000b55c f   kernel32:KERNEL32.dll
+ 0001:0000a562       WaitForSingleObject        000000018000b562 f   kernel32:KERNEL32.dll
+ 0001:0000a568       SuspendThread              000000018000b568 f   kernel32:KERNEL32.dll
+ 0001:0000a56e       SetEvent                   000000018000b56e f   kernel32:KERNEL32.dll
+ 0001:0000a574       GetThreadContext           000000018000b574 f   kernel32:KERNEL32.dll
+ 0001:0000a57a       SetThreadContext           000000018000b57a f   kernel32:KERNEL32.dll
+ 0001:0000a580       Sleep                      000000018000b580 f   kernel32:KERNEL32.dll
+ 0001:0000a586       SetLastError               000000018000b586 f   kernel32:KERNEL32.dll
+ 0001:0000a58c       GetLastError               000000018000b58c f   kernel32:KERNEL32.dll
+ 0001:0000a592       TlsGetValue                000000018000b592 f   kernel32:KERNEL32.dll
+ 0001:0000a598       TlsAlloc                   000000018000b598 f   kernel32:KERNEL32.dll
+ 0001:0000a59e       TlsFree                    000000018000b59e f   kernel32:KERNEL32.dll
+ 0001:0000a5a4       CloseHandle                000000018000b5a4 f   kernel32:KERNEL32.dll
+ 0001:0000a5aa       CreateEventW               000000018000b5aa f   kernel32:KERNEL32.dll
+ 0001:0000a5b0       GetCurrentProcess          000000018000b5b0 f   kernel32:KERNEL32.dll
+ 0001:0000a5b6       GetProcessAffinityMask     000000018000b5b6 f   kernel32:KERNEL32.dll
+ 0001:0000a5bc       GetCurrentThreadId         000000018000b5bc f   kernel32:KERNEL32.dll
+ 0001:0000a5c2       DuplicateHandle            000000018000b5c2 f   kernel32:KERNEL32.dll
+ 0001:0000a5c8       GetCurrentThread           000000018000b5c8 f   kernel32:KERNEL32.dll
+ 0001:0000a5ce       GetThreadPriority          000000018000b5ce f   kernel32:KERNEL32.dll
+ 0001:0000a5d4       ResetEvent                 000000018000b5d4 f   kernel32:KERNEL32.dll
+ 0001:0000a5da       SetThreadPriority          000000018000b5da f   kernel32:KERNEL32.dll
+ 0001:0000a5e0       TlsSetValue                000000018000b5e0 f   kernel32:KERNEL32.dll
+ 0001:0000a5e6       GetSystemDirectoryW        000000018000b5e6 f   kernel32:KERNEL32.dll
+ 0001:0000a5ec       LoadLibraryW               000000018000b5ec f   kernel32:KERNEL32.dll
+ 0001:0000a5f2       GetProcAddress             000000018000b5f2 f   kernel32:KERNEL32.dll
+ 0001:0000a5f8       FreeLibrary                000000018000b5f8 f   kernel32:KERNEL32.dll
+ 0001:0000a5fe       RaiseException             000000018000b5fe f   kernel32:KERNEL32.dll
+ 0001:0000a604       OpenProcess                000000018000b604 f   kernel32:KERNEL32.dll
+ 0001:0000a60a       GetCurrentProcessId        000000018000b60a f   kernel32:KERNEL32.dll
+ 0001:0000a610       SetProcessAffinityMask     000000018000b610 f   kernel32:KERNEL32.dll
+ 0001:0000a616       CreateSemaphoreW           000000018000b616 f   kernel32:KERNEL32.dll
+ 0001:0000a61c       ReleaseSemaphore           000000018000b61c f   kernel32:KERNEL32.dll
+ 0001:0000a622       WaitForMultipleObjects     000000018000b622 f   kernel32:KERNEL32.dll
+ 0001:0000a640       __security_check_cookie    000000018000b640 f   MSVCRTD:_amdsecgs_.obj
+ 0001:0000aa60       _CRT_INIT                  000000018000ba60 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000aa90       _DllMainCRTStartup         000000018000ba90 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000aad0       __raise_securityfailure    000000018000bad0 f   MSVCRTD:gs_report.obj
+ 0001:0000ab10       __report_gsfailure         000000018000bb10 f   MSVCRTD:gs_report.obj
+ 0001:0000abf0       __report_rangecheckfailure 000000018000bbf0 f   MSVCRTD:gs_report.obj
+ 0001:0000ac10       __report_securityfailure   000000018000bc10 f   MSVCRTD:gs_report.obj
+ 0001:0000acb0       __report_securityfailureEx 000000018000bcb0 f   MSVCRTD:gs_report.obj
+ 0001:0000af20       ??$__crt_fast_decode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 000000018000bf20 f i MSVCRTD:utility.obj
+ 0001:0000af60       ??$__crt_fast_encode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 000000018000bf60 f i MSVCRTD:utility.obj
+ 0001:0000afa0       ?__crt_rotate_pointer_value@@YA_K_KH@Z 000000018000bfa0 f i MSVCRTD:utility.obj
+ 0001:0000afc0       ?configure_argv@__scrt_narrow_argv_policy@@SAHXZ 000000018000bfc0 f i MSVCRTD:utility.obj
+ 0001:0000b140       NtCurrentTeb               000000018000c140 f i MSVCRTD:utility.obj
+ 0001:0000b150       __scrt_acquire_startup_lock 000000018000c150 f   MSVCRTD:utility.obj
+ 0001:0000b1c0       __scrt_dllmain_after_initialize_c 000000018000c1c0 f   MSVCRTD:utility.obj
+ 0001:0000b1f0       __scrt_dllmain_before_initialize_c 000000018000c1f0 f   MSVCRTD:utility.obj
+ 0001:0000b210       __scrt_dllmain_crt_thread_attach 000000018000c210 f   MSVCRTD:utility.obj
+ 0001:0000b240       __scrt_dllmain_crt_thread_detach 000000018000c240 f   MSVCRTD:utility.obj
+ 0001:0000b260       __scrt_dllmain_exception_filter 000000018000c260 f   MSVCRTD:utility.obj
+ 0001:0000b2c0       __scrt_dllmain_uninitialize_c 000000018000c2c0 f   MSVCRTD:utility.obj
+ 0001:0000b2f0       __scrt_dllmain_uninitialize_critical 000000018000c2f0 f   MSVCRTD:utility.obj
+ 0001:0000b310       __scrt_initialize_crt      000000018000c310 f   MSVCRTD:utility.obj
+ 0001:0000b360       __scrt_initialize_onexit_tables 000000018000c360 f   MSVCRTD:utility.obj
+ 0001:0000b460       __scrt_is_nonwritable_in_current_image 000000018000c460 f   MSVCRTD:utility.obj
+ 0001:0000b4f0       __scrt_release_startup_lock 000000018000c4f0 f   MSVCRTD:utility.obj
+ 0001:0000b520       __scrt_uninitialize_crt    000000018000c520 f   MSVCRTD:utility.obj
+ 0001:0000b560       _onexit                    000000018000c560 f   MSVCRTD:utility.obj
+ 0001:0000b5f0       at_quick_exit              000000018000c5f0 f   MSVCRTD:utility.obj
+ 0001:0000b640       atexit                     000000018000c640 f   MSVCRTD:utility.obj
+ 0001:0000b680       __security_init_cookie     000000018000c680 f   MSVCRTD:gs_support.obj
+ 0001:0000b7a0       ?__scrt_initialize_type_info@@YAXXZ 000000018000c7a0 f   MSVCRTD:tncleanup.obj
+ 0001:0000b7c0       ?__scrt_uninitialize_type_info@@YAXXZ 000000018000c7c0 f   MSVCRTD:tncleanup.obj
+ 0001:0000b7e0       __local_stdio_printf_options 000000018000c7e0 f i MSVCRTD:default_local_stdio_options.obj
+ 0001:0000b7f0       __local_stdio_scanf_options 000000018000c7f0 f i MSVCRTD:default_local_stdio_options.obj
+ 0001:0000b800       __scrt_initialize_default_local_stdio_options 000000018000c800 f   MSVCRTD:default_local_stdio_options.obj
+ 0001:0000b850       __scrt_get_dyn_tls_init_callback 000000018000c850 f   MSVCRTD:dyn_tls_init.obj
+ 0001:0000b860       __crt_debugger_hook        000000018000c860 f   MSVCRTD:utility_desktop.obj
+ 0001:0000b870       __scrt_fastfail            000000018000c870 f   MSVCRTD:utility_desktop.obj
+ 0001:0000ba10       __scrt_get_show_window_mode 000000018000ca10 f   MSVCRTD:utility_desktop.obj
+ 0001:0000ba70       __scrt_initialize_winrt    000000018000ca70 f   MSVCRTD:utility_desktop.obj
+ 0001:0000ba70       _is_c_termination_complete 000000018000ca70 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000ba70       __scrt_stub_for_is_c_termination_complete 000000018000ca70 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000ba80       __scrt_is_managed_app      000000018000ca80 f   MSVCRTD:utility_desktop.obj
+ 0001:0000bb30       __scrt_set_unhandled_exception_filter 000000018000cb30 f   MSVCRTD:utility_desktop.obj
+ 0001:0000bb50       __scrt_unhandled_exception_filter 000000018000cb50 f   MSVCRTD:utility_desktop.obj
+ 0001:0000bbd0       _RTC_Initialize            000000018000cbd0 f   MSVCRTD:_initsect_.obj
+ 0001:0000bc20       _RTC_Terminate             000000018000cc20 f   MSVCRTD:_initsect_.obj
+ 0001:0000bc70       _guard_check_icall         000000018000cc70 f i MSVCRTD:checkcfg.obj
+ 0001:0000bc90       __isa_available_init       000000018000cc90 f   MSVCRTD:_cpu_disp_.obj
+ 0001:0000c010       _get_startup_argv_mode     000000018000d010 f   MSVCRTD:argv_mode.obj
+ 0001:0000c020       __scrt_is_ucrt_dll_in_use  000000018000d020 f   MSVCRTD:ucrt_detection.obj
+ 0001:0000c050       _guard_check_icall_nop     000000018000d050 f i MSVCRTD:guard_support.obj
+ 0001:0000c060       _guard_icall_checks_enforced 000000018000d060 f i MSVCRTD:guard_support.obj
+ 0001:0000c090       __GSHandlerCheck           000000018000d090 f   MSVCRTD:_gshandler_.obj
+ 0001:0000c0d0       __GSHandlerCheckCommon     000000018000d0d0 f   MSVCRTD:_gshandler_.obj
+ 0001:0000c1d0       __C_specific_handler       000000018000d1d0 f   vcruntimed:VCRUNTIME140D.dll
+ 0001:0000c1d6       __std_type_info_destroy_list 000000018000d1d6 f   vcruntimed:VCRUNTIME140D.dll
+ 0001:0000c1dc       _beginthreadex             000000018000d1dc f   ucrtd:ucrtbased.dll
+ 0001:0000c1e2       free                       000000018000d1e2 f   ucrtd:ucrtbased.dll
+ 0001:0000c1e8       malloc                     000000018000d1e8 f   ucrtd:ucrtbased.dll
+ 0001:0000c1ee       calloc                     000000018000d1ee f   ucrtd:ucrtbased.dll
+ 0001:0000c1f4       _get_errno                 000000018000d1f4 f   ucrtd:ucrtbased.dll
+ 0001:0000c1fa       _endthreadex               000000018000d1fa f   ucrtd:ucrtbased.dll
+ 0001:0000c200       wcsncat_s                  000000018000d200 f   ucrtd:ucrtbased.dll
+ 0001:0000c206       _ftime64_s                 000000018000d206 f   ucrtd:ucrtbased.dll
+ 0001:0000c20c       _set_errno                 000000018000d20c f   ucrtd:ucrtbased.dll
+ 0001:0000c212       exit                       000000018000d212 f   ucrtd:ucrtbased.dll
+ 0001:0000c218       _initterm                  000000018000d218 f   ucrtd:ucrtbased.dll
+ 0001:0000c21e       _initterm_e                000000018000d21e f   ucrtd:ucrtbased.dll
+ 0001:0000c224       _seh_filter_dll            000000018000d224 f   ucrtd:ucrtbased.dll
+ 0001:0000c22a       _configure_narrow_argv     000000018000d22a f   ucrtd:ucrtbased.dll
+ 0001:0000c230       _initialize_narrow_environment 000000018000d230 f   ucrtd:ucrtbased.dll
+ 0001:0000c236       _initialize_onexit_table   000000018000d236 f   ucrtd:ucrtbased.dll
+ 0001:0000c23c       _register_onexit_function  000000018000d23c f   ucrtd:ucrtbased.dll
+ 0001:0000c242       _execute_onexit_table      000000018000d242 f   ucrtd:ucrtbased.dll
+ 0001:0000c248       _crt_atexit                000000018000d248 f   ucrtd:ucrtbased.dll
+ 0001:0000c24e       _crt_at_quick_exit         000000018000d24e f   ucrtd:ucrtbased.dll
+ 0001:0000c254       _cexit                     000000018000d254 f   ucrtd:ucrtbased.dll
+ 0001:0000c25a       terminate                  000000018000d25a f   ucrtd:ucrtbased.dll
+ 0001:0000c260       RtlCaptureContext          000000018000d260 f   kernel32:KERNEL32.dll
+ 0001:0000c266       RtlLookupFunctionEntry     000000018000d266 f   kernel32:KERNEL32.dll
+ 0001:0000c26c       RtlVirtualUnwind           000000018000d26c f   kernel32:KERNEL32.dll
+ 0001:0000c272       UnhandledExceptionFilter   000000018000d272 f   kernel32:KERNEL32.dll
+ 0001:0000c278       SetUnhandledExceptionFilter 000000018000d278 f   kernel32:KERNEL32.dll
+ 0001:0000c27e       TerminateProcess           000000018000d27e f   kernel32:KERNEL32.dll
+ 0001:0000c284       IsProcessorFeaturePresent  000000018000d284 f   kernel32:KERNEL32.dll
+ 0001:0000c28a       QueryPerformanceCounter    000000018000d28a f   kernel32:KERNEL32.dll
+ 0001:0000c290       GetSystemTimeAsFileTime    000000018000d290 f   kernel32:KERNEL32.dll
+ 0001:0000c296       InitializeSListHead        000000018000d296 f   kernel32:KERNEL32.dll
+ 0001:0000c29c       IsDebuggerPresent          000000018000d29c f   kernel32:KERNEL32.dll
+ 0001:0000c2a2       GetStartupInfoW            000000018000d2a2 f   kernel32:KERNEL32.dll
+ 0001:0000c2a8       GetModuleHandleW           000000018000d2a8 f   kernel32:KERNEL32.dll
+ 0001:0000c2b0       __vcrt_thread_detach       000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __scrt_stub_for_acrt_thread_detach 000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __scrt_stub_for_acrt_thread_attach 000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __scrt_stub_for_acrt_initialize 000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __acrt_thread_detach       000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __vcrt_thread_attach       000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __vcrt_initialize          000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __acrt_initialize          000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2b0       __acrt_thread_attach       000000018000d2b0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2c0       __scrt_stub_for_acrt_uninitialize 000000018000d2c0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2c0       __vcrt_uninitialize        000000018000d2c0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2c0       __vcrt_uninitialize_critical 000000018000d2c0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2c0       __scrt_stub_for_acrt_uninitialize_critical 000000018000d2c0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2c0       __acrt_uninitialize        000000018000d2c0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2c0       __acrt_uninitialize_critical 000000018000d2c0 f   MSVCRTD:ucrt_stubs.obj
+ 0001:0000c2d0       _RTC_AllocaHelper          000000018000d2d0 f   MSVCRTD:_stack_.obj
+ 0001:0000c310       _RTC_CheckStackVars        000000018000d310 f   MSVCRTD:_stack_.obj
+ 0001:0000c3a0       _RTC_CheckStackVars2       000000018000d3a0 f   MSVCRTD:_stack_.obj
+ 0001:0000c4b0       __GSHandlerCheck_SEH       000000018000d4b0 f   MSVCRTD:_gshandlerseh_.obj
+ 0001:0000c570       ??$__vcrt_va_start_verify_argument_type@QEBD@@YAXXZ 000000018000d570 f i MSVCRTD:_error_.obj
+ 0001:0000c620       ?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 000000018000d620 f   MSVCRTD:_error_.obj
+ 0001:0000c7b0       ?_RTC_Failure@@YAXPEAXH@Z  000000018000d7b0 f   MSVCRTD:_error_.obj
+ 0001:0000c800       ?_RTC_StackFailure@@YAXPEAXPEBD@Z 000000018000d800 f   MSVCRTD:_error_.obj
+ 0001:0000cc80       _RTC_UninitUse             000000018000dc80 f   MSVCRTD:_error_.obj
+ 0001:0000cda0       _vsprintf_s_l              000000018000dda0 f i MSVCRTD:_error_.obj
+ 0001:0000ce10       sprintf_s                  000000018000de10 f i MSVCRTD:_error_.obj
+ 0001:0000ce50       ?_RTC_GetErrorFunc@@YAP6AHHPEBDH00ZZPEBX@Z 000000018000de50 f   MSVCRTD:_userapi_.obj
+ 0001:0000ce60       ?_RTC_GetErrorFuncW@@YAP6AHHPEB_WH00ZZPEBX@Z 000000018000de60 f   MSVCRTD:_userapi_.obj
+ 0001:0000ce70       _RTC_GetErrDesc            000000018000de70 f   MSVCRTD:_userapi_.obj
+ 0001:0000ce90       _RTC_NumErrors             000000018000de90 f   MSVCRTD:_userapi_.obj
+ 0001:0000cea0       _RTC_SetErrorFunc          000000018000dea0 f   MSVCRTD:_userapi_.obj
+ 0001:0000cec0       _RTC_SetErrorFuncW         000000018000dec0 f   MSVCRTD:_userapi_.obj
+ 0001:0000cee0       _RTC_SetErrorType          000000018000dee0 f   MSVCRTD:_userapi_.obj
+ 0001:0000d3f0       ?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 000000018000e3f0 f   MSVCRTD:_pdblkup_.obj
+ 0001:0000d862       __vcrt_GetModuleFileNameW  000000018000e862 f   vcruntimed:VCRUNTIME140D.dll
+ 0001:0000d868       __vcrt_GetModuleHandleW    000000018000e868 f   vcruntimed:VCRUNTIME140D.dll
+ 0001:0000d86e       __vcrt_LoadLibraryExW      000000018000e86e f   vcruntimed:VCRUNTIME140D.dll
+ 0001:0000d874       __stdio_common_vsprintf_s  000000018000e874 f   ucrtd:ucrtbased.dll
+ 0001:0000d87a       _wmakepath_s               000000018000e87a f   ucrtd:ucrtbased.dll
+ 0001:0000d880       _wsplitpath_s              000000018000e880 f   ucrtd:ucrtbased.dll
+ 0001:0000d886       wcscpy_s                   000000018000e886 f   ucrtd:ucrtbased.dll
+ 0001:0000d88c       MultiByteToWideChar        000000018000e88c f   kernel32:KERNEL32.dll
+ 0001:0000d892       WideCharToMultiByte        000000018000e892 f   kernel32:KERNEL32.dll
+ 0001:0000d898       HeapAlloc                  000000018000e898 f   kernel32:KERNEL32.dll
+ 0001:0000d89e       HeapFree                   000000018000e89e f   kernel32:KERNEL32.dll
+ 0001:0000d8a4       GetProcessHeap             000000018000e8a4 f   kernel32:KERNEL32.dll
+ 0001:0000d8aa       VirtualQuery               000000018000e8aa f   kernel32:KERNEL32.dll
+ 0001:0000d8c0       _guard_dispatch_icall_nop  000000018000e8c0 f   MSVCRTD:_guard_dispatch_.obj
+ 0002:00000000       __imp_SetThreadAffinityMask 000000018000f000     kernel32:KERNEL32.dll
+ 0002:00000008       __imp_ResumeThread         000000018000f008     kernel32:KERNEL32.dll
+ 0002:00000010       __imp_WaitForSingleObject  000000018000f010     kernel32:KERNEL32.dll
+ 0002:00000018       __imp_SuspendThread        000000018000f018     kernel32:KERNEL32.dll
+ 0002:00000020       __imp_SetEvent             000000018000f020     kernel32:KERNEL32.dll
+ 0002:00000028       __imp_GetThreadContext     000000018000f028     kernel32:KERNEL32.dll
+ 0002:00000030       __imp_SetThreadContext     000000018000f030     kernel32:KERNEL32.dll
+ 0002:00000038       __imp_Sleep                000000018000f038     kernel32:KERNEL32.dll
+ 0002:00000040       __imp_SetLastError         000000018000f040     kernel32:KERNEL32.dll
+ 0002:00000048       __imp_GetLastError         000000018000f048     kernel32:KERNEL32.dll
+ 0002:00000050       __imp_TlsGetValue          000000018000f050     kernel32:KERNEL32.dll
+ 0002:00000058       __imp_TlsAlloc             000000018000f058     kernel32:KERNEL32.dll
+ 0002:00000060       __imp_TlsFree              000000018000f060     kernel32:KERNEL32.dll
+ 0002:00000068       __imp_CloseHandle          000000018000f068     kernel32:KERNEL32.dll
+ 0002:00000070       __imp_CreateEventW         000000018000f070     kernel32:KERNEL32.dll
+ 0002:00000078       __imp_GetCurrentProcess    000000018000f078     kernel32:KERNEL32.dll
+ 0002:00000080       __imp_GetProcessAffinityMask 000000018000f080     kernel32:KERNEL32.dll
+ 0002:00000088       __imp_GetCurrentThreadId   000000018000f088     kernel32:KERNEL32.dll
+ 0002:00000090       __imp_DuplicateHandle      000000018000f090     kernel32:KERNEL32.dll
+ 0002:00000098       __imp_GetCurrentThread     000000018000f098     kernel32:KERNEL32.dll
+ 0002:000000a0       __imp_GetThreadPriority    000000018000f0a0     kernel32:KERNEL32.dll
+ 0002:000000a8       __imp_ResetEvent           000000018000f0a8     kernel32:KERNEL32.dll
+ 0002:000000b0       __imp_SetThreadPriority    000000018000f0b0     kernel32:KERNEL32.dll
+ 0002:000000b8       __imp_TlsSetValue          000000018000f0b8     kernel32:KERNEL32.dll
+ 0002:000000c0       __imp_GetSystemDirectoryW  000000018000f0c0     kernel32:KERNEL32.dll
+ 0002:000000c8       __imp_LoadLibraryW         000000018000f0c8     kernel32:KERNEL32.dll
+ 0002:000000d0       __imp_GetProcAddress       000000018000f0d0     kernel32:KERNEL32.dll
+ 0002:000000d8       __imp_FreeLibrary          000000018000f0d8     kernel32:KERNEL32.dll
+ 0002:000000e0       __imp_RaiseException       000000018000f0e0     kernel32:KERNEL32.dll
+ 0002:000000e8       __imp_OpenProcess          000000018000f0e8     kernel32:KERNEL32.dll
+ 0002:000000f0       __imp_GetCurrentProcessId  000000018000f0f0     kernel32:KERNEL32.dll
+ 0002:000000f8       __imp_SetProcessAffinityMask 000000018000f0f8     kernel32:KERNEL32.dll
+ 0002:00000100       __imp_CreateSemaphoreW     000000018000f100     kernel32:KERNEL32.dll
+ 0002:00000108       __imp_ReleaseSemaphore     000000018000f108     kernel32:KERNEL32.dll
+ 0002:00000110       __imp_WaitForMultipleObjects 000000018000f110     kernel32:KERNEL32.dll
+ 0002:00000118       __imp_GetProcessHeap       000000018000f118     kernel32:KERNEL32.dll
+ 0002:00000120       __imp_HeapFree             000000018000f120     kernel32:KERNEL32.dll
+ 0002:00000128       __imp_HeapAlloc            000000018000f128     kernel32:KERNEL32.dll
+ 0002:00000130       __imp_WideCharToMultiByte  000000018000f130     kernel32:KERNEL32.dll
+ 0002:00000138       __imp_MultiByteToWideChar  000000018000f138     kernel32:KERNEL32.dll
+ 0002:00000140       __imp_GetModuleHandleW     000000018000f140     kernel32:KERNEL32.dll
+ 0002:00000148       __imp_GetStartupInfoW      000000018000f148     kernel32:KERNEL32.dll
+ 0002:00000150       __imp_IsDebuggerPresent    000000018000f150     kernel32:KERNEL32.dll
+ 0002:00000158       __imp_VirtualQuery         000000018000f158     kernel32:KERNEL32.dll
+ 0002:00000160       __imp_InitializeSListHead  000000018000f160     kernel32:KERNEL32.dll
+ 0002:00000168       __imp_GetSystemTimeAsFileTime 000000018000f168     kernel32:KERNEL32.dll
+ 0002:00000170       __imp_QueryPerformanceCounter 000000018000f170     kernel32:KERNEL32.dll
+ 0002:00000178       __imp_IsProcessorFeaturePresent 000000018000f178     kernel32:KERNEL32.dll
+ 0002:00000180       __imp_TerminateProcess     000000018000f180     kernel32:KERNEL32.dll
+ 0002:00000188       __imp_SetUnhandledExceptionFilter 000000018000f188     kernel32:KERNEL32.dll
+ 0002:00000190       __imp_UnhandledExceptionFilter 000000018000f190     kernel32:KERNEL32.dll
+ 0002:00000198       __imp_RtlVirtualUnwind     000000018000f198     kernel32:KERNEL32.dll
+ 0002:000001a0       __imp_RtlLookupFunctionEntry 000000018000f1a0     kernel32:KERNEL32.dll
+ 0002:000001a8       __imp_RtlCaptureContext    000000018000f1a8     kernel32:KERNEL32.dll
+ 0002:000001b0       \177KERNEL32_NULL_THUNK_DATA 000000018000f1b0     kernel32:KERNEL32.dll
+ 0002:000001b8       __imp___C_specific_handler 000000018000f1b8     vcruntimed:VCRUNTIME140D.dll
+ 0002:000001c0       __imp___vcrt_LoadLibraryExW 000000018000f1c0     vcruntimed:VCRUNTIME140D.dll
+ 0002:000001c8       __imp___vcrt_GetModuleHandleW 000000018000f1c8     vcruntimed:VCRUNTIME140D.dll
+ 0002:000001d0       __imp___vcrt_GetModuleFileNameW 000000018000f1d0     vcruntimed:VCRUNTIME140D.dll
+ 0002:000001d8       __imp___std_type_info_destroy_list 000000018000f1d8     vcruntimed:VCRUNTIME140D.dll
+ 0002:000001e0       \177VCRUNTIME140D_NULL_THUNK_DATA 000000018000f1e0     vcruntimed:VCRUNTIME140D.dll
+ 0002:000001e8       __imp__initialize_onexit_table 000000018000f1e8     ucrtd:ucrtbased.dll
+ 0002:000001f0       __imp__initialize_narrow_environment 000000018000f1f0     ucrtd:ucrtbased.dll
+ 0002:000001f8       __imp__configure_narrow_argv 000000018000f1f8     ucrtd:ucrtbased.dll
+ 0002:00000200       __imp__seh_filter_dll      000000018000f200     ucrtd:ucrtbased.dll
+ 0002:00000208       __imp__initterm_e          000000018000f208     ucrtd:ucrtbased.dll
+ 0002:00000210       __imp__initterm            000000018000f210     ucrtd:ucrtbased.dll
+ 0002:00000218       __imp_exit                 000000018000f218     ucrtd:ucrtbased.dll
+ 0002:00000220       __imp__set_errno           000000018000f220     ucrtd:ucrtbased.dll
+ 0002:00000228       __imp_terminate            000000018000f228     ucrtd:ucrtbased.dll
+ 0002:00000230       __imp_wcsncat_s            000000018000f230     ucrtd:ucrtbased.dll
+ 0002:00000238       __imp__get_errno           000000018000f238     ucrtd:ucrtbased.dll
+ 0002:00000240       __imp_calloc               000000018000f240     ucrtd:ucrtbased.dll
+ 0002:00000248       __imp_malloc               000000018000f248     ucrtd:ucrtbased.dll
+ 0002:00000250       __imp__cexit               000000018000f250     ucrtd:ucrtbased.dll
+ 0002:00000258       __imp__crt_at_quick_exit   000000018000f258     ucrtd:ucrtbased.dll
+ 0002:00000260       __imp__crt_atexit          000000018000f260     ucrtd:ucrtbased.dll
+ 0002:00000268       __imp___stdio_common_vsprintf_s 000000018000f268     ucrtd:ucrtbased.dll
+ 0002:00000270       __imp__wmakepath_s         000000018000f270     ucrtd:ucrtbased.dll
+ 0002:00000278       __imp__wsplitpath_s        000000018000f278     ucrtd:ucrtbased.dll
+ 0002:00000280       __imp_wcscpy_s             000000018000f280     ucrtd:ucrtbased.dll
+ 0002:00000288       __imp_free                 000000018000f288     ucrtd:ucrtbased.dll
+ 0002:00000290       __imp__beginthreadex       000000018000f290     ucrtd:ucrtbased.dll
+ 0002:00000298       __imp__execute_onexit_table 000000018000f298     ucrtd:ucrtbased.dll
+ 0002:000002a0       __imp__ftime64_s           000000018000f2a0     ucrtd:ucrtbased.dll
+ 0002:000002a8       __imp__register_onexit_function 000000018000f2a8     ucrtd:ucrtbased.dll
+ 0002:000002b0       __imp__endthreadex         000000018000f2b0     ucrtd:ucrtbased.dll
+ 0002:000002b8       \177ucrtbased_NULL_THUNK_DATA 000000018000f2b8     ucrtd:ucrtbased.dll
+ 0002:000002c0       __guard_check_icall_fptr   000000018000f2c0     MSVCRTD:guard_support.obj
+ 0002:000002c8       __guard_dispatch_icall_fptr 000000018000f2c8     MSVCRTD:guard_support.obj
+ 0002:000002d0       __xc_a                     000000018000f2d0     MSVCRTD:initializers.obj
+ 0002:000002d8       __xc_z                     000000018000f2d8     MSVCRTD:initializers.obj
+ 0002:000002e0       __xi_a                     000000018000f2e0     MSVCRTD:initializers.obj
+ 0002:000002e8       __xi_z                     000000018000f2e8     MSVCRTD:initializers.obj
+ 0002:000002f0       __xp_a                     000000018000f2f0     MSVCRTD:initializers.obj
+ 0002:000002f8       __xp_z                     000000018000f2f8     MSVCRTD:initializers.obj
+ 0002:00000300       __xt_a                     000000018000f300     MSVCRTD:initializers.obj
+ 0002:00000308       __xt_z                     000000018000f308     MSVCRTD:initializers.obj
+ 0002:00000310       _pDefaultRawDllMain        000000018000f310     MSVCRTD:dll_dllmain.obj
+ 0002:00000310       _pRawDllMain               000000018000f310     MSVCRTD:dll_dllmain.obj
+ 0002:00000328       ??_C@_1BK@HAOLGFOM@?$AA?2?$AAQ?$AAU?$AAS?$AAE?$AAR?$AAE?$AAX?$AA?4?$AAD?$AAL?$AAL?$AA?$AA@ 000000018000f328     pthread_win32_attach_detach_np.obj
+ 0002:00000348       ??_C@_0P@GONKDLPM@QueueUserAPCEx?$AA@ 000000018000f348     pthread_win32_attach_detach_np.obj
+ 0002:00000358       ??_C@_0BE@KOBJHIEE@QueueUserAPCEx_Init?$AA@ 000000018000f358     pthread_win32_attach_detach_np.obj
+ 0002:00000370       ??_C@_0BE@ELLNKNLF@QueueUserAPCEx_Fini?$AA@ 000000018000f370     pthread_win32_attach_detach_np.obj
+ 0002:00001eb0       ??_C@_0NN@NGPKDKPD@The?5value?5of?5ESP?5was?5not?5properl@ 0000000180010eb0     MSVCRTD:_error_.obj
+ 0002:00001f90       ??_C@_0BBN@GPMLNJCF@A?5cast?5to?5a?5smaller?5data?5type?5ha@ 0000000180010f90     MSVCRTD:_error_.obj
+ 0002:000020b0       ??_C@_0BN@FFOINMNJ@Stack?5memory?5was?5corrupted?6?$AN?$AA@ 00000001800110b0     MSVCRTD:_error_.obj
+ 0002:000020d0       ??_C@_0DG@HKJMLLLP@A?5local?5variable?5was?5used?5before@ 00000001800110d0     MSVCRTD:_error_.obj
+ 0002:00002108       ??_C@_0CM@NGINOKPC@Stack?5memory?5around?5_alloca?5was?5@ 0000000180011108     MSVCRTD:_error_.obj
+ 0002:00002138       ??_C@_0BO@GNIAFIKK@Unknown?5Runtime?5Check?5Error?6?$AN?$AA@ 0000000180011138     MSVCRTD:_error_.obj
+ 0002:00002160       ??_C@_1GM@OLMCBDMB@?$AAR?$AAu?$AAn?$AAt?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?4?$AA?6?$AA?$AN?$AA?5?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo@ 0000000180011160     MSVCRTD:_error_.obj
+ 0002:000021d0       ??_C@_1EA@NFKNIFJP@?$AAR?$AAu?$AAn?$AA?9?$AAT?$AAi?$AAm?$AAe?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAu?$AAr?$AAe?$AA?5?$AA?$CD?$AA?$CF?$AAd?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAs?$AA?$AA@ 00000001800111d0     MSVCRTD:_error_.obj
+ 0002:00002210       ??_C@_0BB@PFFGGCJP@Unknown?5Filename?$AA@ 0000000180011210     MSVCRTD:_error_.obj
+ 0002:00002228       ??_C@_0BE@GNBOBNCK@Unknown?5Module?5Name?$AA@ 0000000180011228     MSVCRTD:_error_.obj
+ 0002:00002240       ??_C@_0CA@IODNCDPG@Run?9Time?5Check?5Failure?5?$CD?$CFd?5?9?5?$CFs?$AA@ 0000000180011240     MSVCRTD:_error_.obj
+ 0002:00002260       ??_C@_0CG@IAFNJNEE@Stack?5corrupted?5near?5unknown?5var@ 0000000180011260     MSVCRTD:_error_.obj
+ 0002:00002288       ??_C@_05MKKEDADM@?$CF?42X?5?$AA@ 0000000180011288     MSVCRTD:_error_.obj
+ 0002:00002290       ??_C@_0EJ@LJKNEOLN@Stack?5area?5around?5_alloca?5memory@ 0000000180011290     MSVCRTD:_error_.obj
+ 0002:000022e0       ??_C@_08OMAHNMHJ@?6Data?3?5?$DM?$AA@ 00000001800112e0     MSVCRTD:_error_.obj
+ 0002:000022f0       ??_C@_0CK@DKGBICFE@?6Allocation?5number?5within?5this?5f@ 00000001800112f0     MSVCRTD:_error_.obj
+ 0002:00002320       ??_C@_07DFDJCKFN@?6Size?3?5?$AA@ 0000000180011320     MSVCRTD:_error_.obj
+ 0002:00002328       ??_C@_0N@MHFFIMFG@?6Address?3?50x?$AA@ 0000000180011328     MSVCRTD:_error_.obj
+ 0002:00002340       ??_C@_0EI@CLEPFNGI@Stack?5area?5around?5_alloca?5memory@ 0000000180011340     MSVCRTD:_error_.obj
+ 0002:00002388       ??_C@_0BC@HHMKLAND@?$CFs?$CFs?$CFp?$CFs?$CFzd?$CFs?$CFd?$CFs?$AA@ 0000000180011388     MSVCRTD:_error_.obj
+ 0002:0000239c       ??_C@_01EEMJAFIK@?6?$AA@   000000018001139c     MSVCRTD:_error_.obj
+ 0002:000023a0       ??_C@_02LLMPMKNF@?$DO?5?$AA@ 00000001800113a0     MSVCRTD:_error_.obj
+ 0002:000023a8       ??_C@_08KJEDNCKC@?$CFs?$CFs?$CFs?$CFs?$AA@ 00000001800113a8     MSVCRTD:_error_.obj
+ 0002:000023b8       ??_C@_0DE@OHJBPMBP@A?5variable?5is?5being?5used?5without@ 00000001800113b8     MSVCRTD:_error_.obj
+ 0002:00002418       ??_C@_0BJ@HEGAHDFO@Stack?5pointer?5corruption?$AA@ 0000000180011418     MSVCRTD:_userapi_.obj
+ 0002:00002438       ??_C@_0CK@FEGOIOPB@Cast?5to?5smaller?5type?5causing?5los@ 0000000180011438     MSVCRTD:_userapi_.obj
+ 0002:00002468       ??_C@_0BI@CIGMDCBH@Stack?5memory?5corruption?$AA@ 0000000180011468     MSVCRTD:_userapi_.obj
+ 0002:00002480       ??_C@_0CK@CNLNOEPB@Local?5variable?5used?5before?5initi@ 0000000180011480     MSVCRTD:_userapi_.obj
+ 0002:000024b0       ??_C@_0BP@OGBCLIBO@Stack?5around?5_alloca?5corrupted?$AA@ 00000001800114b0     MSVCRTD:_userapi_.obj
+ 0002:00002530       ??_C@_1EI@MLPKHBGE@?$AAa?$AAp?$AAi?$AA?9?$AAm?$AAs?$AA?9?$AAw?$AAi?$AAn?$AA?9?$AAc?$AAo?$AAr?$AAe?$AA?9?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt?$AAr?$AAy?$AA?9?$AAl?$AA1?$AA?9?$AA1?$AA?9?$AA0?$AA?4@ 0000000180011530     MSVCRTD:_pdblkup_.obj
+ 0002:00002578       ??_C@_1BK@JHLNAEJL@?$AAa?$AAd?$AAv?$AAa?$AAp?$AAi?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@ 0000000180011578     MSVCRTD:_pdblkup_.obj
+ 0002:00002598       ??_C@_0O@COHOBMLB@RegOpenKeyExW?$AA@ 0000000180011598     MSVCRTD:_pdblkup_.obj
+ 0002:000025a8       ??_C@_0BB@GLNAEDBD@RegQueryValueExW?$AA@ 00000001800115a8     MSVCRTD:_pdblkup_.obj
+ 0002:000025c0       ??_C@_0M@HLOHPNFA@RegCloseKey?$AA@ 00000001800115c0     MSVCRTD:_pdblkup_.obj
+ 0002:000025d0       ??_C@_1HE@EBEAGLFB@?$AAS?$AAO?$AAF?$AAT?$AAW?$AAA?$AAR?$AAE?$AA?2?$AAW?$AAo?$AAw?$AA6?$AA4?$AA3?$AA2?$AAN?$AAo?$AAd?$AAe?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?2?$AAV@ 00000001800115d0     MSVCRTD:_pdblkup_.obj
+ 0002:00002648       ??_C@_1BG@EABPBLLF@?$AAP?$AAr?$AAo?$AAd?$AAu?$AAc?$AAt?$AAD?$AAi?$AAr?$AA?$AA@ 0000000180011648     MSVCRTD:_pdblkup_.obj
+ 0002:00002680       ??_C@_1BC@JINFINNJ@?$AAM?$AAS?$AAP?$AAD?$AAB?$AA1?$AA4?$AA0?$AA?$AA@ 0000000180011680     MSVCRTD:_pdblkup_.obj
+ 0002:00002698       ??_C@_0BB@KCIACLNC@PDBOpenValidate5?$AA@ 0000000180011698     MSVCRTD:_pdblkup_.obj
+ 0002:000026ac       ??_C@_01KDCPPGHE@r?$AA@    00000001800116ac     MSVCRTD:_pdblkup_.obj
+ 0002:000026f0       _load_config_used          00000001800116f0     MSVCRTD:loadcfg.obj
+ 0002:00002a40       __rtc_iaa                  0000000180011a40     MSVCRTD:_initsect_.obj
+ 0002:00002a48       __rtc_izz                  0000000180011a48     MSVCRTD:_initsect_.obj
+ 0002:00002a50       __rtc_taa                  0000000180011a50     MSVCRTD:_initsect_.obj
+ 0002:00002a58       __rtc_tzz                  0000000180011a58     MSVCRTD:_initsect_.obj
+ 0002:00004434       __IMPORT_DESCRIPTOR_KERNEL32 0000000180013434     kernel32:KERNEL32.dll
+ 0002:00004448       __IMPORT_DESCRIPTOR_VCRUNTIME140D 0000000180013448     vcruntimed:VCRUNTIME140D.dll
+ 0002:0000445c       __IMPORT_DESCRIPTOR_ucrtbased 000000018001345c     ucrtd:ucrtbased.dll
+ 0002:00004470       __NULL_IMPORT_DESCRIPTOR   0000000180013470     kernel32:KERNEL32.dll
+ 0003:00000000       __security_cookie          0000000180014000     MSVCRTD:gs_cookie.obj
+ 0003:00000008       __security_cookie_complement 0000000180014008     MSVCRTD:gs_cookie.obj
+ 0003:00000010       __scrt_native_dllmain_reason 0000000180014010     MSVCRTD:utility.obj
+ 0003:00000018       __isa_available            0000000180014018     MSVCRTD:_cpu_disp_.obj
+ 0003:0000001c       __isa_enabled              000000018001401c     MSVCRTD:_cpu_disp_.obj
+ 0003:00000020       __memcpy_nt_iters          0000000180014020     MSVCRTD:_cpu_disp_.obj
+ 0003:00000030       __scrt_ucrt_dll_is_in_use  0000000180014030     MSVCRTD:ucrt_stubs.obj
+ 0003:00000038       ptw32_threadReuseBottom    0000000180014038     global.obj
+ 0003:00000040       ptw32_threadReuseTop       0000000180014040     global.obj
+ 0003:00000078       ?_RTC_ErrorLevels@@3PAHA   0000000180014078     MSVCRTD:_error_.obj
+ 0003:00000610       __scrt_current_native_startup_state 0000000180014610     MSVCRTD:utility.obj
+ 0003:00000618       __scrt_native_startup_lock 0000000180014618     MSVCRTD:utility.obj
+ 0003:00000660       ?__type_info_root_node@@3U__type_info_node@@A 0000000180014660     MSVCRTD:tncleanup.obj
+ 0003:00000670       ?_OptionsStorage@?1??__local_stdio_printf_options@@9@4_KA 0000000180014670     MSVCRTD:default_local_stdio_options.obj
+ 0003:00000678       ?_OptionsStorage@?1??__local_stdio_scanf_options@@9@4_KA 0000000180014678     MSVCRTD:default_local_stdio_options.obj
+ 0003:00000680       __scrt_debugger_hook_flag  0000000180014680     MSVCRTD:utility_desktop.obj
+ 0003:00000684       __favor                    0000000180014684     MSVCRTD:_cpu_disp_.obj
+ 0003:00000688       ptw32_cleanupKey           0000000180014688     global.obj
+ 0003:00000690       ptw32_features             0000000180014690     global.obj
+ 0003:00000694       ptw32_concurrency          0000000180014694     global.obj
+ 0003:00000698       ptw32_cond_list_lock       0000000180014698     global.obj
+ 0003:000006a0       ptw32_threadSeqNumber      00000001800146a0     global.obj
+ 0003:000006a8       ptw32_thread_reuse_lock    00000001800146a8     global.obj
+ 0003:000006b0       ptw32_mutex_test_init_lock 00000001800146b0     global.obj
+ 0003:000006b8       ptw32_selfThreadKey        00000001800146b8     global.obj
+ 0003:000006c0       ptw32_processInitialized   00000001800146c0     global.obj
+ 0003:000006c8       ptw32_rwlock_test_init_lock 00000001800146c8     global.obj
+ 0003:000006d0       ptw32_cond_list_tail       00000001800146d0     global.obj
+ 0003:000006d8       ptw32_cond_list_head       00000001800146d8     global.obj
+ 0003:000006e0       ptw32_cond_test_init_lock  00000001800146e0     global.obj
+ 0003:000006e8       ptw32_register_cancellation 00000001800146e8     global.obj
+ 0003:000006f0       ptw32_spinlock_test_init_lock 00000001800146f0     global.obj
+ 0003:00000720       __dyn_tls_init_callback    0000000180014720     <common>
+ 0003:00000728       ?_OptionsStorage@?1??__local_stdio_printf_options@@9@9 0000000180014728     <common>
+ 0003:00000730       ?_OptionsStorage@?1??__local_stdio_scanf_options@@9@9 0000000180014730     <common>
+
+ entry point at        0001:0000aa90
+
+ Static symbols
+
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     ucrtd:ucrtbased.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     vcruntimed:VCRUNTIME140D.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     pthread_dll.exp
+ 0000:fffe7000       .debug$S                   0000000180000000     vcruntimed:VCRUNTIME140D.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     vcruntimed:VCRUNTIME140D.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     vcruntimed:VCRUNTIME140D.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     vcruntimed:VCRUNTIME140D.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0000:fffe7000       .debug$S                   0000000180000000     kernel32:KERNEL32.dll
+ 0001:00001130       ptw32_cancel_self          0000000180002130 f   pthread_cancel.obj
+ 0001:00001160       ptw32_cancel_callback      0000000180002160 f   pthread_cancel.obj
+ 0001:000014c0       ptw32_get_errno            00000001800024c0 f   pthread_setaffinity.obj
+ 0001:000014c0       ptw32_get_errno            00000001800024c0 f   pthread_cond_destroy.obj
+ 0001:000014c0       ptw32_get_errno            00000001800024c0 f   pthread_cond_signal.obj
+ 0001:000014c0       ptw32_get_errno            00000001800024c0 f   pthread_cond_init.obj
+ 0001:000014c0       ptw32_get_errno            00000001800024c0 f   pthread_cond_wait.obj
+ 0001:00001a30       ptw32_cond_unblock         0000000180002a30 f   pthread_cond_signal.obj
+ 0001:00001ce0       ptw32_cond_wait_cleanup    0000000180002ce0 f   pthread_cond_wait.obj
+ 0001:00001e90       ptw32_cond_timedwait       0000000180002e90 f   pthread_cond_wait.obj
+ 0001:000037a0       ptw32_timed_eventwait      00000001800047a0 f   pthread_mutex_timedlock.obj
+ 0001:00004730       ptw32_mcs_lock_cleanup     0000000180005730 f   pthread_once.obj
+ 0001:00008840       ExceptionFilter            0000000180009840 f   ptw32_threadStart.obj
+ 0001:00009da0       ptw32_sem_timedwait_cleanup 000000018000ada0 f   sem_timedwait.obj
+ 0001:0000a0f0       ptw32_sem_wait_cleanup     000000018000b0f0 f   sem_wait.obj
+ 0001:0000a2e0       ptw32_cancelable_wait      000000018000b2e0 f   w32_CancelableWait.obj
+ 0001:0000a630       $$000000                   000000018000b630     MSVCRTD:_amdsecgs_.obj
+ 0001:0000a670       ?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000b670 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000a700       ?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 000000018000b700 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000a850       ?dllmain_crt_process_detach@@YAH_N@Z 000000018000b850 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000a8d0       ?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000b8d0 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000aa10       ?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z 000000018000ba10 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000adc0       capture_current_context    000000018000bdc0 f   MSVCRTD:gs_report.obj
+ 0001:0000ae60       capture_previous_context   000000018000be60 f   MSVCRTD:gs_report.obj
+ 0001:0000afe0       ?find_pe_section@@YAPEAU_IMAGE_SECTION_HEADER@@QEAE_K@Z 000000018000bfe0 f   MSVCRTD:utility.obj
+ 0001:0000b0b0       ?is_potentially_valid_image_base@@YA_NQEAX@Z 000000018000c0b0 f   MSVCRTD:utility.obj
+ 0001:0000c580       ?DebuggerProbe@@YAHK@Z     000000018000d580 f   MSVCRTD:_error_.obj
+ 0001:0000c5d0       ?DebuggerRuntime@@YAHKHPEAXPEB_W@Z 000000018000d5d0 f   MSVCRTD:_error_.obj
+ 0001:0000c930       ?_getMemBlockDataString@@YAXPEAD00_K@Z 000000018000d930 f   MSVCRTD:_error_.obj
+ 0001:0000c9f0       ?_strlen_priv@@YA_KPEBD@Z  000000018000d9f0 f   MSVCRTD:_error_.obj
+ 0001:0000ca10       ?failwithmessage@@YAXPEAXHHPEBD@Z 000000018000da10 f   MSVCRTD:_error_.obj
+ 0001:0000cf00       ?GetPdbDll@@YAPEAUHINSTANCE__@@XZ 000000018000df00 f   MSVCRTD:_pdblkup_.obj
+ 0001:0000d050       ?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 000000018000e050 f   MSVCRTD:_pdblkup_.obj
+ 0001:0000d2e0       ?GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z 000000018000e2e0 f   MSVCRTD:_pdblkup_.obj
+ 0001:0000d8b0       $$000000                   000000018000e8b0     MSVCRTD:_guard_dispatch_.obj
+ 0001:0000d8d0       ptw32_cond_timedwait$fin$0 000000018000e8d0 f   pthread_cond_wait.obj
+ 0001:0000d900       pthread_once$fin$0         000000018000e900 f   pthread_once.obj
+ 0001:0000d940       pthread_rwlock_timedwrlock$fin$0 000000018000e940 f   pthread_rwlock_timedwrlock.obj
+ 0001:0000d940       pthread_rwlock_wrlock$fin$0 000000018000e940 f   pthread_rwlock_wrlock.obj
+ 0001:0000d9a0       ptw32_threadStart$filt$0   000000018000e9a0 f   ptw32_threadStart.obj
+ 0001:0000d9e0       sem_timedwait$fin$0        000000018000e9e0 f   sem_timedwait.obj
+ 0001:0000da20       sem_wait$fin$0             000000018000ea20 f   sem_wait.obj
+ 0001:0000da60       ?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA 000000018000ea60 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000da80       ?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA 000000018000ea80 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000daa0       ?filt$0@?0??dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z@4HA 000000018000eaa0 f   MSVCRTD:dll_dllmain.obj
+ 0001:0000daf0       __scrt_is_nonwritable_in_current_image$filt$0 000000018000eaf0 f   MSVCRTD:utility.obj
+ 0001:0000db30       ?filt$0@?0??DebuggerRuntime@@YAHKHPEAXPEB_W@Z@4HA 000000018000eb30 f   MSVCRTD:_error_.obj
+ 0001:0000db30       ?filt$0@?0??DebuggerProbe@@YAHK@Z@4HA 000000018000eb30 f   MSVCRTD:_error_.obj
+ 0002:00000318       GS_ExceptionPointers       000000018000f318     MSVCRTD:gs_report.obj
+ 0002:00000390       pthread_create$rtcName$0   000000018000f390     create.obj
+ 0002:000003a0       pthread_create$rtcVarDesc  000000018000f3a0     create.obj
+ 0002:000003e0       pthread_create$rtcFrameData 000000018000f3e0     create.obj
+ 0002:000003f0       ptw32_RegisterCancellation$rtcName$0 000000018000f3f0     pthread_cancel.obj
+ 0002:00000400       ptw32_RegisterCancellation$rtcVarDesc 000000018000f400     pthread_cancel.obj
+ 0002:00000440       ptw32_RegisterCancellation$rtcFrameData 000000018000f440     pthread_cancel.obj
+ 0002:00000450       pthread_cond_destroy$rtcName$0 000000018000f450     pthread_cond_destroy.obj
+ 0002:00000458       pthread_cond_destroy$rtcName$1 000000018000f458     pthread_cond_destroy.obj
+ 0002:00000460       pthread_cond_destroy$rtcVarDesc 000000018000f460     pthread_cond_destroy.obj
+ 0002:000004e0       pthread_cond_destroy$rtcFrameData 000000018000f4e0     pthread_cond_destroy.obj
+ 0002:000004f0       ptw32_get_errno$rtcName$0  000000018000f4f0     pthread_cond_init.obj
+ 0002:000004f0       ptw32_get_errno$rtcName$0  000000018000f4f0     pthread_cond_wait.obj
+ 0002:000004f0       ptw32_get_errno$rtcName$0  000000018000f4f0     pthread_cond_destroy.obj
+ 0002:000004f0       ptw32_get_errno$rtcName$0  000000018000f4f0     pthread_setaffinity.obj
+ 0002:000004f0       ptw32_get_errno$rtcName$0  000000018000f4f0     pthread_cond_signal.obj
+ 0002:00000500       ptw32_get_errno$rtcVarDesc 000000018000f500     pthread_cond_init.obj
+ 0002:00000500       ptw32_get_errno$rtcVarDesc 000000018000f500     pthread_cond_signal.obj
+ 0002:00000500       ptw32_get_errno$rtcVarDesc 000000018000f500     pthread_cond_destroy.obj
+ 0002:00000500       ptw32_get_errno$rtcVarDesc 000000018000f500     pthread_setaffinity.obj
+ 0002:00000500       ptw32_get_errno$rtcVarDesc 000000018000f500     pthread_cond_wait.obj
+ 0002:00000540       ptw32_get_errno$rtcFrameData 000000018000f540     pthread_cond_init.obj
+ 0002:00000540       ptw32_get_errno$rtcFrameData 000000018000f540     pthread_setaffinity.obj
+ 0002:00000540       ptw32_get_errno$rtcFrameData 000000018000f540     pthread_cond_destroy.obj
+ 0002:00000540       ptw32_get_errno$rtcFrameData 000000018000f540     pthread_cond_signal.obj
+ 0002:00000540       ptw32_get_errno$rtcFrameData 000000018000f540     pthread_cond_wait.obj
+ 0002:00000550       ptw32_cond_timedwait$rtcName$0 000000018000f550     pthread_cond_wait.obj
+ 0002:00000558       ptw32_cond_timedwait$rtcName$1 000000018000f558     pthread_cond_wait.obj
+ 0002:00000568       ptw32_cond_timedwait$rtcName$2 000000018000f568     pthread_cond_wait.obj
+ 0002:00000580       ptw32_cond_timedwait$rtcVarDesc 000000018000f580     pthread_cond_wait.obj
+ 0002:00000640       ptw32_cond_timedwait$rtcFrameData 000000018000f640     pthread_cond_wait.obj
+ 0002:00000650       pthread_delay_np$rtcName$0 000000018000f650     pthread_delay_np.obj
+ 0002:00000650       pthread_cancel$rtcName$0   000000018000f650     pthread_cancel.obj
+ 0002:00000658       pthread_cancel$rtcName$1   000000018000f658     pthread_cancel.obj
+ 0002:00000658       pthread_delay_np$rtcName$1 000000018000f658     pthread_delay_np.obj
+ 0002:00000670       pthread_delay_np$rtcVarDesc 000000018000f670     pthread_delay_np.obj
+ 0002:00000670       pthread_cancel$rtcVarDesc  000000018000f670     pthread_cancel.obj
+ 0002:000006f0       pthread_delay_np$rtcFrameData 000000018000f6f0     pthread_delay_np.obj
+ 0002:000006f0       pthread_cancel$rtcFrameData 000000018000f6f0     pthread_cancel.obj
+ 0002:00000700       pthread_detach$rtcName$0   000000018000f700     pthread_detach.obj
+ 0002:00000710       pthread_detach$rtcName$1   000000018000f710     pthread_detach.obj
+ 0002:00000720       pthread_detach$rtcVarDesc  000000018000f720     pthread_detach.obj
+ 0002:000007a0       pthread_detach$rtcFrameData 000000018000f7a0     pthread_detach.obj
+ 0002:000007b0       pthread_key_delete$rtcName$0 000000018000f7b0     pthread_key_delete.obj
+ 0002:000007b8       pthread_key_delete$rtcName$1 000000018000f7b8     pthread_key_delete.obj
+ 0002:000007d0       pthread_key_delete$rtcVarDesc 000000018000f7d0     pthread_key_delete.obj
+ 0002:00000850       pthread_key_delete$rtcFrameData 000000018000f850     pthread_key_delete.obj
+ 0002:00000860       pthread_mutex_destroy$rtcName$0 000000018000f860     pthread_mutex_destroy.obj
+ 0002:00000864       pthread_mutex_destroy$rtcName$1 000000018000f864     pthread_mutex_destroy.obj
+ 0002:00000870       pthread_mutex_destroy$rtcVarDesc 000000018000f870     pthread_mutex_destroy.obj
+ 0002:000008f0       pthread_mutex_destroy$rtcFrameData 000000018000f8f0     pthread_mutex_destroy.obj
+ 0002:00000900       pthread_mutex_lock$rtcName$0 000000018000f900     pthread_mutex_lock.obj
+ 0002:00000908       pthread_mutex_lock$rtcName$1 000000018000f908     pthread_mutex_lock.obj
+ 0002:00000910       pthread_mutex_lock$rtcVarDesc 000000018000f910     pthread_mutex_lock.obj
+ 0002:00000990       pthread_mutex_lock$rtcFrameData 000000018000f990     pthread_mutex_lock.obj
+ 0002:000009a0       pthread_mutex_timedlock$rtcName$0 000000018000f9a0     pthread_mutex_timedlock.obj
+ 0002:000009a8       pthread_mutex_timedlock$rtcName$1 000000018000f9a8     pthread_mutex_timedlock.obj
+ 0002:000009b0       pthread_mutex_timedlock$rtcName$2 000000018000f9b0     pthread_mutex_timedlock.obj
+ 0002:000009b8       pthread_mutex_timedlock$rtcFrameData 000000018000f9b8     pthread_mutex_timedlock.obj
+ 0002:000009d0       pthread_mutex_timedlock$rtcVarDesc 000000018000f9d0     pthread_mutex_timedlock.obj
+ 0002:00000a90       pthread_mutex_unlock$rtcName$0 000000018000fa90     pthread_mutex_unlock.obj
+ 0002:00000aa0       pthread_mutex_unlock$rtcVarDesc 000000018000faa0     pthread_mutex_unlock.obj
+ 0002:00000ae0       pthread_mutex_unlock$rtcFrameData 000000018000fae0     pthread_mutex_unlock.obj
+ 0002:00000af0       pthread_num_processors_np$rtcName$0 000000018000faf0     pthread_num_processors_np.obj
+ 0002:00000b00       pthread_num_processors_np$rtcVarDesc 000000018000fb00     pthread_num_processors_np.obj
+ 0002:00000b40       pthread_num_processors_np$rtcFrameData 000000018000fb40     pthread_num_processors_np.obj
+ 0002:00000b50       pthread_once$rtcName$0     000000018000fb50     pthread_once.obj
+ 0002:00000b58       pthread_once$rtcName$1     000000018000fb58     pthread_once.obj
+ 0002:00000b70       pthread_once$rtcVarDesc    000000018000fb70     pthread_once.obj
+ 0002:00000bf0       pthread_once$rtcFrameData  000000018000fbf0     pthread_once.obj
+ 0002:00000c00       pthread_rwlock_destroy$rtcName$0 000000018000fc00     pthread_rwlock_destroy.obj
+ 0002:00000c10       pthread_rwlock_destroy$rtcVarDesc 000000018000fc10     pthread_rwlock_destroy.obj
+ 0002:00000c50       pthread_rwlock_destroy$rtcFrameData 000000018000fc50     pthread_rwlock_destroy.obj
+ 0002:00000c60       pthread_rwlock_wrlock$rtcName$0 000000018000fc60     pthread_rwlock_wrlock.obj
+ 0002:00000c60       pthread_rwlock_timedwrlock$rtcName$0 000000018000fc60     pthread_rwlock_timedwrlock.obj
+ 0002:00000c68       pthread_rwlock_wrlock$rtcName$1 000000018000fc68     pthread_rwlock_wrlock.obj
+ 0002:00000c68       pthread_rwlock_timedwrlock$rtcName$1 000000018000fc68     pthread_rwlock_timedwrlock.obj
+ 0002:00000c80       pthread_rwlock_wrlock$rtcVarDesc 000000018000fc80     pthread_rwlock_wrlock.obj
+ 0002:00000c80       pthread_rwlock_timedwrlock$rtcVarDesc 000000018000fc80     pthread_rwlock_timedwrlock.obj
+ 0002:00000d00       pthread_rwlock_timedwrlock$rtcFrameData 000000018000fd00     pthread_rwlock_timedwrlock.obj
+ 0002:00000d00       pthread_rwlock_wrlock$rtcFrameData 000000018000fd00     pthread_rwlock_wrlock.obj
+ 0002:00000d10       pthread_self$rtcName$0     000000018000fd10     pthread_self.obj
+ 0002:00000d18       pthread_self$rtcName$1     000000018000fd18     pthread_self.obj
+ 0002:00000d28       pthread_self$rtcName$2     000000018000fd28     pthread_self.obj
+ 0002:00000d34       pthread_self$rtcName$3     000000018000fd34     pthread_self.obj
+ 0002:00000d40       pthread_self$rtcVarDesc    000000018000fd40     pthread_self.obj
+ 0002:00000e40       pthread_self$rtcFrameData  000000018000fe40     pthread_self.obj
+ 0002:00000e50       pthread_setaffinity_np$rtcName$0 000000018000fe50     pthread_setaffinity.obj
+ 0002:00000e58       pthread_setaffinity_np$rtcName$1 000000018000fe58     pthread_setaffinity.obj
+ 0002:00000e68       pthread_setaffinity_np$rtcName$2 000000018000fe68     pthread_setaffinity.obj
+ 0002:00000e70       pthread_setaffinity_np$rtcVarDesc 000000018000fe70     pthread_setaffinity.obj
+ 0002:00000f30       pthread_setaffinity_np$rtcFrameData 000000018000ff30     pthread_setaffinity.obj
+ 0002:00000f40       pthread_setcancelstate$rtcName$0 000000018000ff40     pthread_setcancelstate.obj
+ 0002:00000f40       pthread_testcancel$rtcName$0 000000018000ff40     pthread_testcancel.obj
+ 0002:00000f40       pthread_setcanceltype$rtcName$0 000000018000ff40     pthread_setcanceltype.obj
+ 0002:00000f4c       pthread_setcancelstate$rtcName$1 000000018000ff4c     pthread_setcancelstate.obj
+ 0002:00000f4c       pthread_testcancel$rtcName$1 000000018000ff4c     pthread_testcancel.obj
+ 0002:00000f4c       pthread_setcanceltype$rtcName$1 000000018000ff4c     pthread_setcanceltype.obj
+ 0002:00000f60       pthread_setcancelstate$rtcVarDesc 000000018000ff60     pthread_setcancelstate.obj
+ 0002:00000f60       pthread_setcanceltype$rtcVarDesc 000000018000ff60     pthread_setcanceltype.obj
+ 0002:00000f60       pthread_testcancel$rtcVarDesc 000000018000ff60     pthread_testcancel.obj
+ 0002:00000fe0       pthread_setcanceltype$rtcFrameData 000000018000ffe0     pthread_setcanceltype.obj
+ 0002:00000fe0       pthread_setcancelstate$rtcFrameData 000000018000ffe0     pthread_setcancelstate.obj
+ 0002:00000fe0       pthread_testcancel$rtcFrameData 000000018000ffe0     pthread_testcancel.obj
+ 0002:00000ff0       ptw32_setthreadpriority$rtcName$0 000000018000fff0     pthread_setschedparam.obj
+ 0002:00001000       ptw32_setthreadpriority$rtcVarDesc 0000000180010000     pthread_setschedparam.obj
+ 0002:00001040       ptw32_setthreadpriority$rtcFrameData 0000000180010040     pthread_setschedparam.obj
+ 0002:00001050       pthread_setspecific$rtcName$0 0000000180010050     pthread_setspecific.obj
+ 0002:00001058       pthread_setspecific$rtcName$1 0000000180010058     pthread_setspecific.obj
+ 0002:00001060       pthread_setspecific$rtcName$2 0000000180010060     pthread_setspecific.obj
+ 0002:00001070       pthread_setspecific$rtcVarDesc 0000000180010070     pthread_setspecific.obj
+ 0002:00001130       pthread_setspecific$rtcFrameData 0000000180010130     pthread_setspecific.obj
+ 0002:00001140       pthread_spin_init$rtcName$0 0000000180010140     pthread_spin_init.obj
+ 0002:00001148       pthread_spin_init$rtcName$1 0000000180010148     pthread_spin_init.obj
+ 0002:00001150       pthread_spin_init$rtcVarDesc 0000000180010150     pthread_spin_init.obj
+ 0002:000011d0       pthread_spin_init$rtcFrameData 00000001800101d0     pthread_spin_init.obj
+ 0002:000011e0       pthread_timechange_handler_np$rtcName$0 00000001800101e0     pthread_timechange_handler_np.obj
+ 0002:000011e4       pthread_timechange_handler_np$rtcName$1 00000001800101e4     pthread_timechange_handler_np.obj
+ 0002:000011f0       pthread_timechange_handler_np$rtcVarDesc 00000001800101f0     pthread_timechange_handler_np.obj
+ 0002:00001270       pthread_timechange_handler_np$rtcFrameData 0000000180010270     pthread_timechange_handler_np.obj
+ 0002:00001280       pthread_join$rtcName$0     0000000180010280     pthread_join.obj
+ 0002:00001280       pthread_timedjoin_np$rtcName$0 0000000180010280     pthread_timedjoin_np.obj
+ 0002:00001280       pthread_tryjoin_np$rtcName$0 0000000180010280     pthread_tryjoin_np.obj
+ 0002:00001288       pthread_timedjoin_np$rtcName$1 0000000180010288     pthread_timedjoin_np.obj
+ 0002:00001288       pthread_join$rtcName$1     0000000180010288     pthread_join.obj
+ 0002:00001288       pthread_tryjoin_np$rtcName$1 0000000180010288     pthread_tryjoin_np.obj
+ 0002:00001290       pthread_tryjoin_np$rtcVarDesc 0000000180010290     pthread_tryjoin_np.obj
+ 0002:00001290       pthread_join$rtcVarDesc    0000000180010290     pthread_join.obj
+ 0002:00001290       pthread_timedjoin_np$rtcVarDesc 0000000180010290     pthread_timedjoin_np.obj
+ 0002:00001310       pthread_timedjoin_np$rtcFrameData 0000000180010310     pthread_timedjoin_np.obj
+ 0002:00001310       pthread_tryjoin_np$rtcFrameData 0000000180010310     pthread_tryjoin_np.obj
+ 0002:00001310       pthread_join$rtcFrameData  0000000180010310     pthread_join.obj
+ 0002:00001320       pthread_win32_thread_detach_np$rtcName$0 0000000180010320     pthread_win32_attach_detach_np.obj
+ 0002:0000132c       pthread_win32_thread_detach_np$rtcName$1 000000018001032c     pthread_win32_attach_detach_np.obj
+ 0002:00001330       pthread_win32_thread_detach_np$rtcVarDesc 0000000180010330     pthread_win32_attach_detach_np.obj
+ 0002:000013b0       pthread_win32_thread_detach_np$rtcFrameData 00000001800103b0     pthread_win32_attach_detach_np.obj
+ 0002:000013c0       pthread_win32_process_attach_np$rtcName$0 00000001800103c0     pthread_win32_attach_detach_np.obj
+ 0002:000013e0       pthread_win32_process_attach_np$rtcVarDesc 00000001800103e0     pthread_win32_attach_detach_np.obj
+ 0002:00001420       pthread_win32_process_attach_np$rtcFrameData 0000000180010420     pthread_win32_attach_detach_np.obj
+ 0002:00001430       ptw32_callUserDestroyRoutines$rtcName$0 0000000180010430     ptw32_callUserDestroyRoutines.obj
+ 0002:00001440       ptw32_callUserDestroyRoutines$rtcName$1 0000000180010440     ptw32_callUserDestroyRoutines.obj
+ 0002:00001450       ptw32_callUserDestroyRoutines$rtcVarDesc 0000000180010450     ptw32_callUserDestroyRoutines.obj
+ 0002:000014d0       ptw32_callUserDestroyRoutines$rtcFrameData 00000001800104d0     ptw32_callUserDestroyRoutines.obj
+ 0002:000014e0       ptw32_getprocessors$rtcName$0 00000001800104e0     ptw32_getprocessors.obj
+ 0002:000014f0       ptw32_getprocessors$rtcName$1 00000001800104f0     ptw32_getprocessors.obj
+ 0002:00001500       ptw32_getprocessors$rtcVarDesc 0000000180010500     ptw32_getprocessors.obj
+ 0002:00001580       ptw32_getprocessors$rtcFrameData 0000000180010580     ptw32_getprocessors.obj
+ 0002:00001590       ptw32_new$rtcName$0        0000000180010590     ptw32_new.obj
+ 0002:00001594       ptw32_new$rtcName$1        0000000180010594     ptw32_new.obj
+ 0002:000015a0       ptw32_new$rtcVarDesc       00000001800105a0     ptw32_new.obj
+ 0002:00001620       ptw32_new$rtcFrameData     0000000180010620     ptw32_new.obj
+ 0002:00001630       ptw32_relmillisecs$rtcName$0 0000000180010630     ptw32_relmillisecs.obj
+ 0002:00001640       ptw32_relmillisecs$rtcVarDesc 0000000180010640     ptw32_relmillisecs.obj
+ 0002:00001680       ptw32_relmillisecs$rtcFrameData 0000000180010680     ptw32_relmillisecs.obj
+ 0002:00001690       ptw32_threadReusePop$rtcName$0 0000000180010690     ptw32_reuse.obj
+ 0002:00001694       ptw32_threadReusePop$rtcName$1 0000000180010694     ptw32_reuse.obj
+ 0002:000016a0       ptw32_threadReusePop$rtcVarDesc 00000001800106a0     ptw32_reuse.obj
+ 0002:00001720       ptw32_threadReusePop$rtcFrameData 0000000180010720     ptw32_reuse.obj
+ 0002:00001730       ptw32_threadReusePush$rtcName$0 0000000180010730     ptw32_reuse.obj
+ 0002:00001734       ptw32_threadReusePush$rtcName$1 0000000180010734     ptw32_reuse.obj
+ 0002:00001740       ptw32_threadReusePush$rtcVarDesc 0000000180010740     ptw32_reuse.obj
+ 0002:000017c0       ptw32_threadReusePush$rtcFrameData 00000001800107c0     ptw32_reuse.obj
+ 0002:000017d0       pthread_spin_destroy$rtcName$0 00000001800107d0     pthread_spin_destroy.obj
+ 0002:000017d0       ptw32_processTerminate$rtcName$0 00000001800107d0     ptw32_processTerminate.obj
+ 0002:000017d0       pthread_cond_init$rtcName$0 00000001800107d0     pthread_cond_init.obj
+ 0002:000017d0       ptw32_rwlock_check_need_init$rtcName$0 00000001800107d0     ptw32_rwlock_check_need_init.obj
+ 0002:000017d0       ptw32_cond_check_need_init$rtcName$0 00000001800107d0     ptw32_cond_check_need_init.obj
+ 0002:000017d0       ptw32_mutex_check_need_init$rtcName$0 00000001800107d0     ptw32_mutex_check_need_init.obj
+ 0002:000017d0       ptw32_spinlock_check_need_init$rtcName$0 00000001800107d0     ptw32_spinlock_check_need_init.obj
+ 0002:000017d0       pthread_kill$rtcName$0     00000001800107d0     pthread_kill.obj
+ 0002:000017d0       pthread_getaffinity_np$rtcName$0 00000001800107d0     pthread_setaffinity.obj
+ 0002:000017d0       pthread_barrier_wait$rtcName$0 00000001800107d0     pthread_barrier_wait.obj
+ 0002:000017d0       pthread_barrier_destroy$rtcName$0 00000001800107d0     pthread_barrier_destroy.obj
+ 0002:000017e0       pthread_spin_destroy$rtcVarDesc 00000001800107e0     pthread_spin_destroy.obj
+ 0002:000017e0       ptw32_spinlock_check_need_init$rtcVarDesc 00000001800107e0     ptw32_spinlock_check_need_init.obj
+ 0002:000017e0       pthread_kill$rtcVarDesc    00000001800107e0     pthread_kill.obj
+ 0002:000017e0       ptw32_processTerminate$rtcVarDesc 00000001800107e0     ptw32_processTerminate.obj
+ 0002:000017e0       pthread_getaffinity_np$rtcVarDesc 00000001800107e0     pthread_setaffinity.obj
+ 0002:000017e0       ptw32_rwlock_check_need_init$rtcVarDesc 00000001800107e0     ptw32_rwlock_check_need_init.obj
+ 0002:000017e0       ptw32_cond_check_need_init$rtcVarDesc 00000001800107e0     ptw32_cond_check_need_init.obj
+ 0002:000017e0       ptw32_mutex_check_need_init$rtcVarDesc 00000001800107e0     ptw32_mutex_check_need_init.obj
+ 0002:000017e0       pthread_cond_init$rtcVarDesc 00000001800107e0     pthread_cond_init.obj
+ 0002:000017e0       pthread_barrier_destroy$rtcVarDesc 00000001800107e0     pthread_barrier_destroy.obj
+ 0002:000017e0       pthread_barrier_wait$rtcVarDesc 00000001800107e0     pthread_barrier_wait.obj
+ 0002:00001820       pthread_spin_destroy$rtcFrameData 0000000180010820     pthread_spin_destroy.obj
+ 0002:00001820       pthread_cond_init$rtcFrameData 0000000180010820     pthread_cond_init.obj
+ 0002:00001820       pthread_barrier_destroy$rtcFrameData 0000000180010820     pthread_barrier_destroy.obj
+ 0002:00001820       pthread_getaffinity_np$rtcFrameData 0000000180010820     pthread_setaffinity.obj
+ 0002:00001820       ptw32_processTerminate$rtcFrameData 0000000180010820     ptw32_processTerminate.obj
+ 0002:00001820       ptw32_cond_check_need_init$rtcFrameData 0000000180010820     ptw32_cond_check_need_init.obj
+ 0002:00001820       ptw32_rwlock_check_need_init$rtcFrameData 0000000180010820     ptw32_rwlock_check_need_init.obj
+ 0002:00001820       pthread_kill$rtcFrameData  0000000180010820     pthread_kill.obj
+ 0002:00001820       pthread_barrier_wait$rtcFrameData 0000000180010820     pthread_barrier_wait.obj
+ 0002:00001820       ptw32_mutex_check_need_init$rtcFrameData 0000000180010820     ptw32_mutex_check_need_init.obj
+ 0002:00001820       ptw32_spinlock_check_need_init$rtcFrameData 0000000180010820     ptw32_spinlock_check_need_init.obj
+ 0002:00001830       ptw32_threadDestroy$rtcName$0 0000000180010830     ptw32_threadDestroy.obj
+ 0002:00001840       ptw32_threadDestroy$rtcVarDesc 0000000180010840     ptw32_threadDestroy.obj
+ 0002:00001880       ptw32_threadDestroy$rtcFrameData 0000000180010880     ptw32_threadDestroy.obj
+ 0002:00001890       ExceptionFilter$rtcName$0  0000000180010890     ptw32_threadStart.obj
+ 0002:00001890       pthread_mutex_trylock$rtcName$0 0000000180010890     pthread_mutex_trylock.obj
+ 0002:000018a0       pthread_mutex_trylock$rtcVarDesc 00000001800108a0     pthread_mutex_trylock.obj
+ 0002:000018a0       ExceptionFilter$rtcVarDesc 00000001800108a0     ptw32_threadStart.obj
+ 0002:000018e0       pthread_mutex_trylock$rtcFrameData 00000001800108e0     pthread_mutex_trylock.obj
+ 0002:000018e0       ExceptionFilter$rtcFrameData 00000001800108e0     ptw32_threadStart.obj
+ 0002:000018f0       ptw32_threadStart$rtcName$0 00000001800108f0     ptw32_threadStart.obj
+ 0002:000018f8       ptw32_threadStart$rtcName$1 00000001800108f8     ptw32_threadStart.obj
+ 0002:00001900       ptw32_threadStart$rtcName$2 0000000180010900     ptw32_threadStart.obj
+ 0002:0000190c       ptw32_threadStart$rtcName$3 000000018001090c     ptw32_threadStart.obj
+ 0002:00001918       ptw32_threadStart$rtcFrameData 0000000180010918     ptw32_threadStart.obj
+ 0002:00001930       ptw32_threadStart$rtcVarDesc 0000000180010930     ptw32_threadStart.obj
+ 0002:00001a30       ptw32_throw$rtcName$0      0000000180010a30     ptw32_throw.obj
+ 0002:00001a50       ptw32_throw$rtcVarDesc     0000000180010a50     ptw32_throw.obj
+ 0002:00001a90       ptw32_throw$rtcFrameData   0000000180010a90     ptw32_throw.obj
+ 0002:00001aa0       sched_setaffinity$rtcName$0 0000000180010aa0     sched_setaffinity.obj
+ 0002:00001aa0       sched_getaffinity$rtcName$0 0000000180010aa0     sched_setaffinity.obj
+ 0002:00001ab0       sched_setaffinity$rtcName$1 0000000180010ab0     sched_setaffinity.obj
+ 0002:00001ab0       sched_getaffinity$rtcName$1 0000000180010ab0     sched_setaffinity.obj
+ 0002:00001ac0       sched_setaffinity$rtcVarDesc 0000000180010ac0     sched_setaffinity.obj
+ 0002:00001ac0       sched_getaffinity$rtcVarDesc 0000000180010ac0     sched_setaffinity.obj
+ 0002:00001b40       sched_getaffinity$rtcFrameData 0000000180010b40     sched_setaffinity.obj
+ 0002:00001b40       sched_setaffinity$rtcFrameData 0000000180010b40     sched_setaffinity.obj
+ 0002:00001b50       sem_timedwait$rtcName$0    0000000180010b50     sem_timedwait.obj
+ 0002:00001b58       sem_timedwait$rtcName$1    0000000180010b58     sem_timedwait.obj
+ 0002:00001b68       sem_timedwait$rtcName$2    0000000180010b68     sem_timedwait.obj
+ 0002:00001b80       sem_timedwait$rtcVarDesc   0000000180010b80     sem_timedwait.obj
+ 0002:00001c40       sem_timedwait$rtcFrameData 0000000180010c40     sem_timedwait.obj
+ 0002:00001c50       sem_wait$rtcName$0         0000000180010c50     sem_wait.obj
+ 0002:00001c58       sem_wait$rtcName$1         0000000180010c58     sem_wait.obj
+ 0002:00001c70       sem_wait$rtcVarDesc        0000000180010c70     sem_wait.obj
+ 0002:00001cf0       sem_wait$rtcFrameData      0000000180010cf0     sem_wait.obj
+ 0002:00001d00       ptw32_cancelable_wait$rtcName$0 0000000180010d00     w32_CancelableWait.obj
+ 0002:00001d08       ptw32_cancelable_wait$rtcName$1 0000000180010d08     w32_CancelableWait.obj
+ 0002:00001d10       ptw32_cancelable_wait$rtcName$2 0000000180010d10     w32_CancelableWait.obj
+ 0002:00001d20       ptw32_cancelable_wait$rtcVarDesc 0000000180010d20     w32_CancelableWait.obj
+ 0002:00001de0       ptw32_cancelable_wait$rtcFrameData 0000000180010de0     w32_CancelableWait.obj
+ 0002:00001df0       ?uninit_postmsg@@3QBDB     0000000180010df0     MSVCRTD:_error_.obj
+ 0002:00001e20       ?_RTC_ErrorMessages@@3QBQEBDB 0000000180010e20     MSVCRTD:_error_.obj
+ 0002:00001e50       ?_RTC_NoFalsePositives@@3QBHB 0000000180010e50     MSVCRTD:_error_.obj
+ 0002:00001e68       ?stack_premsg@@3QBDB       0000000180010e68     MSVCRTD:_error_.obj
+ 0002:00001e88       ?stack_postmsg@@3QBDB      0000000180010e88     MSVCRTD:_error_.obj
+ 0002:00001ea0       ?uninit_premsg@@3QBDB      0000000180010ea0     MSVCRTD:_error_.obj
+ 0002:000023f0       ?_RTC_errlist@@3QBQEBDB    00000001800113f0     MSVCRTD:_userapi_.obj
+ 0002:000024d0       ?mspdbName@@3QB_WB         00000001800114d0     MSVCRTD:_pdblkup_.obj
+ 0002:00002500       ?debugCrtFileName@@3QB_WB  0000000180011500     MSVCRTD:_pdblkup_.obj
+ 0002:00002660       ?dllExt@?1??GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z@4QB_WB 0000000180011660     MSVCRTD:_pdblkup_.obj
+ 0002:00002668       ?mspdbFilename@?1??GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z@4QB_WB 0000000180011668     MSVCRTD:_pdblkup_.obj
+ 0002:00002a60       $unwind$ptw32_pop_cleanup  0000000180011a60     cleanup.obj
+ 0002:00002a68       $unwind$ptw32_push_cleanup 0000000180011a68     cleanup.obj
+ 0002:00002a68       $unwind$pthread_cond_timedwait 0000000180011a68     pthread_cond_wait.obj
+ 0002:00002a70       $unwind$pthread_create     0000000180011a70     create.obj
+ 0002:00002a7c       $unwind$DllMain            0000000180011a7c     dll.obj
+ 0002:00002a84       $unwind$sem_close          0000000180011a84     sem_close.obj
+ 0002:00002a84       $unwind$pthread_attr_destroy 0000000180011a84     pthread_attr_destroy.obj
+ 0002:00002a84       $unwind$pthread_cond_broadcast 0000000180011a84     pthread_cond_signal.obj
+ 0002:00002a84       $unwind$pthread_mutex_consistent 0000000180011a84     pthread_mutex_consistent.obj
+ 0002:00002a84       $unwind$pthread_cond_signal 0000000180011a84     pthread_cond_signal.obj
+ 0002:00002a84       $unwind$sem_unlink         0000000180011a84     sem_unlink.obj
+ 0002:00002a84       $unwind$pthreadCancelableWait 0000000180011a84     w32_CancelableWait.obj
+ 0002:00002a84       $unwind$ptw32_cancel_callback 0000000180011a84     pthread_cancel.obj
+ 0002:00002a8c       $unwind$pthread_attr_getschedparam 0000000180011a8c     pthread_attr_getschedparam.obj
+ 0002:00002a8c       $unwind$pthread_attr_setstacksize 0000000180011a8c     pthread_attr_setstacksize.obj
+ 0002:00002a8c       $unwind$ptw32_robust_mutex_remove 0000000180011a8c     pthread_mutex_consistent.obj
+ 0002:00002a8c       $unwind$pthread_attr_getdetachstate 0000000180011a8c     pthread_attr_getdetachstate.obj
+ 0002:00002a8c       $unwind$pthread_attr_getinheritsched 0000000180011a8c     pthread_attr_getinheritsched.obj
+ 0002:00002a8c       $unwind$pthread_mutexattr_getkind_np 0000000180011a8c     pthread_mutexattr_getkind_np.obj
+ 0002:00002a8c       $unwind$pthread_cond_wait  0000000180011a8c     pthread_cond_wait.obj
+ 0002:00002a8c       $unwind$pthread_attr_getstacksize 0000000180011a8c     pthread_attr_getstacksize.obj
+ 0002:00002a8c       $unwind$pthread_attr_setstackaddr 0000000180011a8c     pthread_attr_setstackaddr.obj
+ 0002:00002a8c       $unwind$pthread_attr_getschedpolicy 0000000180011a8c     pthread_attr_getschedpolicy.obj
+ 0002:00002a8c       $unwind$pthread_attr_getstackaddr 0000000180011a8c     pthread_attr_getstackaddr.obj
+ 0002:00002a94       $unwind$pthread_attr_getscope 0000000180011a94     pthread_attr_getscope.obj
+ 0002:00002a9c       $unwind$ptw32_rwlock_cancelwrwait 0000000180011a9c     ptw32_rwlock_cancelwrwait.obj
+ 0002:00002a9c       $unwind$ptw32_mcs_lock_cleanup 0000000180011a9c     pthread_once.obj
+ 0002:00002a9c       $unwind$ptw32_sem_wait_cleanup 0000000180011a9c     sem_wait.obj
+ 0002:00002a9c       $unwind$ptw32_mcs_flag_wait 0000000180011a9c     ptw32_MCS_lock.obj
+ 0002:00002a9c       $unwind$pthread_condattr_destroy 0000000180011a9c     pthread_condattr_destroy.obj
+ 0002:00002a9c       $unwind$ptw32_tkAssocDestroy 0000000180011a9c     ptw32_tkAssocDestroy.obj
+ 0002:00002a9c       $unwind$sem_trywait        0000000180011a9c     sem_trywait.obj
+ 0002:00002a9c       $unwind$pthread_rwlockattr_destroy 0000000180011a9c     pthread_rwlockattr_destroy.obj
+ 0002:00002a9c       $unwind$ptw32_robust_mutex_inherit 0000000180011a9c     pthread_mutex_consistent.obj
+ 0002:00002a9c       $unwind$pthread_exit       0000000180011a9c     pthread_exit.obj
+ 0002:00002a9c       $unwind$ptw32_sem_timedwait_cleanup 0000000180011a9c     sem_timedwait.obj
+ 0002:00002a9c       $unwind$sem_destroy        0000000180011a9c     sem_destroy.obj
+ 0002:00002a9c       $unwind$pthread_barrierattr_init 0000000180011a9c     pthread_barrierattr_init.obj
+ 0002:00002a9c       $unwind$pthread_barrierattr_destroy 0000000180011a9c     pthread_barrierattr_destroy.obj
+ 0002:00002a9c       $unwind$pthread_attr_init  0000000180011a9c     pthread_attr_init.obj
+ 0002:00002a9c       $unwind$pthread_condattr_init 0000000180011a9c     pthread_condattr_init.obj
+ 0002:00002a9c       $unwind$pthread_getspecific 0000000180011a9c     pthread_getspecific.obj
+ 0002:00002a9c       $unwind$pthread_rwlockattr_init 0000000180011a9c     pthread_rwlockattr_init.obj
+ 0002:00002a9c       $unwind$ptw32_mcs_flag_set 0000000180011a9c     ptw32_MCS_lock.obj
+ 0002:00002a9c       $unwind$pthread_mutexattr_init 0000000180011a9c     pthread_mutexattr_init.obj
+ 0002:00002a9c       $unwind$pthread_mutexattr_destroy 0000000180011a9c     pthread_mutexattr_destroy.obj
+ 0002:00002aa4       $unwind$pthread_attr_setschedpolicy 0000000180011aa4     pthread_attr_setschedpolicy.obj
+ 0002:00002aa4       $unwind$pthread_attr_setdetachstate 0000000180011aa4     pthread_attr_setdetachstate.obj
+ 0002:00002aa4       $unwind$pthread_attr_setinheritsched 0000000180011aa4     pthread_attr_setinheritsched.obj
+ 0002:00002aa4       $unwind$pthread_mutexattr_setkind_np 0000000180011aa4     pthread_mutexattr_setkind_np.obj
+ 0002:00002aa4       $unwind$pthreadCancelableTimedWait 0000000180011aa4     w32_CancelableWait.obj
+ 0002:00002aac       $unwind$ptw32_mcs_node_transfer 0000000180011aac     ptw32_MCS_lock.obj
+ 0002:00002aac       $unwind$pthread_mutex_init 0000000180011aac     pthread_mutex_init.obj
+ 0002:00002aac       $unwind$pthread_attr_setschedparam 0000000180011aac     pthread_attr_setschedparam.obj
+ 0002:00002aac       $unwind$pthread_rwlock_init 0000000180011aac     pthread_rwlock_init.obj
+ 0002:00002aac       $unwind$ptw32_mcs_lock_acquire 0000000180011aac     ptw32_MCS_lock.obj
+ 0002:00002aac       $unwind$ptw32_timed_eventwait 0000000180011aac     pthread_mutex_timedlock.obj
+ 0002:00002aac       $unwind$ptw32_tkAssocCreate 0000000180011aac     ptw32_tkAssocCreate.obj
+ 0002:00002aac       $unwind$sem_getvalue       0000000180011aac     sem_getvalue.obj
+ 0002:00002ab4       $unwind$pthread_mutexattr_setpshared 0000000180011ab4     pthread_mutexattr_setpshared.obj
+ 0002:00002ab4       $unwind$pthread_rwlockattr_setpshared 0000000180011ab4     pthread_rwlockattr_setpshared.obj
+ 0002:00002ab4       $unwind$pthread_condattr_setpshared 0000000180011ab4     pthread_condattr_setpshared.obj
+ 0002:00002ab4       $unwind$pthread_mutexattr_settype 0000000180011ab4     pthread_mutexattr_settype.obj
+ 0002:00002ab4       $unwind$pthread_mutexattr_setrobust 0000000180011ab4     pthread_mutexattr_setrobust.obj
+ 0002:00002ab4       $unwind$pthread_attr_setscope 0000000180011ab4     pthread_attr_setscope.obj
+ 0002:00002ab4       $unwind$pthread_barrierattr_setpshared 0000000180011ab4     pthread_barrierattr_setpshared.obj
+ 0002:00002abc       $unwind$ptw32_rwlock_check_need_init 0000000180011abc     ptw32_rwlock_check_need_init.obj
+ 0002:00002abc       $unwind$ptw32_cond_check_need_init 0000000180011abc     ptw32_cond_check_need_init.obj
+ 0002:00002abc       $unwind$ptw32_mutex_check_need_init 0000000180011abc     ptw32_mutex_check_need_init.obj
+ 0002:00002abc       $unwind$ptw32_getprocessors 0000000180011abc     ptw32_getprocessors.obj
+ 0002:00002abc       $unwind$pthread_barrier_destroy 0000000180011abc     pthread_barrier_destroy.obj
+ 0002:00002abc       $unwind$pthread_spin_destroy 0000000180011abc     pthread_spin_destroy.obj
+ 0002:00002abc       $unwind$ptw32_spinlock_check_need_init 0000000180011abc     ptw32_spinlock_check_need_init.obj
+ 0002:00002abc       $unwind$pthread_barrier_wait 0000000180011abc     pthread_barrier_wait.obj
+ 0002:00002ac4       $unwind$pthread_barrier_init 0000000180011ac4     pthread_barrier_init.obj
+ 0002:00002acc       $unwind$_sched_affinitycpuequal 0000000180011acc     sched_setaffinity.obj
+ 0002:00002acc       $unwind$pthread_rwlockattr_getpshared 0000000180011acc     pthread_rwlockattr_getpshared.obj
+ 0002:00002acc       $unwind$pthread_mutexattr_gettype 0000000180011acc     pthread_mutexattr_gettype.obj
+ 0002:00002acc       $unwind$pthread_mutexattr_getrobust 0000000180011acc     pthread_mutexattr_getrobust.obj
+ 0002:00002acc       $unwind$pthread_equal      0000000180011acc     pthread_equal.obj
+ 0002:00002acc       $unwind$ptw32_mcs_lock_try_acquire 0000000180011acc     ptw32_MCS_lock.obj
+ 0002:00002acc       $unwind$pthread_barrierattr_getpshared 0000000180011acc     pthread_barrierattr_getpshared.obj
+ 0002:00002acc       $unwind$pthread_mutexattr_getpshared 0000000180011acc     pthread_mutexattr_getpshared.obj
+ 0002:00002acc       $unwind$pthread_condattr_getpshared 0000000180011acc     pthread_condattr_getpshared.obj
+ 0002:00002ad4       $unwind$ptw32_cancel_self  0000000180011ad4     pthread_cancel.obj
+ 0002:00002ad4       $unwind$ptw32_processInitialize 0000000180011ad4     ptw32_processInitialize.obj
+ 0002:00002ad4       $unwind$sched_yield        0000000180011ad4     sched_yield.obj
+ 0002:00002adc       $unwind$ptw32_RegisterCancellation 0000000180011adc     pthread_cancel.obj
+ 0002:00002af0       $unwind$pthread_cancel     0000000180011af0     pthread_cancel.obj
+ 0002:00002afc       $unwind$ptw32_get_errno    0000000180011afc     pthread_cond_wait.obj
+ 0002:00002afc       $unwind$pthread_num_processors_np 0000000180011afc     pthread_num_processors_np.obj
+ 0002:00002afc       $unwind$ptw32_get_errno    0000000180011afc     pthread_setaffinity.obj
+ 0002:00002afc       $unwind$ptw32_get_errno    0000000180011afc     pthread_cond_signal.obj
+ 0002:00002afc       $unwind$ptw32_get_errno    0000000180011afc     pthread_cond_destroy.obj
+ 0002:00002afc       $unwind$ptw32_get_errno    0000000180011afc     pthread_cond_init.obj
+ 0002:00002b04       $unwind$pthread_cond_destroy 0000000180011b04     pthread_cond_destroy.obj
+ 0002:00002b10       $unwind$pthread_cond_init  0000000180011b10     pthread_cond_init.obj
+ 0002:00002b18       $unwind$sem_post_multiple  0000000180011b18     sem_post_multiple.obj
+ 0002:00002b18       $unwind$ptw32_cond_unblock 0000000180011b18     pthread_cond_signal.obj
+ 0002:00002b18       $unwind$sched_setscheduler 0000000180011b18     sched_setscheduler.obj
+ 0002:00002b20       $unwind$ptw32_cond_wait_cleanup 0000000180011b20     pthread_cond_wait.obj
+ 0002:00002b28       $unwind$ptw32_cond_timedwait 0000000180011b28     pthread_cond_wait.obj
+ 0002:00002b4c       $unwind$pthread_rwlock_wrlock$fin$0 0000000180011b4c     pthread_rwlock_wrlock.obj
+ 0002:00002b4c       $unwind$pthread_rwlock_timedwrlock$fin$0 0000000180011b4c     pthread_rwlock_timedwrlock.obj
+ 0002:00002b4c       $unwind$sem_timedwait$fin$0 0000000180011b4c     sem_timedwait.obj
+ 0002:00002b4c       $unwind$sem_wait$fin$0     0000000180011b4c     sem_wait.obj
+ 0002:00002b4c       $unwind$pthread_once$fin$0 0000000180011b4c     pthread_once.obj
+ 0002:00002b4c       $unwind$ptw32_cond_timedwait$fin$0 0000000180011b4c     pthread_cond_wait.obj
+ 0002:00002b4c       $unwind$ptw32_threadStart$filt$0 0000000180011b4c     ptw32_threadStart.obj
+ 0002:00002b58       $unwind$pthread_delay_np   0000000180011b58     pthread_delay_np.obj
+ 0002:00002b64       $unwind$pthread_detach     0000000180011b64     pthread_detach.obj
+ 0002:00002b70       $unwind$ptw32_get_exception_services_code 0000000180011b70     ptw32_throw.obj
+ 0002:00002b70       $unwind$pthread_win32_thread_attach_np 0000000180011b70     pthread_win32_attach_detach_np.obj
+ 0002:00002b70       $unwind$pthread_getconcurrency 0000000180011b70     pthread_getconcurrency.obj
+ 0002:00002b78       $unwind$pthread_getschedparam 0000000180011b78     pthread_getschedparam.obj
+ 0002:00002b84       $unwind$pthread_getunique_np 0000000180011b84     pthread_getunique_np.obj
+ 0002:00002b84       $unwind$pthread_getw32threadid_np 0000000180011b84     pthread_getw32threadhandle_np.obj
+ 0002:00002b84       $unwind$pthread_getw32threadhandle_np 0000000180011b84     pthread_getw32threadhandle_np.obj
+ 0002:00002b84       $unwind$_sched_affinitycpuzero 0000000180011b84     sched_setaffinity.obj
+ 0002:00002b8c       $unwind$pthread_join       0000000180011b8c     pthread_join.obj
+ 0002:00002b8c       $unwind$pthread_tryjoin_np 0000000180011b8c     pthread_tryjoin_np.obj
+ 0002:00002b98       $unwind$pthread_rwlock_timedrdlock 0000000180011b98     pthread_rwlock_timedrdlock.obj
+ 0002:00002b98       $unwind$pthread_key_create 0000000180011b98     pthread_key_create.obj
+ 0002:00002ba0       $unwind$pthread_key_delete 0000000180011ba0     pthread_key_delete.obj
+ 0002:00002bac       $unwind$pthread_spin_init  0000000180011bac     pthread_spin_init.obj
+ 0002:00002bac       $unwind$pthread_kill       0000000180011bac     pthread_kill.obj
+ 0002:00002bb4       $unwind$ptw32_robust_mutex_add 0000000180011bb4     pthread_mutex_consistent.obj
+ 0002:00002bc0       $unwind$pthread_timechange_handler_np 0000000180011bc0     pthread_timechange_handler_np.obj
+ 0002:00002bc0       $unwind$pthread_mutex_destroy 0000000180011bc0     pthread_mutex_destroy.obj
+ 0002:00002bcc       $unwind$pthread_mutex_lock 0000000180011bcc     pthread_mutex_lock.obj
+ 0002:00002bd8       $unwind$pthread_mutex_timedlock 0000000180011bd8     pthread_mutex_timedlock.obj
+ 0002:00002be4       $unwind$ptw32_threadDestroy 0000000180011be4     ptw32_threadDestroy.obj
+ 0002:00002be4       $unwind$pthread_mutex_trylock 0000000180011be4     pthread_mutex_trylock.obj
+ 0002:00002bf0       $unwind$pthread_mutex_unlock 0000000180011bf0     pthread_mutex_unlock.obj
+ 0002:00002bfc       $unwind$pthread_once       0000000180011bfc     pthread_once.obj
+ 0002:00002c20       $unwind$pthread_rwlock_destroy 0000000180011c20     pthread_rwlock_destroy.obj
+ 0002:00002c28       $unwind$pthread_rwlock_unlock 0000000180011c28     pthread_rwlock_unlock.obj
+ 0002:00002c28       $unwind$pthread_rwlock_trywrlock 0000000180011c28     pthread_rwlock_trywrlock.obj
+ 0002:00002c28       $unwind$pthread_spin_lock  0000000180011c28     pthread_spin_lock.obj
+ 0002:00002c28       $unwind$ptw32_mcs_lock_release 0000000180011c28     ptw32_MCS_lock.obj
+ 0002:00002c28       $unwind$pthread_spin_unlock 0000000180011c28     pthread_spin_unlock.obj
+ 0002:00002c28       $unwind$sched_getscheduler 0000000180011c28     sched_getscheduler.obj
+ 0002:00002c28       $unwind$sem_post           0000000180011c28     sem_post.obj
+ 0002:00002c28       $unwind$pthread_rwlock_tryrdlock 0000000180011c28     pthread_rwlock_tryrdlock.obj
+ 0002:00002c28       $unwind$pthread_spin_trylock 0000000180011c28     pthread_spin_trylock.obj
+ 0002:00002c28       $unwind$ptw32_semwait      0000000180011c28     ptw32_semwait.obj
+ 0002:00002c28       $unwind$pthread_rwlock_rdlock 0000000180011c28     pthread_rwlock_rdlock.obj
+ 0002:00002c30       $unwind$pthread_rwlock_timedwrlock 0000000180011c30     pthread_rwlock_timedwrlock.obj
+ 0002:00002c50       $unwind$pthread_rwlock_wrlock 0000000180011c50     pthread_rwlock_wrlock.obj
+ 0002:00002c70       $unwind$pthread_self       0000000180011c70     pthread_self.obj
+ 0002:00002c7c       $unwind$pthread_setaffinity_np 0000000180011c7c     pthread_setaffinity.obj
+ 0002:00002c90       $unwind$pthread_getaffinity_np 0000000180011c90     pthread_setaffinity.obj
+ 0002:00002c90       $unwind$sched_getaffinity  0000000180011c90     sched_setaffinity.obj
+ 0002:00002c98       $unwind$pthread_setcanceltype 0000000180011c98     pthread_setcanceltype.obj
+ 0002:00002c98       $unwind$pthread_setcancelstate 0000000180011c98     pthread_setcancelstate.obj
+ 0002:00002ca4       $unwind$pthread_setconcurrency 0000000180011ca4     pthread_setconcurrency.obj
+ 0002:00002cac       $unwind$pthread_setschedparam 0000000180011cac     pthread_setschedparam.obj
+ 0002:00002cb8       $unwind$ptw32_setthreadpriority 0000000180011cb8     pthread_setschedparam.obj
+ 0002:00002cc0       $unwind$pthread_setspecific 0000000180011cc0     pthread_setspecific.obj
+ 0002:00002ccc       $unwind$pthread_testcancel 0000000180011ccc     pthread_testcancel.obj
+ 0002:00002cd8       $unwind$pthread_timedjoin_np 0000000180011cd8     pthread_timedjoin_np.obj
+ 0002:00002ce4       $unwind$pthread_win32_process_attach_np 0000000180011ce4     pthread_win32_attach_detach_np.obj
+ 0002:00002cf8       $unwind$pthread_win32_process_detach_np 0000000180011cf8     pthread_win32_attach_detach_np.obj
+ 0002:00002d04       $unwind$pthread_win32_thread_detach_np 0000000180011d04     pthread_win32_attach_detach_np.obj
+ 0002:00002d10       $unwind$pthread_win32_test_features_np 0000000180011d10     pthread_win32_attach_detach_np.obj
+ 0002:00002d18       $unwind$ptw32_callUserDestroyRoutines 0000000180011d18     ptw32_callUserDestroyRoutines.obj
+ 0002:00002d24       $unwind$_sched_affinitycpucount 0000000180011d24     sched_setaffinity.obj
+ 0002:00002d24       $unwind$ptw32_is_attr      0000000180011d24     ptw32_is_attr.obj
+ 0002:00002d2c       $unwind$ptw32_threadReusePush 0000000180011d2c     ptw32_reuse.obj
+ 0002:00002d2c       $unwind$ptw32_new          0000000180011d2c     ptw32_new.obj
+ 0002:00002d38       $unwind$ptw32_processTerminate 0000000180011d38     ptw32_processTerminate.obj
+ 0002:00002d40       $unwind$ptw32_relmillisecs 0000000180011d40     ptw32_relmillisecs.obj
+ 0002:00002d54       $unwind$ptw32_threadReusePop 0000000180011d54     ptw32_reuse.obj
+ 0002:00002d60       $unwind$ExceptionFilter    0000000180011d60     ptw32_threadStart.obj
+ 0002:00002d6c       $unwind$ptw32_threadStart  0000000180011d6c     ptw32_threadStart.obj
+ 0002:00002d94       $unwind$ptw32_throw        0000000180011d94     ptw32_throw.obj
+ 0002:00002da4       $unwind$ptw32_pop_cleanup_all 0000000180011da4     ptw32_throw.obj
+ 0002:00002da4       $unwind$sched_get_priority_max 0000000180011da4     sched_get_priority_max.obj
+ 0002:00002da4       $unwind$sched_get_priority_min 0000000180011da4     sched_get_priority_min.obj
+ 0002:00002dac       $unwind$sched_setaffinity  0000000180011dac     sched_setaffinity.obj
+ 0002:00002db4       $unwind$_sched_affinitycpuisset 0000000180011db4     sched_setaffinity.obj
+ 0002:00002db4       $unwind$_sched_affinitycpuclr 0000000180011db4     sched_setaffinity.obj
+ 0002:00002db4       $unwind$_sched_affinitycpuset 0000000180011db4     sched_setaffinity.obj
+ 0002:00002dbc       $unwind$_sched_affinitycpuxor 0000000180011dbc     sched_setaffinity.obj
+ 0002:00002dbc       $unwind$_sched_affinitycpuand 0000000180011dbc     sched_setaffinity.obj
+ 0002:00002dbc       $unwind$_sched_affinitycpuor 0000000180011dbc     sched_setaffinity.obj
+ 0002:00002dc4       $unwind$sem_init           0000000180011dc4     sem_init.obj
+ 0002:00002dcc       $unwind$sem_open           0000000180011dcc     sem_open.obj
+ 0002:00002dd4       $unwind$sem_timedwait      0000000180011dd4     sem_timedwait.obj
+ 0002:00002df8       $unwind$sem_wait           0000000180011df8     sem_wait.obj
+ 0002:00002e18       $unwind$ptw32_cancelable_wait 0000000180011e18     w32_CancelableWait.obj
+ 0002:00002e28       $xdatasym                  0000000180011e28     MSVCRTD:_amdsecgs_.obj
+ 0002:00002e2c       $unwind$?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 0000000180011e2c     MSVCRTD:dll_dllmain.obj
+ 0002:00002e4c       $unwind$?dllmain_crt_process_detach@@YAH_N@Z 0000000180011e4c     MSVCRTD:dll_dllmain.obj
+ 0002:00002e6c       $unwind$?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA 0000000180011e6c     MSVCRTD:dll_dllmain.obj
+ 0002:00002e6c       $unwind$?filt$0@?0??DebuggerRuntime@@YAHKHPEAXPEB_W@Z@4HA 0000000180011e6c     MSVCRTD:_error_.obj
+ 0002:00002e6c       $unwind$__scrt_is_nonwritable_in_current_image$filt$0 0000000180011e6c     MSVCRTD:utility.obj
+ 0002:00002e6c       $unwind$?filt$0@?0??DebuggerProbe@@YAHK@Z@4HA 0000000180011e6c     MSVCRTD:_error_.obj
+ 0002:00002e6c       $unwind$?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA 0000000180011e6c     MSVCRTD:dll_dllmain.obj
+ 0002:00002e74       $unwind$?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180011e74     MSVCRTD:dll_dllmain.obj
+ 0002:00002e74       $unwind$?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180011e74     MSVCRTD:dll_dllmain.obj
+ 0002:00002e7c       $unwind$_DllMainCRTStartup 0000000180011e7c     MSVCRTD:dll_dllmain.obj
+ 0002:00002e7c       $unwind$_CRT_INIT          0000000180011e7c     MSVCRTD:dll_dllmain.obj
+ 0002:00002e84       $unwind$?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180011e84     MSVCRTD:dll_dllmain.obj
+ 0002:00002ea4       $unwind$?filt$0@?0??dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z@4HA 0000000180011ea4     MSVCRTD:dll_dllmain.obj
+ 0002:00002eac       $unwind$__report_securityfailureEx 0000000180011eac     MSVCRTD:gs_report.obj
+ 0002:00002eb4       $unwind$capture_current_context 0000000180011eb4     MSVCRTD:gs_report.obj
+ 0002:00002eb4       $unwind$capture_previous_context 0000000180011eb4     MSVCRTD:gs_report.obj
+ 0002:00002ebc       $unwind$_onexit            0000000180011ebc     MSVCRTD:utility.obj
+ 0002:00002ec4       $unwind$__scrt_is_nonwritable_in_current_image 0000000180011ec4     MSVCRTD:utility.obj
+ 0002:00002ee4       $unwind$__security_init_cookie 0000000180011ee4     MSVCRTD:gs_support.obj
+ 0002:00002ee4       $unwind$__scrt_acquire_startup_lock 0000000180011ee4     MSVCRTD:utility.obj
+ 0002:00002eec       $unwind$__scrt_initialize_crt 0000000180011eec     MSVCRTD:utility.obj
+ 0002:00002eec       $unwind$__report_securityfailure 0000000180011eec     MSVCRTD:gs_report.obj
+ 0002:00002eec       $unwind$__scrt_release_startup_lock 0000000180011eec     MSVCRTD:utility.obj
+ 0002:00002ef4       $unwind$__scrt_uninitialize_crt 0000000180011ef4     MSVCRTD:utility.obj
+ 0002:00002efc       $unwind$__scrt_initialize_onexit_tables 0000000180011efc     MSVCRTD:utility.obj
+ 0002:00002f08       $unwind$__scrt_dllmain_exception_filter 0000000180011f08     MSVCRTD:utility.obj
+ 0002:00002f10       $unwind$?is_potentially_valid_image_base@@YA_NQEAX@Z 0000000180011f10     MSVCRTD:utility.obj
+ 0002:00002f10       $unwind$__raise_securityfailure 0000000180011f10     MSVCRTD:gs_report.obj
+ 0002:00002f10       $unwind$??$__crt_fast_decode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 0000000180011f10     MSVCRTD:utility.obj
+ 0002:00002f10       $unwind$??$__crt_fast_encode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 0000000180011f10     MSVCRTD:utility.obj
+ 0002:00002f10       $unwind$_guard_check_icall 0000000180011f10     MSVCRTD:checkcfg.obj
+ 0002:00002f18       $unwind$?find_pe_section@@YAPEAU_IMAGE_SECTION_HEADER@@QEAE_K@Z 0000000180011f18     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$__scrt_dllmain_after_initialize_c 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$?configure_argv@__scrt_narrow_argv_policy@@SAHXZ 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$__scrt_set_unhandled_exception_filter 0000000180011f20     MSVCRTD:utility_desktop.obj
+ 0002:00002f20       $unwind$__scrt_dllmain_crt_thread_detach 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$__scrt_dllmain_before_initialize_c 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$?__scrt_initialize_type_info@@YAXXZ 0000000180011f20     MSVCRTD:tncleanup.obj
+ 0002:00002f20       $unwind$__report_rangecheckfailure 0000000180011f20     MSVCRTD:gs_report.obj
+ 0002:00002f20       $unwind$__scrt_dllmain_crt_thread_attach 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$__scrt_dllmain_uninitialize_c 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f20       $unwind$?__scrt_uninitialize_type_info@@YAXXZ 0000000180011f20     MSVCRTD:tncleanup.obj
+ 0002:00002f20       $unwind$__scrt_dllmain_uninitialize_critical 0000000180011f20     MSVCRTD:utility.obj
+ 0002:00002f28       $unwind$__scrt_initialize_default_local_stdio_options 0000000180011f28     MSVCRTD:default_local_stdio_options.obj
+ 0002:00002f28       $unwind$__scrt_is_managed_app 0000000180011f28     MSVCRTD:utility_desktop.obj
+ 0002:00002f30       $unwind$__scrt_get_show_window_mode 0000000180011f30     MSVCRTD:utility_desktop.obj
+ 0002:00002f3c       $unwind$__scrt_fastfail    0000000180011f3c     MSVCRTD:utility_desktop.obj
+ 0002:00002f48       $unwind$__scrt_unhandled_exception_filter 0000000180011f48     MSVCRTD:utility_desktop.obj
+ 0002:00002f48       $unwind$atexit             0000000180011f48     MSVCRTD:utility.obj
+ 0002:00002f48       $unwind$at_quick_exit      0000000180011f48     MSVCRTD:utility.obj
+ 0002:00002f48       $unwind$__report_gsfailure 0000000180011f48     MSVCRTD:gs_report.obj
+ 0002:00002f50       $chain$0$_RTC_Initialize   0000000180011f50     MSVCRTD:_initsect_.obj
+ 0002:00002f64       $chain$1$_RTC_Initialize   0000000180011f64     MSVCRTD:_initsect_.obj
+ 0002:00002f74       $unwind$_RTC_Terminate     0000000180011f74     MSVCRTD:_initsect_.obj
+ 0002:00002f74       $unwind$_RTC_Initialize    0000000180011f74     MSVCRTD:_initsect_.obj
+ 0002:00002f80       $chain$0$_RTC_Terminate    0000000180011f80     MSVCRTD:_initsect_.obj
+ 0002:00002f94       $chain$1$_RTC_Terminate    0000000180011f94     MSVCRTD:_initsect_.obj
+ 0002:00002fa4       $unwind$__isa_available_init 0000000180011fa4     MSVCRTD:_cpu_disp_.obj
+ 0002:00002fb4       $unwind$__scrt_is_ucrt_dll_in_use 0000000180011fb4     MSVCRTD:ucrt_detection.obj
+ 0002:00002fb4       $unwind$_guard_icall_checks_enforced 0000000180011fb4     MSVCRTD:guard_support.obj
+ 0002:00002fbc       $unwind$__GSHandlerCheckCommon 0000000180011fbc     MSVCRTD:_gshandler_.obj
+ 0002:00002fc4       $unwind$__GSHandlerCheck   0000000180011fc4     MSVCRTD:_gshandler_.obj
+ 0002:00002fd0       $xdatasym                  0000000180011fd0     MSVCRTD:_guard_dispatch_.obj
+ 0002:00002fd4       $unwind$_RTC_CheckStackVars 0000000180011fd4     MSVCRTD:_stack_.obj
+ 0002:00002fe4       $chain$0$_RTC_CheckStackVars 0000000180011fe4     MSVCRTD:_stack_.obj
+ 0002:00002ff8       $chain$1$_RTC_CheckStackVars 0000000180011ff8     MSVCRTD:_stack_.obj
+ 0002:00003008       $unwind$_RTC_CheckStackVars2 0000000180012008     MSVCRTD:_stack_.obj
+ 0002:00003014       $chain$1$_RTC_CheckStackVars2 0000000180012014     MSVCRTD:_stack_.obj
+ 0002:0000302c       $chain$2$_RTC_CheckStackVars2 000000018001202c     MSVCRTD:_stack_.obj
+ 0002:00003040       $chain$3$_RTC_CheckStackVars2 0000000180012040     MSVCRTD:_stack_.obj
+ 0002:00003054       $chain$4$_RTC_CheckStackVars2 0000000180012054     MSVCRTD:_stack_.obj
+ 0002:00003064       $chain$5$_RTC_CheckStackVars2 0000000180012064     MSVCRTD:_stack_.obj
+ 0002:00003074       $chain$6$_RTC_CheckStackVars2 0000000180012074     MSVCRTD:_stack_.obj
+ 0002:00003084       $unwind$_RTC_AllocaHelper  0000000180012084     MSVCRTD:_stack_.obj
+ 0002:0000308c       $chain$0$_RTC_AllocaHelper 000000018001208c     MSVCRTD:_stack_.obj
+ 0002:000030a0       $chain$1$_RTC_AllocaHelper 00000001800120a0     MSVCRTD:_stack_.obj
+ 0002:000030b0       $unwind$__GSHandlerCheck_SEH 00000001800120b0     MSVCRTD:_gshandlerseh_.obj
+ 0002:000030b8       $unwind$_RTC_UninitUse     00000001800120b8     MSVCRTD:_error_.obj
+ 0002:000030d0       $unwind$?_RTC_StackFailure@@YAXPEAXPEBD@Z 00000001800120d0     MSVCRTD:_error_.obj
+ 0002:000030ec       $unwind$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 00000001800120ec     MSVCRTD:_error_.obj
+ 0002:00003104       $chain$1$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 0000000180012104     MSVCRTD:_error_.obj
+ 0002:0000311c       $chain$2$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 000000018001211c     MSVCRTD:_error_.obj
+ 0002:0000312c       $unwind$_vsprintf_s_l      000000018001212c     MSVCRTD:_error_.obj
+ 0002:00003140       $unwind$sprintf_s          0000000180012140     MSVCRTD:_error_.obj
+ 0002:0000314c       $unwind$?DebuggerProbe@@YAHK@Z 000000018001214c     MSVCRTD:_error_.obj
+ 0002:0000316c       $unwind$?DebuggerRuntime@@YAHKHPEAXPEB_W@Z 000000018001216c     MSVCRTD:_error_.obj
+ 0002:0000318c       $unwind$?failwithmessage@@YAXPEAXHHPEBD@Z 000000018001218c     MSVCRTD:_error_.obj
+ 0002:000031b0       $unwind$?_getMemBlockDataString@@YAXPEAD00_K@Z 00000001800121b0     MSVCRTD:_error_.obj
+ 0002:000031c0       $chain$3$?_getMemBlockDataString@@YAXPEAD00_K@Z 00000001800121c0     MSVCRTD:_error_.obj
+ 0002:000031e0       $chain$4$?_getMemBlockDataString@@YAXPEAD00_K@Z 00000001800121e0     MSVCRTD:_error_.obj
+ 0002:000031f0       $unwind$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 00000001800121f0     MSVCRTD:_pdblkup_.obj
+ 0002:00003204       $chain$2$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180012204     MSVCRTD:_pdblkup_.obj
+ 0002:0000321c       $chain$3$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 000000018001221c     MSVCRTD:_pdblkup_.obj
+ 0002:00003230       $chain$4$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180012230     MSVCRTD:_pdblkup_.obj
+ 0002:00003240       $chain$5$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180012240     MSVCRTD:_pdblkup_.obj
+ 0002:00003250       $unwind$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180012250     MSVCRTD:_pdblkup_.obj
+ 0002:00003264       $chain$0$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180012264     MSVCRTD:_pdblkup_.obj
+ 0002:00003278       $chain$1$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180012278     MSVCRTD:_pdblkup_.obj
+ 0002:0000328c       $chain$2$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 000000018001228c     MSVCRTD:_pdblkup_.obj
+ 0002:000032a0       $chain$3$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 00000001800122a0     MSVCRTD:_pdblkup_.obj
+ 0002:000032b0       $chain$4$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 00000001800122b0     MSVCRTD:_pdblkup_.obj
+ 0002:000032c0       $chain$5$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 00000001800122c0     MSVCRTD:_pdblkup_.obj
+ 0002:000032d0       $unwind$?GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z 00000001800122d0     MSVCRTD:_pdblkup_.obj
+ 0002:000032e8       $unwind$?GetPdbDll@@YAPEAUHINSTANCE__@@XZ 00000001800122e8     MSVCRTD:_pdblkup_.obj
+ 0002:00003300       .edata                     0000000180012300     pthread_dll.exp
+ 0002:00003328       rgpv                       0000000180012328     pthread_dll.exp
+ 0002:00003544       rgszName                   0000000180012544     pthread_dll.exp
+ 0002:00003760       rgwOrd                     0000000180012760     pthread_dll.exp
+ 0002:0000386e       szName                     000000018001286e     pthread_dll.exp
+ 0002:0000387e       $N00001                    000000018001287e     pthread_dll.exp
+ 0002:00003894       $N00002                    0000000180012894     pthread_dll.exp
+ 0002:000038aa       $N00003                    00000001800128aa     pthread_dll.exp
+ 0002:000038c2       $N00004                    00000001800128c2     pthread_dll.exp
+ 0002:000038da       $N00005                    00000001800128da     pthread_dll.exp
+ 0002:000038f2       $N00006                    00000001800128f2     pthread_dll.exp
+ 0002:00003907       $N00007                    0000000180012907     pthread_dll.exp
+ 0002:0000391d       $N00008                    000000018001291d     pthread_dll.exp
+ 0002:00003933       $N00009                    0000000180012933     pthread_dll.exp
+ 0002:0000394a       $N00010                    000000018001294a     pthread_dll.exp
+ 0002:00003965       $N00011                    0000000180012965     pthread_dll.exp
+ 0002:0000397b       $N00012                    000000018001297b     pthread_dll.exp
+ 0002:00003990       $N00013                    0000000180012990     pthread_dll.exp
+ 0002:000039ac       $N00014                    00000001800129ac     pthread_dll.exp
+ 0002:000039c9       $N00015                    00000001800129c9     pthread_dll.exp
+ 0002:000039e4       $N00016                    00000001800129e4     pthread_dll.exp
+ 0002:00003a00       $N00017                    0000000180012a00     pthread_dll.exp
+ 0002:00003a16       $N00018                    0000000180012a16     pthread_dll.exp
+ 0002:00003a30       $N00019                    0000000180012a30     pthread_dll.exp
+ 0002:00003a4a       $N00020                    0000000180012a4a     pthread_dll.exp
+ 0002:00003a5c       $N00021                    0000000180012a5c     pthread_dll.exp
+ 0002:00003a78       $N00022                    0000000180012a78     pthread_dll.exp
+ 0002:00003a95       $N00023                    0000000180012a95     pthread_dll.exp
+ 0002:00003ab0       $N00024                    0000000180012ab0     pthread_dll.exp
+ 0002:00003acc       $N00025                    0000000180012acc     pthread_dll.exp
+ 0002:00003ae2       $N00026                    0000000180012ae2     pthread_dll.exp
+ 0002:00003afc       $N00027                    0000000180012afc     pthread_dll.exp
+ 0002:00003b16       $N00028                    0000000180012b16     pthread_dll.exp
+ 0002:00003b2e       $N00029                    0000000180012b2e     pthread_dll.exp
+ 0002:00003b43       $N00030                    0000000180012b43     pthread_dll.exp
+ 0002:00003b58       $N00031                    0000000180012b58     pthread_dll.exp
+ 0002:00003b74       $N00032                    0000000180012b74     pthread_dll.exp
+ 0002:00003b93       $N00033                    0000000180012b93     pthread_dll.exp
+ 0002:00003bac       $N00034                    0000000180012bac     pthread_dll.exp
+ 0002:00003bcb       $N00035                    0000000180012bcb     pthread_dll.exp
+ 0002:00003bda       $N00036                    0000000180012bda     pthread_dll.exp
+ 0002:00003bf1       $N00037                    0000000180012bf1     pthread_dll.exp
+ 0002:00003c06       $N00038                    0000000180012c06     pthread_dll.exp
+ 0002:00003c18       $N00039                    0000000180012c18     pthread_dll.exp
+ 0002:00003c2c       $N00040                    0000000180012c2c     pthread_dll.exp
+ 0002:00003c43       $N00041                    0000000180012c43     pthread_dll.exp
+ 0002:00003c55       $N00042                    0000000180012c55     pthread_dll.exp
+ 0002:00003c6e       $N00043                    0000000180012c6e     pthread_dll.exp
+ 0002:00003c8a       $N00044                    0000000180012c8a     pthread_dll.exp
+ 0002:00003ca0       $N00045                    0000000180012ca0     pthread_dll.exp
+ 0002:00003cbc       $N00046                    0000000180012cbc     pthread_dll.exp
+ 0002:00003ccb       $N00047                    0000000180012ccb     pthread_dll.exp
+ 0002:00003cdc       $N00048                    0000000180012cdc     pthread_dll.exp
+ 0002:00003ceb       $N00049                    0000000180012ceb     pthread_dll.exp
+ 0002:00003cf9       $N00050                    0000000180012cf9     pthread_dll.exp
+ 0002:00003d06       $N00051                    0000000180012d06     pthread_dll.exp
+ 0002:00003d1d       $N00052                    0000000180012d1d     pthread_dll.exp
+ 0002:00003d34       $N00053                    0000000180012d34     pthread_dll.exp
+ 0002:00003d4a       $N00054                    0000000180012d4a     pthread_dll.exp
+ 0002:00003d5e       $N00055                    0000000180012d5e     pthread_dll.exp
+ 0002:00003d73       $N00056                    0000000180012d73     pthread_dll.exp
+ 0002:00003d91       $N00057                    0000000180012d91     pthread_dll.exp
+ 0002:00003dab       $N00058                    0000000180012dab     pthread_dll.exp
+ 0002:00003db8       $N00059                    0000000180012db8     pthread_dll.exp
+ 0002:00003dcb       $N00060                    0000000180012dcb     pthread_dll.exp
+ 0002:00003dde       $N00061                    0000000180012dde     pthread_dll.exp
+ 0002:00003deb       $N00062                    0000000180012deb     pthread_dll.exp
+ 0002:00003e04       $N00063                    0000000180012e04     pthread_dll.exp
+ 0002:00003e1a       $N00064                    0000000180012e1a     pthread_dll.exp
+ 0002:00003e2d       $N00065                    0000000180012e2d     pthread_dll.exp
+ 0002:00003e40       $N00066                    0000000180012e40     pthread_dll.exp
+ 0002:00003e58       $N00067                    0000000180012e58     pthread_dll.exp
+ 0002:00003e6e       $N00068                    0000000180012e6e     pthread_dll.exp
+ 0002:00003e83       $N00069                    0000000180012e83     pthread_dll.exp
+ 0002:00003e9d       $N00070                    0000000180012e9d     pthread_dll.exp
+ 0002:00003eba       $N00071                    0000000180012eba     pthread_dll.exp
+ 0002:00003ed7       $N00072                    0000000180012ed7     pthread_dll.exp
+ 0002:00003ef3       $N00073                    0000000180012ef3     pthread_dll.exp
+ 0002:00003f0d       $N00074                    0000000180012f0d     pthread_dll.exp
+ 0002:00003f24       $N00075                    0000000180012f24     pthread_dll.exp
+ 0002:00003f41       $N00076                    0000000180012f41     pthread_dll.exp
+ 0002:00003f5e       $N00077                    0000000180012f5e     pthread_dll.exp
+ 0002:00003f7a       $N00078                    0000000180012f7a     pthread_dll.exp
+ 0002:00003f94       $N00079                    0000000180012f94     pthread_dll.exp
+ 0002:00003fae       $N00080                    0000000180012fae     pthread_dll.exp
+ 0002:00003fbb       $N00081                    0000000180012fbb     pthread_dll.exp
+ 0002:00003fd2       $N00082                    0000000180012fd2     pthread_dll.exp
+ 0002:00003fe6       $N00083                    0000000180012fe6     pthread_dll.exp
+ 0002:00003ffc       $N00084                    0000000180012ffc     pthread_dll.exp
+ 0002:00004017       $N00085                    0000000180013017     pthread_dll.exp
+ 0002:00004032       $N00086                    0000000180013032     pthread_dll.exp
+ 0002:0000404b       $N00087                    000000018001304b     pthread_dll.exp
+ 0002:00004064       $N00088                    0000000180013064     pthread_dll.exp
+ 0002:0000407a       $N00089                    000000018001307a     pthread_dll.exp
+ 0002:00004090       $N00090                    0000000180013090     pthread_dll.exp
+ 0002:000040ab       $N00091                    00000001800130ab     pthread_dll.exp
+ 0002:000040c9       $N00092                    00000001800130c9     pthread_dll.exp
+ 0002:000040e1       $N00093                    00000001800130e1     pthread_dll.exp
+ 0002:000040ff       $N00094                    00000001800130ff     pthread_dll.exp
+ 0002:0000410c       $N00095                    000000018001310c     pthread_dll.exp
+ 0002:00004123       $N00096                    0000000180013123     pthread_dll.exp
+ 0002:0000413a       $N00097                    000000018001313a     pthread_dll.exp
+ 0002:00004150       $N00098                    0000000180013150     pthread_dll.exp
+ 0002:00004167       $N00099                    0000000180013167     pthread_dll.exp
+ 0002:0000417d       $N00100                    000000018001317d     pthread_dll.exp
+ 0002:00004191       $N00101                    0000000180013191     pthread_dll.exp
+ 0002:000041a6       $N00102                    00000001800131a6     pthread_dll.exp
+ 0002:000041b8       $N00103                    00000001800131b8     pthread_dll.exp
+ 0002:000041ca       $N00104                    00000001800131ca     pthread_dll.exp
+ 0002:000041df       $N00105                    00000001800131df     pthread_dll.exp
+ 0002:000041f3       $N00106                    00000001800131f3     pthread_dll.exp
+ 0002:00004206       $N00107                    0000000180013206     pthread_dll.exp
+ 0002:00004224       $N00108                    0000000180013224     pthread_dll.exp
+ 0002:00004239       $N00109                    0000000180013239     pthread_dll.exp
+ 0002:0000424c       $N00110                    000000018001324c     pthread_dll.exp
+ 0002:0000426c       $N00111                    000000018001326c     pthread_dll.exp
+ 0002:0000428c       $N00112                    000000018001328c     pthread_dll.exp
+ 0002:000042ab       $N00113                    00000001800132ab     pthread_dll.exp
+ 0002:000042ca       $N00114                    00000001800132ca     pthread_dll.exp
+ 0002:000042e9       $N00115                    00000001800132e9     pthread_dll.exp
+ 0002:0000430b       $N00116                    000000018001330b     pthread_dll.exp
+ 0002:0000431d       $N00117                    000000018001331d     pthread_dll.exp
+ 0002:00004330       $N00118                    0000000180013330     pthread_dll.exp
+ 0002:00004347       $N00119                    0000000180013347     pthread_dll.exp
+ 0002:0000435e       $N00120                    000000018001335e     pthread_dll.exp
+ 0002:00004370       $N00121                    0000000180013370     pthread_dll.exp
+ 0002:00004383       $N00122                    0000000180013383     pthread_dll.exp
+ 0002:00004395       $N00123                    0000000180013395     pthread_dll.exp
+ 0002:000043a8       $N00124                    00000001800133a8     pthread_dll.exp
+ 0002:000043b4       $N00125                    00000001800133b4     pthread_dll.exp
+ 0002:000043be       $N00126                    00000001800133be     pthread_dll.exp
+ 0002:000043ca       $N00127                    00000001800133ca     pthread_dll.exp
+ 0002:000043d7       $N00128                    00000001800133d7     pthread_dll.exp
+ 0002:000043e0       $N00129                    00000001800133e0     pthread_dll.exp
+ 0002:000043e9       $N00130                    00000001800133e9     pthread_dll.exp
+ 0002:000043f2       $N00131                    00000001800133f2     pthread_dll.exp
+ 0002:00004404       $N00132                    0000000180013404     pthread_dll.exp
+ 0002:00004412       $N00133                    0000000180013412     pthread_dll.exp
+ 0002:0000441e       $N00134                    000000018001341e     pthread_dll.exp
+ 0002:00004429       $N00135                    0000000180013429     pthread_dll.exp
+ 0002:000049ba       .idata$6                   00000001800139ba     kernel32:KERNEL32.dll
+ 0002:00004a00       .idata$6                   0000000180013a00     vcruntimed:VCRUNTIME140D.dll
+ 0002:00004b80       .idata$6                   0000000180013b80     ucrtd:ucrtbased.dll
+ 0003:00000048       ptw32_errorcheck_mutexattr_s 0000000180014048     ptw32_mutex_check_need_init.obj
+ 0003:00000058       ptw32_recursive_mutexattr  0000000180014058     ptw32_mutex_check_need_init.obj
+ 0003:00000060       ptw32_recursive_mutexattr_s 0000000180014060     ptw32_mutex_check_need_init.obj
+ 0003:00000070       ptw32_errorcheck_mutexattr 0000000180014070     ptw32_mutex_check_need_init.obj
+ 0003:00000090       ?__proc_attached@@3HA      0000000180014090     MSVCRTD:dll_dllmain.obj
+ 0003:000000a0       GS_ExceptionRecord         00000001800140a0     MSVCRTD:gs_report.obj
+ 0003:00000140       GS_ContextRecord           0000000180014140     MSVCRTD:gs_report.obj
+ 0003:00000620       ?module_local_atexit_table@@3U_onexit_table_t@@A 0000000180014620     MSVCRTD:utility.obj
+ 0003:00000638       ?module_local_at_quick_exit_table@@3U_onexit_table_t@@A 0000000180014638     MSVCRTD:utility.obj
+ 0003:00000650       ?is_initialized_as_dll@@3_NA 0000000180014650     MSVCRTD:utility.obj
+ 0003:000006f8       ptw32_h_quserex            00000001800146f8     pthread_win32_attach_detach_np.obj
+ 0003:00000700       ?_RTC_ErrorReportFunc@@3P6AHHPEBDH00ZZEA 0000000180014700     MSVCRTD:_userapi_.obj
+ 0003:00000708       ?_RTC_ErrorReportFuncW@@3P6AHHPEB_WH00ZZEA 0000000180014708     MSVCRTD:_userapi_.obj
+ 0003:00000710       ?mspdb@@3PEAUHINSTANCE__@@EA 0000000180014710     MSVCRTD:_pdblkup_.obj
+ 0003:00000718       ?alreadyTried@?1??GetPdbDll@@YAPEAUHINSTANCE__@@XZ@4_NA 0000000180014718     MSVCRTD:_pdblkup_.obj
+ 0003:00000719       ?PDBOK@?1??_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z@4_NA 0000000180014719     MSVCRTD:_pdblkup_.obj
+ 0004:00000000       $pdata$ptw32_pop_cleanup   0000000180015000     cleanup.obj
+ 0004:0000000c       $pdata$ptw32_push_cleanup  000000018001500c     cleanup.obj
+ 0004:00000018       $pdata$pthread_create      0000000180015018     create.obj
+ 0004:00000024       $pdata$DllMain             0000000180015024     dll.obj
+ 0004:00000030       $pdata$pthread_attr_destroy 0000000180015030     pthread_attr_destroy.obj
+ 0004:0000003c       $pdata$pthread_attr_getdetachstate 000000018001503c     pthread_attr_getdetachstate.obj
+ 0004:00000048       $pdata$pthread_attr_getinheritsched 0000000180015048     pthread_attr_getinheritsched.obj
+ 0004:00000054       $pdata$pthread_attr_getschedparam 0000000180015054     pthread_attr_getschedparam.obj
+ 0004:00000060       $pdata$pthread_attr_getschedpolicy 0000000180015060     pthread_attr_getschedpolicy.obj
+ 0004:0000006c       $pdata$pthread_attr_getscope 000000018001506c     pthread_attr_getscope.obj
+ 0004:00000078       $pdata$pthread_attr_getstackaddr 0000000180015078     pthread_attr_getstackaddr.obj
+ 0004:00000084       $pdata$pthread_attr_getstacksize 0000000180015084     pthread_attr_getstacksize.obj
+ 0004:00000090       $pdata$pthread_attr_init   0000000180015090     pthread_attr_init.obj
+ 0004:0000009c       $pdata$pthread_attr_setdetachstate 000000018001509c     pthread_attr_setdetachstate.obj
+ 0004:000000a8       $pdata$pthread_attr_setinheritsched 00000001800150a8     pthread_attr_setinheritsched.obj
+ 0004:000000b4       $pdata$pthread_attr_setschedparam 00000001800150b4     pthread_attr_setschedparam.obj
+ 0004:000000c0       $pdata$pthread_attr_setschedpolicy 00000001800150c0     pthread_attr_setschedpolicy.obj
+ 0004:000000cc       $pdata$pthread_attr_setscope 00000001800150cc     pthread_attr_setscope.obj
+ 0004:000000d8       $pdata$pthread_attr_setstackaddr 00000001800150d8     pthread_attr_setstackaddr.obj
+ 0004:000000e4       $pdata$pthread_attr_setstacksize 00000001800150e4     pthread_attr_setstacksize.obj
+ 0004:000000f0       $pdata$pthread_barrier_destroy 00000001800150f0     pthread_barrier_destroy.obj
+ 0004:000000fc       $pdata$pthread_barrier_init 00000001800150fc     pthread_barrier_init.obj
+ 0004:00000108       $pdata$pthread_barrier_wait 0000000180015108     pthread_barrier_wait.obj
+ 0004:00000114       $pdata$pthread_rwlockattr_destroy 0000000180015114     pthread_rwlockattr_destroy.obj
+ 0004:00000114       $pdata$pthread_barrierattr_destroy 0000000180015114     pthread_barrierattr_destroy.obj
+ 0004:00000114       $pdata$pthread_mutexattr_destroy 0000000180015114     pthread_mutexattr_destroy.obj
+ 0004:00000120       $pdata$pthread_rwlockattr_getpshared 0000000180015120     pthread_rwlockattr_getpshared.obj
+ 0004:00000120       $pdata$pthread_mutexattr_getpshared 0000000180015120     pthread_mutexattr_getpshared.obj
+ 0004:00000120       $pdata$pthread_condattr_getpshared 0000000180015120     pthread_condattr_getpshared.obj
+ 0004:00000120       $pdata$pthread_barrierattr_getpshared 0000000180015120     pthread_barrierattr_getpshared.obj
+ 0004:0000012c       $pdata$pthread_barrierattr_init 000000018001512c     pthread_barrierattr_init.obj
+ 0004:00000138       $pdata$pthread_condattr_setpshared 0000000180015138     pthread_condattr_setpshared.obj
+ 0004:00000138       $pdata$pthread_mutexattr_setpshared 0000000180015138     pthread_mutexattr_setpshared.obj
+ 0004:00000138       $pdata$pthread_barrierattr_setpshared 0000000180015138     pthread_barrierattr_setpshared.obj
+ 0004:00000138       $pdata$pthread_rwlockattr_setpshared 0000000180015138     pthread_rwlockattr_setpshared.obj
+ 0004:00000144       $pdata$ptw32_cancel_self   0000000180015144     pthread_cancel.obj
+ 0004:00000150       $pdata$ptw32_cancel_callback 0000000180015150     pthread_cancel.obj
+ 0004:0000015c       $pdata$ptw32_RegisterCancellation 000000018001515c     pthread_cancel.obj
+ 0004:00000168       $pdata$pthread_cancel      0000000180015168     pthread_cancel.obj
+ 0004:00000174       $pdata$ptw32_get_errno     0000000180015174     pthread_cond_destroy.obj
+ 0004:00000174       $pdata$ptw32_get_errno     0000000180015174     pthread_setaffinity.obj
+ 0004:00000174       $pdata$ptw32_get_errno     0000000180015174     pthread_cond_signal.obj
+ 0004:00000174       $pdata$ptw32_get_errno     0000000180015174     pthread_cond_wait.obj
+ 0004:00000174       $pdata$ptw32_get_errno     0000000180015174     pthread_cond_init.obj
+ 0004:00000180       $pdata$pthread_cond_destroy 0000000180015180     pthread_cond_destroy.obj
+ 0004:0000018c       $pdata$pthread_cond_init   000000018001518c     pthread_cond_init.obj
+ 0004:00000198       $pdata$ptw32_cond_unblock  0000000180015198     pthread_cond_signal.obj
+ 0004:000001a4       $pdata$pthread_cond_signal 00000001800151a4     pthread_cond_signal.obj
+ 0004:000001b0       $pdata$pthread_cond_broadcast 00000001800151b0     pthread_cond_signal.obj
+ 0004:000001bc       $pdata$ptw32_cond_wait_cleanup 00000001800151bc     pthread_cond_wait.obj
+ 0004:000001c8       $pdata$ptw32_cond_timedwait 00000001800151c8     pthread_cond_wait.obj
+ 0004:000001d4       $pdata$pthread_cond_wait   00000001800151d4     pthread_cond_wait.obj
+ 0004:000001e0       $pdata$pthread_cond_timedwait 00000001800151e0     pthread_cond_wait.obj
+ 0004:000001ec       $pdata$pthread_condattr_destroy 00000001800151ec     pthread_condattr_destroy.obj
+ 0004:000001f8       $pdata$pthread_condattr_init 00000001800151f8     pthread_condattr_init.obj
+ 0004:00000204       $pdata$pthread_delay_np    0000000180015204     pthread_delay_np.obj
+ 0004:00000210       $pdata$pthread_detach      0000000180015210     pthread_detach.obj
+ 0004:0000021c       $pdata$pthread_equal       000000018001521c     pthread_equal.obj
+ 0004:00000228       $pdata$pthread_exit        0000000180015228     pthread_exit.obj
+ 0004:00000234       $pdata$pthread_getconcurrency 0000000180015234     pthread_getconcurrency.obj
+ 0004:00000240       $pdata$pthread_getschedparam 0000000180015240     pthread_getschedparam.obj
+ 0004:0000024c       $pdata$pthread_getspecific 000000018001524c     pthread_getspecific.obj
+ 0004:00000258       $pdata$pthread_getunique_np 0000000180015258     pthread_getunique_np.obj
+ 0004:00000264       $pdata$pthread_getw32threadhandle_np 0000000180015264     pthread_getw32threadhandle_np.obj
+ 0004:00000270       $pdata$pthread_getw32threadid_np 0000000180015270     pthread_getw32threadhandle_np.obj
+ 0004:0000027c       $pdata$pthread_join        000000018001527c     pthread_join.obj
+ 0004:00000288       $pdata$pthread_key_create  0000000180015288     pthread_key_create.obj
+ 0004:00000294       $pdata$pthread_key_delete  0000000180015294     pthread_key_delete.obj
+ 0004:000002a0       $pdata$pthread_kill        00000001800152a0     pthread_kill.obj
+ 0004:000002ac       $pdata$ptw32_robust_mutex_inherit 00000001800152ac     pthread_mutex_consistent.obj
+ 0004:000002b8       $pdata$ptw32_robust_mutex_add 00000001800152b8     pthread_mutex_consistent.obj
+ 0004:000002c4       $pdata$ptw32_robust_mutex_remove 00000001800152c4     pthread_mutex_consistent.obj
+ 0004:000002d0       $pdata$pthread_mutex_consistent 00000001800152d0     pthread_mutex_consistent.obj
+ 0004:000002dc       $pdata$pthread_mutex_destroy 00000001800152dc     pthread_mutex_destroy.obj
+ 0004:000002e8       $pdata$pthread_mutex_init  00000001800152e8     pthread_mutex_init.obj
+ 0004:000002f4       $pdata$pthread_mutex_lock  00000001800152f4     pthread_mutex_lock.obj
+ 0004:00000300       $pdata$ptw32_timed_eventwait 0000000180015300     pthread_mutex_timedlock.obj
+ 0004:0000030c       $pdata$pthread_mutex_timedlock 000000018001530c     pthread_mutex_timedlock.obj
+ 0004:00000318       $pdata$pthread_mutex_trylock 0000000180015318     pthread_mutex_trylock.obj
+ 0004:00000324       $pdata$pthread_mutex_unlock 0000000180015324     pthread_mutex_unlock.obj
+ 0004:00000330       $pdata$pthread_mutexattr_getkind_np 0000000180015330     pthread_mutexattr_getkind_np.obj
+ 0004:0000033c       $pdata$pthread_mutexattr_getrobust 000000018001533c     pthread_mutexattr_getrobust.obj
+ 0004:00000348       $pdata$pthread_mutexattr_gettype 0000000180015348     pthread_mutexattr_gettype.obj
+ 0004:00000354       $pdata$pthread_mutexattr_init 0000000180015354     pthread_mutexattr_init.obj
+ 0004:00000360       $pdata$pthread_mutexattr_setkind_np 0000000180015360     pthread_mutexattr_setkind_np.obj
+ 0004:0000036c       $pdata$pthread_mutexattr_setrobust 000000018001536c     pthread_mutexattr_setrobust.obj
+ 0004:00000378       $pdata$pthread_mutexattr_settype 0000000180015378     pthread_mutexattr_settype.obj
+ 0004:00000384       $pdata$pthread_num_processors_np 0000000180015384     pthread_num_processors_np.obj
+ 0004:00000390       $pdata$ptw32_mcs_lock_cleanup 0000000180015390     pthread_once.obj
+ 0004:0000039c       $pdata$pthread_once        000000018001539c     pthread_once.obj
+ 0004:000003a8       $pdata$pthread_rwlock_destroy 00000001800153a8     pthread_rwlock_destroy.obj
+ 0004:000003b4       $pdata$pthread_rwlock_init 00000001800153b4     pthread_rwlock_init.obj
+ 0004:000003c0       $pdata$pthread_rwlock_rdlock 00000001800153c0     pthread_rwlock_rdlock.obj
+ 0004:000003cc       $pdata$pthread_rwlock_timedrdlock 00000001800153cc     pthread_rwlock_timedrdlock.obj
+ 0004:000003d8       $pdata$pthread_rwlock_timedwrlock 00000001800153d8     pthread_rwlock_timedwrlock.obj
+ 0004:000003e4       $pdata$pthread_rwlock_tryrdlock 00000001800153e4     pthread_rwlock_tryrdlock.obj
+ 0004:000003f0       $pdata$pthread_rwlock_trywrlock 00000001800153f0     pthread_rwlock_trywrlock.obj
+ 0004:000003fc       $pdata$pthread_rwlock_unlock 00000001800153fc     pthread_rwlock_unlock.obj
+ 0004:00000408       $pdata$pthread_rwlock_wrlock 0000000180015408     pthread_rwlock_wrlock.obj
+ 0004:00000414       $pdata$pthread_rwlockattr_init 0000000180015414     pthread_rwlockattr_init.obj
+ 0004:00000420       $pdata$pthread_self        0000000180015420     pthread_self.obj
+ 0004:0000042c       $pdata$pthread_setaffinity_np 000000018001542c     pthread_setaffinity.obj
+ 0004:00000438       $pdata$pthread_getaffinity_np 0000000180015438     pthread_setaffinity.obj
+ 0004:00000444       $pdata$pthread_setcancelstate 0000000180015444     pthread_setcancelstate.obj
+ 0004:00000450       $pdata$pthread_setcanceltype 0000000180015450     pthread_setcanceltype.obj
+ 0004:0000045c       $pdata$pthread_setconcurrency 000000018001545c     pthread_setconcurrency.obj
+ 0004:00000468       $pdata$pthread_setschedparam 0000000180015468     pthread_setschedparam.obj
+ 0004:00000474       $pdata$ptw32_setthreadpriority 0000000180015474     pthread_setschedparam.obj
+ 0004:00000480       $pdata$pthread_setspecific 0000000180015480     pthread_setspecific.obj
+ 0004:0000048c       $pdata$pthread_spin_destroy 000000018001548c     pthread_spin_destroy.obj
+ 0004:00000498       $pdata$pthread_spin_init   0000000180015498     pthread_spin_init.obj
+ 0004:000004a4       $pdata$pthread_spin_lock   00000001800154a4     pthread_spin_lock.obj
+ 0004:000004b0       $pdata$pthread_spin_trylock 00000001800154b0     pthread_spin_trylock.obj
+ 0004:000004bc       $pdata$pthread_spin_unlock 00000001800154bc     pthread_spin_unlock.obj
+ 0004:000004c8       $pdata$pthread_testcancel  00000001800154c8     pthread_testcancel.obj
+ 0004:000004d4       $pdata$pthread_timechange_handler_np 00000001800154d4     pthread_timechange_handler_np.obj
+ 0004:000004e0       $pdata$pthread_timedjoin_np 00000001800154e0     pthread_timedjoin_np.obj
+ 0004:000004ec       $pdata$pthread_tryjoin_np  00000001800154ec     pthread_tryjoin_np.obj
+ 0004:000004f8       $pdata$pthread_win32_process_attach_np 00000001800154f8     pthread_win32_attach_detach_np.obj
+ 0004:00000504       $pdata$pthread_win32_process_detach_np 0000000180015504     pthread_win32_attach_detach_np.obj
+ 0004:00000510       $pdata$pthread_win32_thread_attach_np 0000000180015510     pthread_win32_attach_detach_np.obj
+ 0004:0000051c       $pdata$pthread_win32_thread_detach_np 000000018001551c     pthread_win32_attach_detach_np.obj
+ 0004:00000528       $pdata$pthread_win32_test_features_np 0000000180015528     pthread_win32_attach_detach_np.obj
+ 0004:00000534       $pdata$ptw32_callUserDestroyRoutines 0000000180015534     ptw32_callUserDestroyRoutines.obj
+ 0004:00000540       $pdata$ptw32_cond_check_need_init 0000000180015540     ptw32_cond_check_need_init.obj
+ 0004:0000054c       $pdata$ptw32_getprocessors 000000018001554c     ptw32_getprocessors.obj
+ 0004:00000558       $pdata$ptw32_is_attr       0000000180015558     ptw32_is_attr.obj
+ 0004:00000564       $pdata$ptw32_mcs_flag_set  0000000180015564     ptw32_MCS_lock.obj
+ 0004:00000570       $pdata$ptw32_mcs_flag_wait 0000000180015570     ptw32_MCS_lock.obj
+ 0004:0000057c       $pdata$ptw32_mcs_lock_acquire 000000018001557c     ptw32_MCS_lock.obj
+ 0004:00000588       $pdata$ptw32_mcs_lock_release 0000000180015588     ptw32_MCS_lock.obj
+ 0004:00000594       $pdata$ptw32_mcs_lock_try_acquire 0000000180015594     ptw32_MCS_lock.obj
+ 0004:000005a0       $pdata$ptw32_mcs_node_transfer 00000001800155a0     ptw32_MCS_lock.obj
+ 0004:000005ac       $pdata$ptw32_mutex_check_need_init 00000001800155ac     ptw32_mutex_check_need_init.obj
+ 0004:000005b8       $pdata$ptw32_new           00000001800155b8     ptw32_new.obj
+ 0004:000005c4       $pdata$ptw32_processInitialize 00000001800155c4     ptw32_processInitialize.obj
+ 0004:000005d0       $pdata$ptw32_processTerminate 00000001800155d0     ptw32_processTerminate.obj
+ 0004:000005dc       $pdata$ptw32_relmillisecs  00000001800155dc     ptw32_relmillisecs.obj
+ 0004:000005e8       $pdata$ptw32_threadReusePop 00000001800155e8     ptw32_reuse.obj
+ 0004:000005f4       $pdata$ptw32_threadReusePush 00000001800155f4     ptw32_reuse.obj
+ 0004:00000600       $pdata$ptw32_rwlock_cancelwrwait 0000000180015600     ptw32_rwlock_cancelwrwait.obj
+ 0004:0000060c       $pdata$ptw32_rwlock_check_need_init 000000018001560c     ptw32_rwlock_check_need_init.obj
+ 0004:00000618       $pdata$ptw32_semwait       0000000180015618     ptw32_semwait.obj
+ 0004:00000624       $pdata$ptw32_spinlock_check_need_init 0000000180015624     ptw32_spinlock_check_need_init.obj
+ 0004:00000630       $pdata$ptw32_threadDestroy 0000000180015630     ptw32_threadDestroy.obj
+ 0004:0000063c       $pdata$ExceptionFilter     000000018001563c     ptw32_threadStart.obj
+ 0004:00000648       $pdata$ptw32_threadStart   0000000180015648     ptw32_threadStart.obj
+ 0004:00000654       $pdata$ptw32_throw         0000000180015654     ptw32_throw.obj
+ 0004:00000660       $pdata$ptw32_pop_cleanup_all 0000000180015660     ptw32_throw.obj
+ 0004:0000066c       $pdata$ptw32_get_exception_services_code 000000018001566c     ptw32_throw.obj
+ 0004:00000678       $pdata$ptw32_tkAssocCreate 0000000180015678     ptw32_tkAssocCreate.obj
+ 0004:00000684       $pdata$ptw32_tkAssocDestroy 0000000180015684     ptw32_tkAssocDestroy.obj
+ 0004:00000690       $pdata$sched_get_priority_max 0000000180015690     sched_get_priority_max.obj
+ 0004:0000069c       $pdata$sched_get_priority_min 000000018001569c     sched_get_priority_min.obj
+ 0004:000006a8       $pdata$sched_getscheduler  00000001800156a8     sched_getscheduler.obj
+ 0004:000006b4       $pdata$sched_setaffinity   00000001800156b4     sched_setaffinity.obj
+ 0004:000006c0       $pdata$sched_getaffinity   00000001800156c0     sched_setaffinity.obj
+ 0004:000006cc       $pdata$_sched_affinitycpucount 00000001800156cc     sched_setaffinity.obj
+ 0004:000006d8       $pdata$_sched_affinitycpuzero 00000001800156d8     sched_setaffinity.obj
+ 0004:000006e4       $pdata$_sched_affinitycpuset 00000001800156e4     sched_setaffinity.obj
+ 0004:000006f0       $pdata$_sched_affinitycpuclr 00000001800156f0     sched_setaffinity.obj
+ 0004:000006fc       $pdata$_sched_affinitycpuisset 00000001800156fc     sched_setaffinity.obj
+ 0004:00000708       $pdata$_sched_affinitycpuand 0000000180015708     sched_setaffinity.obj
+ 0004:00000714       $pdata$_sched_affinitycpuor 0000000180015714     sched_setaffinity.obj
+ 0004:00000720       $pdata$_sched_affinitycpuxor 0000000180015720     sched_setaffinity.obj
+ 0004:0000072c       $pdata$_sched_affinitycpuequal 000000018001572c     sched_setaffinity.obj
+ 0004:00000738       $pdata$sched_setscheduler  0000000180015738     sched_setscheduler.obj
+ 0004:00000744       $pdata$sched_yield         0000000180015744     sched_yield.obj
+ 0004:00000750       $pdata$sem_unlink          0000000180015750     sem_unlink.obj
+ 0004:00000750       $pdata$sem_close           0000000180015750     sem_close.obj
+ 0004:0000075c       $pdata$sem_destroy         000000018001575c     sem_destroy.obj
+ 0004:00000768       $pdata$sem_getvalue        0000000180015768     sem_getvalue.obj
+ 0004:00000774       $pdata$sem_init            0000000180015774     sem_init.obj
+ 0004:00000780       $pdata$sem_open            0000000180015780     sem_open.obj
+ 0004:0000078c       $pdata$sem_post            000000018001578c     sem_post.obj
+ 0004:00000798       $pdata$sem_post_multiple   0000000180015798     sem_post_multiple.obj
+ 0004:000007a4       $pdata$ptw32_sem_timedwait_cleanup 00000001800157a4     sem_timedwait.obj
+ 0004:000007b0       $pdata$sem_timedwait       00000001800157b0     sem_timedwait.obj
+ 0004:000007bc       $pdata$sem_trywait         00000001800157bc     sem_trywait.obj
+ 0004:000007c8       $pdata$ptw32_sem_wait_cleanup 00000001800157c8     sem_wait.obj
+ 0004:000007d4       $pdata$sem_wait            00000001800157d4     sem_wait.obj
+ 0004:000007e0       $pdata$ptw32_cancelable_wait 00000001800157e0     w32_CancelableWait.obj
+ 0004:000007ec       $pdata$pthreadCancelableWait 00000001800157ec     w32_CancelableWait.obj
+ 0004:000007f8       $pdata$pthreadCancelableTimedWait 00000001800157f8     w32_CancelableWait.obj
+ 0004:00000810       $pdata$?dllmain_crt_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180015810     MSVCRTD:dll_dllmain.obj
+ 0004:0000081c       $pdata$?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 000000018001581c     MSVCRTD:dll_dllmain.obj
+ 0004:00000828       $pdata$?dllmain_crt_process_detach@@YAH_N@Z 0000000180015828     MSVCRTD:dll_dllmain.obj
+ 0004:00000834       $pdata$?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180015834     MSVCRTD:dll_dllmain.obj
+ 0004:00000840       $pdata$?dllmain_raw@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180015840     MSVCRTD:dll_dllmain.obj
+ 0004:0000084c       $pdata$_CRT_INIT           000000018001584c     MSVCRTD:dll_dllmain.obj
+ 0004:00000858       $pdata$_DllMainCRTStartup  0000000180015858     MSVCRTD:dll_dllmain.obj
+ 0004:00000864       $pdata$__raise_securityfailure 0000000180015864     MSVCRTD:gs_report.obj
+ 0004:00000870       $pdata$__report_gsfailure  0000000180015870     MSVCRTD:gs_report.obj
+ 0004:0000087c       $pdata$__report_rangecheckfailure 000000018001587c     MSVCRTD:gs_report.obj
+ 0004:00000888       $pdata$__report_securityfailure 0000000180015888     MSVCRTD:gs_report.obj
+ 0004:00000894       $pdata$__report_securityfailureEx 0000000180015894     MSVCRTD:gs_report.obj
+ 0004:000008a0       $pdata$capture_current_context 00000001800158a0     MSVCRTD:gs_report.obj
+ 0004:000008ac       $pdata$capture_previous_context 00000001800158ac     MSVCRTD:gs_report.obj
+ 0004:000008b8       $pdata$??$__crt_fast_decode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 00000001800158b8     MSVCRTD:utility.obj
+ 0004:000008c4       $pdata$??$__crt_fast_encode_pointer@PEAP6AXXZ@@YAPEAP6AXXZQEAP6AXXZ@Z 00000001800158c4     MSVCRTD:utility.obj
+ 0004:000008d0       $pdata$?configure_argv@__scrt_narrow_argv_policy@@SAHXZ 00000001800158d0     MSVCRTD:utility.obj
+ 0004:000008dc       $pdata$?find_pe_section@@YAPEAU_IMAGE_SECTION_HEADER@@QEAE_K@Z 00000001800158dc     MSVCRTD:utility.obj
+ 0004:000008e8       $pdata$?is_potentially_valid_image_base@@YA_NQEAX@Z 00000001800158e8     MSVCRTD:utility.obj
+ 0004:000008f4       $pdata$__scrt_acquire_startup_lock 00000001800158f4     MSVCRTD:utility.obj
+ 0004:00000900       $pdata$__scrt_dllmain_after_initialize_c 0000000180015900     MSVCRTD:utility.obj
+ 0004:0000090c       $pdata$__scrt_dllmain_before_initialize_c 000000018001590c     MSVCRTD:utility.obj
+ 0004:00000918       $pdata$__scrt_dllmain_crt_thread_attach 0000000180015918     MSVCRTD:utility.obj
+ 0004:00000924       $pdata$__scrt_dllmain_crt_thread_detach 0000000180015924     MSVCRTD:utility.obj
+ 0004:00000930       $pdata$__scrt_dllmain_exception_filter 0000000180015930     MSVCRTD:utility.obj
+ 0004:0000093c       $pdata$__scrt_dllmain_uninitialize_c 000000018001593c     MSVCRTD:utility.obj
+ 0004:00000948       $pdata$__scrt_dllmain_uninitialize_critical 0000000180015948     MSVCRTD:utility.obj
+ 0004:00000954       $pdata$__scrt_initialize_crt 0000000180015954     MSVCRTD:utility.obj
+ 0004:00000960       $pdata$__scrt_initialize_onexit_tables 0000000180015960     MSVCRTD:utility.obj
+ 0004:0000096c       $pdata$__scrt_is_nonwritable_in_current_image 000000018001596c     MSVCRTD:utility.obj
+ 0004:00000978       $pdata$__scrt_release_startup_lock 0000000180015978     MSVCRTD:utility.obj
+ 0004:00000984       $pdata$__scrt_uninitialize_crt 0000000180015984     MSVCRTD:utility.obj
+ 0004:00000990       $pdata$_onexit             0000000180015990     MSVCRTD:utility.obj
+ 0004:0000099c       $pdata$at_quick_exit       000000018001599c     MSVCRTD:utility.obj
+ 0004:000009a8       $pdata$atexit              00000001800159a8     MSVCRTD:utility.obj
+ 0004:000009b4       $pdata$__security_init_cookie 00000001800159b4     MSVCRTD:gs_support.obj
+ 0004:000009c0       $pdata$?__scrt_initialize_type_info@@YAXXZ 00000001800159c0     MSVCRTD:tncleanup.obj
+ 0004:000009cc       $pdata$?__scrt_uninitialize_type_info@@YAXXZ 00000001800159cc     MSVCRTD:tncleanup.obj
+ 0004:000009d8       $pdata$__scrt_initialize_default_local_stdio_options 00000001800159d8     MSVCRTD:default_local_stdio_options.obj
+ 0004:000009e4       $pdata$__scrt_fastfail     00000001800159e4     MSVCRTD:utility_desktop.obj
+ 0004:000009f0       $pdata$__scrt_get_show_window_mode 00000001800159f0     MSVCRTD:utility_desktop.obj
+ 0004:000009fc       $pdata$__scrt_is_managed_app 00000001800159fc     MSVCRTD:utility_desktop.obj
+ 0004:00000a08       $pdata$__scrt_set_unhandled_exception_filter 0000000180015a08     MSVCRTD:utility_desktop.obj
+ 0004:00000a14       $pdata$__scrt_unhandled_exception_filter 0000000180015a14     MSVCRTD:utility_desktop.obj
+ 0004:00000a20       $pdata$_RTC_Initialize     0000000180015a20     MSVCRTD:_initsect_.obj
+ 0004:00000a2c       $pdata$0$_RTC_Initialize   0000000180015a2c     MSVCRTD:_initsect_.obj
+ 0004:00000a38       $pdata$1$_RTC_Initialize   0000000180015a38     MSVCRTD:_initsect_.obj
+ 0004:00000a44       $pdata$_RTC_Terminate      0000000180015a44     MSVCRTD:_initsect_.obj
+ 0004:00000a50       $pdata$0$_RTC_Terminate    0000000180015a50     MSVCRTD:_initsect_.obj
+ 0004:00000a5c       $pdata$1$_RTC_Terminate    0000000180015a5c     MSVCRTD:_initsect_.obj
+ 0004:00000a68       $pdata$_guard_check_icall  0000000180015a68     MSVCRTD:checkcfg.obj
+ 0004:00000a74       $pdata$__isa_available_init 0000000180015a74     MSVCRTD:_cpu_disp_.obj
+ 0004:00000a80       $pdata$__scrt_is_ucrt_dll_in_use 0000000180015a80     MSVCRTD:ucrt_detection.obj
+ 0004:00000a8c       $pdata$_guard_icall_checks_enforced 0000000180015a8c     MSVCRTD:guard_support.obj
+ 0004:00000a98       $pdata$__GSHandlerCheck    0000000180015a98     MSVCRTD:_gshandler_.obj
+ 0004:00000aa4       $pdata$__GSHandlerCheckCommon 0000000180015aa4     MSVCRTD:_gshandler_.obj
+ 0004:00000ab0       $pdata$_RTC_AllocaHelper   0000000180015ab0     MSVCRTD:_stack_.obj
+ 0004:00000abc       $pdata$0$_RTC_AllocaHelper 0000000180015abc     MSVCRTD:_stack_.obj
+ 0004:00000ac8       $pdata$1$_RTC_AllocaHelper 0000000180015ac8     MSVCRTD:_stack_.obj
+ 0004:00000ad4       $pdata$_RTC_CheckStackVars 0000000180015ad4     MSVCRTD:_stack_.obj
+ 0004:00000ae0       $pdata$0$_RTC_CheckStackVars 0000000180015ae0     MSVCRTD:_stack_.obj
+ 0004:00000aec       $pdata$1$_RTC_CheckStackVars 0000000180015aec     MSVCRTD:_stack_.obj
+ 0004:00000af8       $pdata$_RTC_CheckStackVars2 0000000180015af8     MSVCRTD:_stack_.obj
+ 0004:00000b04       $pdata$1$_RTC_CheckStackVars2 0000000180015b04     MSVCRTD:_stack_.obj
+ 0004:00000b10       $pdata$2$_RTC_CheckStackVars2 0000000180015b10     MSVCRTD:_stack_.obj
+ 0004:00000b1c       $pdata$3$_RTC_CheckStackVars2 0000000180015b1c     MSVCRTD:_stack_.obj
+ 0004:00000b28       $pdata$4$_RTC_CheckStackVars2 0000000180015b28     MSVCRTD:_stack_.obj
+ 0004:00000b34       $pdata$5$_RTC_CheckStackVars2 0000000180015b34     MSVCRTD:_stack_.obj
+ 0004:00000b40       $pdata$6$_RTC_CheckStackVars2 0000000180015b40     MSVCRTD:_stack_.obj
+ 0004:00000b4c       $pdata$__GSHandlerCheck_SEH 0000000180015b4c     MSVCRTD:_gshandlerseh_.obj
+ 0004:00000b58       $pdata$?DebuggerProbe@@YAHK@Z 0000000180015b58     MSVCRTD:_error_.obj
+ 0004:00000b64       $pdata$?DebuggerRuntime@@YAHKHPEAXPEB_W@Z 0000000180015b64     MSVCRTD:_error_.obj
+ 0004:00000b70       $pdata$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 0000000180015b70     MSVCRTD:_error_.obj
+ 0004:00000b7c       $pdata$1$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 0000000180015b7c     MSVCRTD:_error_.obj
+ 0004:00000b88       $pdata$2$?_RTC_AllocaFailure@@YAXPEAXPEAU_RTC_ALLOCA_NODE@@H@Z 0000000180015b88     MSVCRTD:_error_.obj
+ 0004:00000b94       $pdata$?_RTC_StackFailure@@YAXPEAXPEBD@Z 0000000180015b94     MSVCRTD:_error_.obj
+ 0004:00000ba0       $pdata$?_getMemBlockDataString@@YAXPEAD00_K@Z 0000000180015ba0     MSVCRTD:_error_.obj
+ 0004:00000bac       $pdata$3$?_getMemBlockDataString@@YAXPEAD00_K@Z 0000000180015bac     MSVCRTD:_error_.obj
+ 0004:00000bb8       $pdata$4$?_getMemBlockDataString@@YAXPEAD00_K@Z 0000000180015bb8     MSVCRTD:_error_.obj
+ 0004:00000bc4       $pdata$?failwithmessage@@YAXPEAXHHPEBD@Z 0000000180015bc4     MSVCRTD:_error_.obj
+ 0004:00000bd0       $pdata$_RTC_UninitUse      0000000180015bd0     MSVCRTD:_error_.obj
+ 0004:00000bdc       $pdata$_vsprintf_s_l       0000000180015bdc     MSVCRTD:_error_.obj
+ 0004:00000be8       $pdata$sprintf_s           0000000180015be8     MSVCRTD:_error_.obj
+ 0004:00000bf4       $pdata$?GetPdbDll@@YAPEAUHINSTANCE__@@XZ 0000000180015bf4     MSVCRTD:_pdblkup_.obj
+ 0004:00000c00       $pdata$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c00     MSVCRTD:_pdblkup_.obj
+ 0004:00000c0c       $pdata$0$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c0c     MSVCRTD:_pdblkup_.obj
+ 0004:00000c18       $pdata$1$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c18     MSVCRTD:_pdblkup_.obj
+ 0004:00000c24       $pdata$2$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c24     MSVCRTD:_pdblkup_.obj
+ 0004:00000c30       $pdata$3$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c30     MSVCRTD:_pdblkup_.obj
+ 0004:00000c3c       $pdata$4$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c3c     MSVCRTD:_pdblkup_.obj
+ 0004:00000c48       $pdata$5$?GetPdbDllFromInstallPath@@YAPEAUHINSTANCE__@@XZ 0000000180015c48     MSVCRTD:_pdblkup_.obj
+ 0004:00000c54       $pdata$?GetPdbDllPathFromFilePath@@YAHPEB_WPEA_W_K@Z 0000000180015c54     MSVCRTD:_pdblkup_.obj
+ 0004:00000c60       $pdata$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180015c60     MSVCRTD:_pdblkup_.obj
+ 0004:00000c6c       $pdata$2$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180015c6c     MSVCRTD:_pdblkup_.obj
+ 0004:00000c78       $pdata$3$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180015c78     MSVCRTD:_pdblkup_.obj
+ 0004:00000c84       $pdata$4$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180015c84     MSVCRTD:_pdblkup_.obj
+ 0004:00000c90       $pdata$5$?_RTC_GetSrcLine@@YAHPEAEPEA_WKPEAH1K@Z 0000000180015c90     MSVCRTD:_pdblkup_.obj
+ 0004:00000ca8       $pdata$ptw32_cond_timedwait$fin$0 0000000180015ca8     pthread_cond_wait.obj
+ 0004:00000cb4       $pdata$pthread_once$fin$0  0000000180015cb4     pthread_once.obj
+ 0004:00000cc0       $pdata$pthread_rwlock_wrlock$fin$0 0000000180015cc0     pthread_rwlock_wrlock.obj
+ 0004:00000cc0       $pdata$pthread_rwlock_timedwrlock$fin$0 0000000180015cc0     pthread_rwlock_timedwrlock.obj
+ 0004:00000ccc       $pdata$ptw32_threadStart$filt$0 0000000180015ccc     ptw32_threadStart.obj
+ 0004:00000cd8       $pdata$sem_timedwait$fin$0 0000000180015cd8     sem_timedwait.obj
+ 0004:00000ce4       $pdata$sem_wait$fin$0      0000000180015ce4     sem_wait.obj
+ 0004:00000cf0       $pdata$?fin$0@?0??dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z@4HA 0000000180015cf0     MSVCRTD:dll_dllmain.obj
+ 0004:00000cfc       $pdata$?fin$0@?0??dllmain_crt_process_detach@@YAH_N@Z@4HA 0000000180015cfc     MSVCRTD:dll_dllmain.obj
+ 0004:00000d08       $pdata$?filt$0@?0??dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z@4HA 0000000180015d08     MSVCRTD:dll_dllmain.obj
+ 0004:00000d14       $pdata$__scrt_is_nonwritable_in_current_image$filt$0 0000000180015d14     MSVCRTD:utility.obj
+ 0004:00000d20       $pdata$?filt$0@?0??DebuggerProbe@@YAHK@Z@4HA 0000000180015d20     MSVCRTD:_error_.obj
+ 0004:00000d20       $pdata$?filt$0@?0??DebuggerRuntime@@YAHKHPEAXPEB_W@Z@4HA 0000000180015d20     MSVCRTD:_error_.obj
+ 0005:00000000       __guard_fids_?dllmain_crt_process_attach@@YAHQEAUHINSTANCE__@@QEAX@Z 0000000180016000     MSVCRTD:dll_dllmain.obj
+ 0005:00000008       __guard_fids_?dllmain_dispatch@@YAHQEAUHINSTANCE__@@KQEAX@Z 0000000180016008     MSVCRTD:dll_dllmain.obj
+ 0005:0000000c       __guard_fids___scrt_set_unhandled_exception_filter 000000018001600c     MSVCRTD:utility_desktop.obj
+ 0005:00000010       __guard_fids__             0000000180016010     MSVCRTD:guard_support.obj
+ 0005:00000014       __guard_fids__guard_icall_checks_enforced 0000000180016014     MSVCRTD:guard_support.obj
+ 0006:000000a0       $R000000                   00000001800170a0     version.res
+ 0006:00000460       $R0003C0                   0000000180017460     version.res
+
+ Exports
+
+  ordinal    name
+
+        1    _sched_affinitycpuand
+        2    _sched_affinitycpuclr
+        3    _sched_affinitycpucount
+        4    _sched_affinitycpuequal
+        5    _sched_affinitycpuisset
+        6    _sched_affinitycpuor
+        7    _sched_affinitycpuset
+        8    _sched_affinitycpuxor
+        9    _sched_affinitycpuzero
+       10    pthreadCancelableTimedWait
+       11    pthreadCancelableWait
+       12    pthread_attr_destroy
+       13    pthread_attr_getdetachstate
+       14    pthread_attr_getinheritsched
+       15    pthread_attr_getschedparam
+       16    pthread_attr_getschedpolicy
+       17    pthread_attr_getscope
+       18    pthread_attr_getstackaddr
+       19    pthread_attr_getstacksize
+       20    pthread_attr_init
+       21    pthread_attr_setdetachstate
+       22    pthread_attr_setinheritsched
+       23    pthread_attr_setschedparam
+       24    pthread_attr_setschedpolicy
+       25    pthread_attr_setscope
+       26    pthread_attr_setstackaddr
+       27    pthread_attr_setstacksize
+       28    pthread_barrier_destroy
+       29    pthread_barrier_init
+       30    pthread_barrier_wait
+       31    pthread_barrierattr_destroy
+       32    pthread_barrierattr_getpshared
+       33    pthread_barrierattr_init
+       34    pthread_barrierattr_setpshared
+       35    pthread_cancel
+       36    pthread_cond_broadcast
+       37    pthread_cond_destroy
+       38    pthread_cond_init
+       39    pthread_cond_signal
+       40    pthread_cond_timedwait
+       41    pthread_cond_wait
+       42    pthread_condattr_destroy
+       43    pthread_condattr_getpshared
+       44    pthread_condattr_init
+       45    pthread_condattr_setpshared
+       46    pthread_create
+       47    pthread_delay_np
+       48    pthread_detach
+       49    pthread_equal
+       50    pthread_exit
+       51    pthread_getaffinity_np
+       52    pthread_getconcurrency
+       53    pthread_getschedparam
+       54    pthread_getspecific
+       55    pthread_getunique_np
+       56    pthread_getw32threadhandle_np
+       57    pthread_getw32threadid_np
+       58    pthread_join
+       59    pthread_key_create
+       60    pthread_key_delete
+       61    pthread_kill
+       62    pthread_mutex_consistent
+       63    pthread_mutex_destroy
+       64    pthread_mutex_init
+       65    pthread_mutex_lock
+       66    pthread_mutex_timedlock
+       67    pthread_mutex_trylock
+       68    pthread_mutex_unlock
+       69    pthread_mutexattr_destroy
+       70    pthread_mutexattr_getkind_np
+       71    pthread_mutexattr_getpshared
+       72    pthread_mutexattr_getrobust
+       73    pthread_mutexattr_gettype
+       74    pthread_mutexattr_init
+       75    pthread_mutexattr_setkind_np
+       76    pthread_mutexattr_setpshared
+       77    pthread_mutexattr_setrobust
+       78    pthread_mutexattr_settype
+       79    pthread_num_processors_np
+       80    pthread_once
+       81    pthread_rwlock_destroy
+       82    pthread_rwlock_init
+       83    pthread_rwlock_rdlock
+       84    pthread_rwlock_timedrdlock
+       85    pthread_rwlock_timedwrlock
+       86    pthread_rwlock_tryrdlock
+       87    pthread_rwlock_trywrlock
+       88    pthread_rwlock_unlock
+       89    pthread_rwlock_wrlock
+       90    pthread_rwlockattr_destroy
+       91    pthread_rwlockattr_getpshared
+       92    pthread_rwlockattr_init
+       93    pthread_rwlockattr_setpshared
+       94    pthread_self
+       95    pthread_setaffinity_np
+       96    pthread_setcancelstate
+       97    pthread_setcanceltype
+       98    pthread_setconcurrency
+       99    pthread_setschedparam
+      100    pthread_setspecific
+      101    pthread_spin_destroy
+      102    pthread_spin_init
+      103    pthread_spin_lock
+      104    pthread_spin_trylock
+      105    pthread_spin_unlock
+      106    pthread_testcancel
+      107    pthread_timechange_handler_np
+      108    pthread_timedjoin_np
+      109    pthread_tryjoin_np
+      110    pthread_win32_process_attach_np
+      111    pthread_win32_process_detach_np
+      112    pthread_win32_test_features_np
+      113    pthread_win32_thread_attach_np
+      114    pthread_win32_thread_detach_np
+      115    ptw32_get_exception_services_code
+      116    ptw32_pop_cleanup
+      117    ptw32_push_cleanup
+      118    sched_get_priority_max
+      119    sched_get_priority_min
+      120    sched_getaffinity
+      121    sched_getscheduler
+      122    sched_setaffinity
+      123    sched_setscheduler
+      124    sched_yield
+      125    sem_close
+      126    sem_destroy
+      127    sem_getvalue
+      128    sem_init
+      129    sem_open
+      130    sem_post
+      131    sem_post_multiple
+      132    sem_timedwait
+      133    sem_trywait
+      134    sem_unlink
+      135    sem_wait

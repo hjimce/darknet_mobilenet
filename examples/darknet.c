@@ -406,7 +406,8 @@ int main(int argc, char **argv)
 {
     //test_resize("data/bad.jpg");
     //test_box();
-    //test_convolutional_layer();
+    test_depthwise_convolutional_layer();
+/*
     if(argc < 2){
         fprintf(stderr, "usage: %s <function>\n", argv[0]);
         return 0;
@@ -423,8 +424,14 @@ int main(int argc, char **argv)
         cuda_set_device(gpu_index);
     }
 #endif
+*/
 
-    if (0 == strcmp(argv[1], "average")){
+
+
+
+
+
+  /*  if (0 == strcmp(argv[1], "average")){
         average(argc, argv);
     } else if (0 == strcmp(argv[1], "yolo")){
         run_yolo(argc, argv);
@@ -444,25 +451,13 @@ int main(int argc, char **argv)
         test_detector("cfg/coco.data", argv[2], argv[3], filename, thresh, .5, outfile, fullscreen);
     } else if (0 == strcmp(argv[1], "cifar")){
         run_cifar(argc, argv);
-    } else if (0 == strcmp(argv[1], "go")){
-        run_go(argc, argv);
-    } else if (0 == strcmp(argv[1], "rnn")){
-        run_char_rnn(argc, argv);
-    } else if (0 == strcmp(argv[1], "vid")){
-        run_vid_rnn(argc, argv);
-    } else if (0 == strcmp(argv[1], "coco")){
+    }else if (0 == strcmp(argv[1], "coco")){
         run_coco(argc, argv);
     } else if (0 == strcmp(argv[1], "classify")){
         predict_classifier("cfg/imagenet1k.data", argv[2], argv[3], argv[4], 5);
     } else if (0 == strcmp(argv[1], "classifier")){
         run_classifier(argc, argv);
-    } else if (0 == strcmp(argv[1], "regressor")){
-        run_regressor(argc, argv);
-    } else if (0 == strcmp(argv[1], "segmenter")){
-        run_segmenter(argc, argv);
-    } else if (0 == strcmp(argv[1], "art")){
-        run_art(argc, argv);
-    } else if (0 == strcmp(argv[1], "tag")){
+    }else if (0 == strcmp(argv[1], "tag")){
         run_tag(argc, argv);
     } else if (0 == strcmp(argv[1], "compare")){
         run_compare(argc, argv);
@@ -510,7 +505,7 @@ int main(int argc, char **argv)
         test_resize(argv[2]);
     } else {
         fprintf(stderr, "Not an option: %s\n", argv[1]);
-    }
+    }*/
     return 0;
 }
 

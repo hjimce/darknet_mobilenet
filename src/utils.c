@@ -12,9 +12,9 @@
 
 double what_time_is_it_now()
 {
-    struct timespec now;
-    clock_gettime(CLOCK_REALTIME, &now);
-    return now.tv_sec + now.tv_nsec*1e-9;
+    //struct timespec now;
+    //clock_gettime(CLOCK_REALTIME, &now);
+	return 0;//now.tv_sec + now.tv_nsec*1e-9;
 }
 
 int *read_intlist(char *gpu_list, int *ngpus, int d)
@@ -57,25 +57,25 @@ int *read_map(char *filename)
 
 void sorta_shuffle(void *arr, size_t n, size_t size, size_t sections)
 {
-    size_t i;
+  /*  size_t i;
     for(i = 0; i < sections; ++i){
         size_t start = n*i/sections;
         size_t end = n*(i+1)/sections;
         size_t num = end-start;
         shuffle(arr+(start*size), num, size);
-    }
+    }*/
 }
 
 void shuffle(void *arr, size_t n, size_t size)
 {
-    size_t i;
+    /*size_t i;
     void *swp = calloc(1, size);
     for(i = 0; i < n-1; ++i){
         size_t j = i + rand()/(RAND_MAX / (n-i)+1);
         memcpy(swp,          arr+(j*size), size);
         memcpy(arr+(j*size), arr+(i*size), size);
         memcpy(arr+(i*size), swp,          size);
-    }
+    }*/
 }
 
 void del_arg(int argc, char **argv, int index)

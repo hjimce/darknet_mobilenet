@@ -132,7 +132,7 @@ float gradient(float x, ACTIVATION a)
     }
     return 0;
 }
-
+//激活函数的反向求导
 void gradient_array(const float *x, const int n, const ACTIVATION a, float *delta)
 {
     int i;

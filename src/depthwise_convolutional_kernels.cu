@@ -167,7 +167,6 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
         gemm_gpu(0,1,m,n,k,1,a + i*m*k,k,b,k,1,c,n);
 
         if(net.delta_gpu){
-            if(l.binary || l.xnor) swap_binary(&l);
             float * a = l.weights_gpu;
             float * b = l.delta_gpu;
             float * c = net.workspace;

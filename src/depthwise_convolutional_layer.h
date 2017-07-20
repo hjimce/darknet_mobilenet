@@ -29,19 +29,15 @@ depthwise_convolutional_layer make_convolutional_layer(int batch, int h, int w, 
 void resize_depthwise_convolutional_layer(depthwise_convolutional_layer *layer, int w, int h);
 void forward_depthwise_convolutional_layer(const depthwise_convolutional_layer layer, network net);
 void update_depthwise_convolutional_layer(depthwise_convolutional_layer layer, update_args a);
-image *visualize_depthwise_convolutional_layer(depthwise_convolutional_layer layer, char *window, image *prev_weights);
-void binarize_weights(float *weights, int n, int size, float *binary);
-void swap_binary(depthwise_convolutional_layer *l);
-void binarize_weights2(float *weights, int n, int size, char *binary, float *scales);
+
+
 
 void backward_depthwise_convolutional_layer(depthwise_convolutional_layer layer, network net);
 
 void add_bias(float *output, float *biases, int batch, int n, int size);
 void backward_bias(float *bias_updates, float *delta, int batch, int n, int size);
 
-image get_convolutional_image(depthwise_convolutional_layer layer);
-image get_convolutional_delta(depthwise_convolutional_layer layer);
-image get_convolutional_weight(depthwise_convolutional_layer layer, int i);
+
 
 int depthwise_convolutional_out_height(depthwise_convolutional_layer layer);
 int depthwise_convolutional_out_width(depthwise_convolutional_layer layer);

@@ -22,16 +22,8 @@ int depthwise_convolutional_out_width(depthwise_convolutional_layer l)
     return (l.w + 2*l.pad - l.size) / l.stride + 1;
 }
 
-image get_depthwise_convolutional_image(depthwise_convolutional_layer l)
-{
-    return float_to_image(l.out_w,l.out_h,l.out_c,l.output);
-}
 
-image get_depthwise_convolutional_delta(depthwise_convolutional_layer l)
-{
-    return float_to_image(l.out_w,l.out_h,l.out_c,l.delta);
-}
-
+//临时数据空间大小
 static size_t get_workspace_size(layer l){
 #ifdef CUDNN
     if(gpu_index >= 0){
@@ -67,8 +59,9 @@ static size_t get_workspace_size(layer l){
     return (size_t)l.out_h*l.out_w*l.size*l.size*l.c*sizeof(float);
 }
 
+
 #ifdef GPU
-#ifdef CUDNN
+/*#ifdef CUDNN
 void cudnn_convolutional_setup(layer *l)
 {
     cudnnSetTensor4dDescriptor(l->dsrcTensorDesc, CUDNN_TENSOR_NCHW, CUDNN_DATA_FLOAT, l->batch, l->c, l->h, l->w); 
@@ -105,7 +98,7 @@ void cudnn_convolutional_setup(layer *l)
             0,
             &l->bf_algo);
 }
-#endif
+#endif*/
 #endif
 
 depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int h, int w, int c,int size, int stride, int padding, ACTIVATION activation, int batch_normalize)
@@ -210,7 +203,7 @@ depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int 
             l.x_gpu = cuda_make_array(l.output, l.batch*out_h*out_w*c);
             l.x_norm_gpu = cuda_make_array(l.output, l.batch*out_h*out_w*c);
         }
-#ifdef CUDNN
+/*#ifdef CUDNN
         cudnnCreateTensorDescriptor(&l.normTensorDesc);
         cudnnCreateTensorDescriptor(&l.srcTensorDesc);
         cudnnCreateTensorDescriptor(&l.dstTensorDesc);
@@ -220,13 +213,15 @@ depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int 
         cudnnCreateFilterDescriptor(&l.dweightDesc);
         cudnnCreateConvolutionDescriptor(&l.convDesc);
         cudnn_convolutional_setup(&l);
-#endif
+#endif*/
     }
 #endif
     l.workspace_size = get_workspace_size(l);
     l.activation = activation;
 
-    fprintf(stderr, "conv  %5d %2d x%2d /%2d  %4d x%4d x%4d   ->  %4d x%4d x%4d\n", c, size, size, stride, w, h, c, l.out_w, l.out_h, l.out_c);
+    fprintf(stderr, "depthwise conv  %5d %2d x%2d /%2d  %4d x%4d x%4d   ->  %4d x%4d x%4d\n", c, size, size, stride, w, h, c, l.out_w, l.out_h, l.out_c);
+
+
 
     return l;
 }
@@ -447,10 +442,12 @@ void forward_depthwise_convolutional_layer(depthwise_convolutional_layer l, netw
 		}
     }
 
+/*
 	for (int i = 0; i < l.batch*l.c*l.out_h*l.out_w; i++)
 	{
 		fprintf(stderr, "%f \t", l.output[i]);
 	}
+*/
 
 
 
@@ -465,10 +462,11 @@ void forward_depthwise_convolutional_layer(depthwise_convolutional_layer l, netw
 
 	int m = l.n;
     activate_array(l.output, m*n*l.batch, l.activation);//激活函数前向传导
+/*
 	for (int i = 0; i < l.batch*l.c*l.out_h*l.out_w; i++)
 	{
 		fprintf(stderr, "%f \t", l.output[i]);
-	}
+	}*/
 
 }
 
@@ -521,10 +519,14 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
 		}
 	}
 
+
+/*
 	for (int i = 0; i < l.c*l.size*l.size; i++)
 	{
 		fprintf(stderr, "weight_updates:%f \t", l.weight_updates[i]);
 	}
+*/
+
 
 
 }

@@ -4,6 +4,7 @@
 
 extern "C" {
 #include "convolutional_layer.h"
+#include"depthwise_convolutional_layer.h"
 #include "batchnorm_layer.h"
 #include "gemm.h"
 #include "blas.h"
@@ -250,6 +251,8 @@ void backward_convolutional_layer_gpu(convolutional_layer l, network net)
         }
     }
 #endif
+	//cuda_pull_array(l.weight_updates_gpu, l.weight_updates, l.c*l.n*l.size*l.size);//add by hjimce for debug
+
 }
 
 void pull_convolutional_layer(convolutional_layer layer)
@@ -277,6 +280,7 @@ void push_convolutional_layer(convolutional_layer layer)
         cuda_push_array(layer.rolling_variance_gpu, layer.rolling_variance, layer.n);
     }
 }
+
 
 void update_convolutional_layer_gpu(layer l, update_args a)
 {

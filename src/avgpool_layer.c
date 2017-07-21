@@ -51,7 +51,7 @@ void forward_avgpool_layer(const avgpool_layer l, network net)
             }
             l.output[out_index] /= l.h*l.w;
 
-			fprintf(stderr, "avg pool forward:%f \t", l.output[out_index]);
+			//fprintf(stderr, "avg pool forward:%f \t", l.output[out_index]);
         }
 
 		

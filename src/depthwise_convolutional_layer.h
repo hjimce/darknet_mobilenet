@@ -25,7 +25,7 @@ void cudnn_convolutional_setup(layer *l);
 #endif
 #endif
 
-depthwise_convolutional_layer make_convolutional_layer(int batch, int h, int w, int c, int n, int size, int stride, int padding, ACTIVATION activation, int batch_normalize, int binary, int xnor, int adam);
+depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int h, int w, int c, int size, int stride, int padding, ACTIVATION activation, int batch_normalize);
 void resize_depthwise_convolutional_layer(depthwise_convolutional_layer *layer, int w, int h);
 void forward_depthwise_convolutional_layer(const depthwise_convolutional_layer layer, network net);
 void update_depthwise_convolutional_layer(depthwise_convolutional_layer layer, update_args a);

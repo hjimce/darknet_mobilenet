@@ -255,7 +255,8 @@ void test_depthwise_convolutional_layer()
         3,3,3,3,3,
         3,3,3,3,3,
         3,3,3,3,3};
-	float truth[] = { 1,0,1 };
+	float truth[] = { 0,0,1 };
+	float delta[75] = {0 };
 
 
 	int num_layer = 4;
@@ -266,6 +267,7 @@ void test_depthwise_convolutional_layer()
 	net.batch = 1;
 	
 	net.input = data;
+
 	net.truth = truth;
 	net.train = 1;
 
@@ -278,13 +280,11 @@ void test_depthwise_convolutional_layer()
 	cost_layer cost_1 = make_cost_layer(net.batch, depthwise_conv1.n, SSE, 1);
 
 
-
-
 	net.layers[0] = depthwise_conv1;
 	net.layers[1] = global_avgpool1;
 	net.layers[2] = softmax_1;
 	net.layers[3] = cost_1;
-	net.workspace = calloc(1, depthwise_conv1.workspace_size);
+	net.workspace = calloc(1, 75);
 
 	
 
@@ -303,6 +303,29 @@ void test_depthwise_convolutional_layer()
 	calc_network_cost(net);
 	
 	fprintf(stderr, "**********************cost:%f ***************", *net.cost);
+
+
+
+
+	fprintf(stderr, "**********************backward *************** \n");
+
+
+	network orig = net;
+	for (int i = net.n - 1; i >= 0; --i) {
+		layer l = net.layers[i];
+		if (i == 0) {
+			//net = orig;
+			net.input = data;
+			net.delta = delta;
+		}
+		else {
+			layer prev = net.layers[i - 1];
+			net.input = prev.output;
+			net.delta = prev.delta;//切记这边是指针赋值，所以下面backward的时候，其实是更改了当前网络层前面一层的输出导数值
+		}
+		net.index = i;
+		l.backward(l, net);
+	}
 
 
 	
@@ -483,6 +506,7 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
 				l.size, l.stride, l.pad, boffset);
 			gemm(0, 1, 1, n, k, 1, aoffset, k, boffset, k, 1, coffset, n);
 			//对本层网络输入求导：也就是用原始的权重，对输出层数据微分特征图进行卷积运算
+
 			if (net.delta) {
 				aoffset = l.weights+ c*l.size*l.size;
 				boffset = l.delta + c*l.out_h*l.out_w + b*l.n*l.out_h*l.out_w;
@@ -490,11 +514,16 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
 
 				gemm(1, 0, n, k, 1, 1, aoffset, n, boffset, k, 0, coffset, k);
 
-				col2im_cpu(net.workspace, 1, l.h, l.w, l.size, l.stride, l.pad, net.delta + c*l.out_h*l.out_w + b*l.n*l.out_h*l.out_w);
+				col2im_cpu(net.workspace, 1, l.h, l.w, l.size, l.stride, l.pad, net.delta + c*l.h*l.w + b*l.n*l.h*l.w);
 			}
 
 
 		}
+	}
+
+	for (int i = 0; i < l.c*l.size*l.size; i++)
+	{
+		fprintf(stderr, "weight_updates:%f \t", l.weight_updates[i]);
 	}
 
 

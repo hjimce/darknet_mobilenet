@@ -46,11 +46,21 @@ void forward_softmax_layer(const softmax_layer l, network net)
     } else {
         softmax_cpu(net.input, l.inputs/l.groups, l.batch, l.inputs, l.groups, l.inputs/l.groups, 1, l.temperature, l.output);
     }
+	for (int i=0;i<l.batch*l.inputs;i++)
+	{
+		fprintf(stderr, "softmax:%f \t", l.output[i]);
+	}
+	
 }
 
 void backward_softmax_layer(const softmax_layer l, network net)
 {
-    axpy_cpu(l.inputs*l.batch, 1, l.delta, 1, net.delta, 1);
+    axpy_cpu(l.inputs*l.batch, 1, l.delta, 1, net.delta, 1);//难道softmax网络层的反向求导的时候，微分值为1
+
+	for (int i = 0; i < l.batch*l.inputs; i++)
+	{
+		fprintf(stderr, "softmax backward:%f \t", l.delta[i]);
+	}
 }
 
 #ifdef GPU

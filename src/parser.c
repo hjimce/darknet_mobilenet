@@ -858,7 +858,22 @@ void save_convolutional_weights_binary(layer l, FILE *fp)
         }
     }
 }
-
+void save_depthwise_convolutional_weights(layer l, FILE *fp)
+{
+#ifdef GPU
+	if (gpu_index >= 0) {
+		pull_depthwise_convolutional_layer(l);
+	}
+#endif
+	int num = l.n*l.size*l.size;
+	fwrite(l.biases, sizeof(float), l.n, fp);
+	if (l.batch_normalize) {
+		fwrite(l.scales, sizeof(float), l.n, fp);
+		fwrite(l.rolling_mean, sizeof(float), l.n, fp);
+		fwrite(l.rolling_variance, sizeof(float), l.n, fp);
+	}
+	fwrite(l.weights, sizeof(float), num, fp);
+}
 void save_convolutional_weights(layer l, FILE *fp)
 {
     if(l.binary){
@@ -930,6 +945,9 @@ void save_weights_upto(network net, char *filename, int cutoff)
     int i;
     for(i = 0; i < net.n && i < cutoff; ++i){
         layer l = net.layers[i];
+		if (l.type == DEPTHWISE_CONVOLUTIONAL) {
+			save_depthwise_convolutional_weights(l, fp);
+		}
         if(l.type == CONVOLUTIONAL || l.type == DECONVOLUTIONAL){
             save_convolutional_weights(l, fp);
         } if(l.type == CONNECTED){
@@ -1173,6 +1191,9 @@ void load_weights_upto(network *net, char *filename, int start, int cutoff)
     for(i = start; i < net->n && i < cutoff; ++i){
         layer l = net->layers[i];
         if (l.dontload) continue;
+		if (l.type == DEPTHWISE_CONVOLUTIONAL) {
+			load_depthwise_convolutional_weights(l, fp);
+		}
         if(l.type == CONVOLUTIONAL || l.type == DECONVOLUTIONAL){
             load_convolutional_weights(l, fp);
         }

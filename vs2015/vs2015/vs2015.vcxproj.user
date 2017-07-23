@@ -3,5 +3,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerEnvironment>F:\darknet_mobilenet\vs2015\vs2015\pthread\lib\x64\debug $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>classifier train cfg/cifar.data cfg/cifar_mobilenet.cfg</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>F:\darknet_mobilenet\</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>

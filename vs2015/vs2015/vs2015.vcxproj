@@ -75,7 +75,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\darknet_mobilenet\src;F:\darknet_mobilenet\vs2015\vs2015\pthread\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\darknet_mobilenet\vs2015\vs2015;F:\darknet_mobilenet\include;F:\darknet_mobilenet\src;F:\darknet_mobilenet\vs2015\vs2015\pthread\include;$(IncludePath)</IncludePath>
     <LibraryPath>F:\darknet_mobilenet\vs2015\vs2015\pthread\lib\x64\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -172,6 +172,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <CudaCompile Include="kernel.cu" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\examples\art.c" />
     <ClCompile Include="..\..\examples\captcha.c" />
     <ClCompile Include="..\..\examples\cifar.c" />
     <ClCompile Include="..\..\examples\classifier.c" />
@@ -181,7 +182,12 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <ClCompile Include="..\..\examples\dice.c" />
     <ClCompile Include="..\..\examples\lsd.c" />
     <ClCompile Include="..\..\examples\nightmare.c" />
+    <ClCompile Include="..\..\examples\regressor.c" />
+    <ClCompile Include="..\..\examples\rnn.c" />
+    <ClCompile Include="..\..\examples\rnn_vid.c" />
+    <ClCompile Include="..\..\examples\segmenter.c" />
     <ClCompile Include="..\..\examples\super.c" />
+    <ClCompile Include="..\..\examples\swag.c" />
     <ClCompile Include="..\..\examples\tag.c" />
     <ClCompile Include="..\..\examples\voxel.c" />
     <ClCompile Include="..\..\examples\writing.c" />

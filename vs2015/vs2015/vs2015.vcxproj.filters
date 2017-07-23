@@ -216,6 +216,24 @@
     <ClCompile Include="..\..\src\depthwise_convolutional_layer.c">
       <Filter>darknet</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\examples\art.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\regressor.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\rnn.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\rnn_vid.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\segmenter.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\swag.c">
+      <Filter>example</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\activation_layer.h">

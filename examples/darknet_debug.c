@@ -16,14 +16,8 @@ extern void run_nightmare(int argc, char **argv);
 extern void run_dice(int argc, char **argv);
 extern void run_compare(int argc, char **argv);
 extern void run_classifier(int argc, char **argv);
-extern void run_regressor(int argc, char **argv);
-extern void run_segmenter(int argc, char **argv);
-extern void run_char_rnn(int argc, char **argv);
-extern void run_vid_rnn(int argc, char **argv);
 extern void run_tag(int argc, char **argv);
 extern void run_cifar(int argc, char **argv);
-extern void run_go(int argc, char **argv);
-extern void run_art(int argc, char **argv);
 extern void run_super(int argc, char **argv);
 extern void run_lsd(int argc, char **argv);
 
@@ -404,9 +398,11 @@ void visualize(char *cfgfile, char *weightfile)
 
 int main(int argc, char **argv)
 {
+#include "classifier.h"
     //test_resize("data/bad.jpg");
     //test_box();
-    //test_convolutional_layer();
+   // test_depthwise_convolutional_layer();
+/*
     if(argc < 2){
         fprintf(stderr, "usage: %s <function>\n", argv[0]);
         return 0;
@@ -424,7 +420,72 @@ int main(int argc, char **argv)
     }
 #endif
 
-    if (0 == strcmp(argv[1], "average")){
+*/
+	int ngpus = 1;
+	gpu_index =0;
+	
+	network net= load_network("test.cfg", "", 0);
+	net.learning_rate *= ngpus;
+
+	float data[] = { 1,1,1,1,1,
+		1,1,1,1,1,
+		1,1,1,1,1,
+		1,1,1,1,1,
+		1,1,1,1,1,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		3,3,3,3,3,
+		3,3,3,3,3,
+		3,3,3,3,3,
+		3,3,3,3,3,
+		3,3,3,3,3 };
+	float truth[] = { 0,0,1 };
+	float delta[75] = { 0 };
+
+
+
+	net.input = data;
+
+	net.truth = truth;
+	net.train = 1;
+	if (gpu_index>=0)
+	{
+		int x_size = net.inputs*net.batch;
+		int y_size = net.truths*net.batch;
+		cuda_push_array(net.input_gpu, net.input, x_size);
+		cuda_push_array(net.truth_gpu, net.truth, y_size);
+
+		net.train = 1;
+		forward_network_gpu(net);
+		fprintf(stderr, "**********************cost:%f ***************", *net.cost);
+		backward_network_gpu(net);
+
+
+	}
+	else
+	{	
+		forward_network(net);
+		fprintf(stderr, "**********************cost:%f ***************", *net.cost);
+		backward_network(net);
+		float error = *net.cost;
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  if (0 == strcmp(argv[1], "average")){
         average(argc, argv);
     } else if (0 == strcmp(argv[1], "yolo")){
         run_yolo(argc, argv);
@@ -444,23 +505,13 @@ int main(int argc, char **argv)
         test_detector("cfg/coco.data", argv[2], argv[3], filename, thresh, .5, outfile, fullscreen);
     } else if (0 == strcmp(argv[1], "cifar")){
         run_cifar(argc, argv);
-    }else if (0 == strcmp(argv[1], "rnn")){
-        run_char_rnn(argc, argv);
-    } else if (0 == strcmp(argv[1], "vid")){
-        run_vid_rnn(argc, argv);
-    } else if (0 == strcmp(argv[1], "coco")){
+    }else if (0 == strcmp(argv[1], "coco")){
         run_coco(argc, argv);
     } else if (0 == strcmp(argv[1], "classify")){
         predict_classifier("cfg/imagenet1k.data", argv[2], argv[3], argv[4], 5);
     } else if (0 == strcmp(argv[1], "classifier")){
         run_classifier(argc, argv);
-    } else if (0 == strcmp(argv[1], "regressor")){
-        run_regressor(argc, argv);
-    } else if (0 == strcmp(argv[1], "segmenter")){
-        run_segmenter(argc, argv);
-    } else if (0 == strcmp(argv[1], "art")){
-        run_art(argc, argv);
-    } else if (0 == strcmp(argv[1], "tag")){
+    }else if (0 == strcmp(argv[1], "tag")){
         run_tag(argc, argv);
     } else if (0 == strcmp(argv[1], "compare")){
         run_compare(argc, argv);
@@ -508,7 +559,7 @@ int main(int argc, char **argv)
         test_resize(argv[2]);
     } else {
         fprintf(stderr, "Not an option: %s\n", argv[1]);
-    }
+    }*/
     return 0;
 }
 

@@ -86,7 +86,7 @@ void train_classifier(char *datacfg, char *cfgfile, char *weightfile, int *gpus,
     args.d = &buffer;
     load_thread = load_data(args);
 
-    int epoch = (*net.seen)/N;
+   // int epoch = (*net.seen)/N;
     while(get_current_batch(net) < net.max_batches || net.max_batches == 0){
         time=clock();
 
@@ -111,12 +111,13 @@ void train_classifier(char *datacfg, char *cfgfile, char *weightfile, int *gpus,
         avg_loss = avg_loss*.9 + loss*.1;
         printf("%ld, %.3f: %f, %f avg, %f rate, %lf seconds, %ld images\n", get_current_batch(net), (float)(*net.seen)/N, loss, avg_loss, get_current_rate(net), sec(clock()-time), *net.seen);
         free_data(train);
+/*
         if(*net.seen/N > epoch){
             epoch = *net.seen/N;
             char buff[256];
             sprintf(buff, "%s/%s_%d.weights",backup_directory,base, epoch);
             save_weights(net, buff);
-        }
+        }*/
         if(get_current_batch(net)%1000 == 0){
             char buff[256];
             sprintf(buff, "%s/%s.backup",backup_directory,base);

@@ -177,7 +177,7 @@ copy "$(CudaToolkitBinDir)\cudart*.dll" "$(OutDir)"</Command>
     <ClCompile Include="..\..\examples\cifar.c" />
     <ClCompile Include="..\..\examples\classifier.c" />
     <ClCompile Include="..\..\examples\coco.c" />
-    <ClCompile Include="..\..\examples\darknet.c" />
+    <ClCompile Include="..\..\examples\darknet_debug.c" />
     <ClCompile Include="..\..\examples\detector.c" />
     <ClCompile Include="..\..\examples\dice.c" />
     <ClCompile Include="..\..\examples\lsd.c" />

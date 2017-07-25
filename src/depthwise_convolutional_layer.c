@@ -130,7 +130,7 @@ depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int 
     // float scale = 1./sqrt(size*size*c);
     float scale = sqrt(2./(size*size*c));
     //scale = .02;
-   // for(i = 0; i < c*size*size; ++i) l.weights[i] = 0.01*i;
+   //for(i = 0; i < c*size*size; ++i) l.weights[i] = 0.01*i;
     for(i = 0; i < l.n*l.size*l.size; ++i) l.weights[i] = scale*rand_normal();
     int out_w = depthwise_convolutional_out_width(l);
     int out_h = depthwise_convolutional_out_height(l);
@@ -226,7 +226,46 @@ depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int 
     return l;
 }
 
+void resize_depthwise_convolutional_layer(depthwise_convolutional_layer *l, int w, int h)
+{
+	l->w = w;
+	l->h = h;
+	int out_w = depthwise_convolutional_out_width(*l);
+	int out_h = depthwise_convolutional_out_height(*l);
 
+	l->out_w = out_w;
+	l->out_h = out_h;
+
+	l->outputs = l->out_h * l->out_w * l->out_c;
+	l->inputs = l->w * l->h * l->c;
+
+	l->output = realloc(l->output, l->batch*l->outputs * sizeof(float));
+	l->delta = realloc(l->delta, l->batch*l->outputs * sizeof(float));
+	if (l->batch_normalize) {
+		l->x = realloc(l->x, l->batch*l->outputs * sizeof(float));
+		l->x_norm = realloc(l->x_norm, l->batch*l->outputs * sizeof(float));
+	}
+
+#ifdef GPU
+	cuda_free(l->delta_gpu);
+	cuda_free(l->output_gpu);
+
+	l->delta_gpu = cuda_make_array(l->delta, l->batch*l->outputs);
+	l->output_gpu = cuda_make_array(l->output, l->batch*l->outputs);
+
+	if (l->batch_normalize) {
+		cuda_free(l->x_gpu);
+		cuda_free(l->x_norm_gpu);
+
+		l->x_gpu = cuda_make_array(l->output, l->batch*l->outputs);
+		l->x_norm_gpu = cuda_make_array(l->output, l->batch*l->outputs);
+	}
+#ifdef CUDNN
+	cudnn_depthwise_convolutional_setup(l);
+#endif
+#endif
+	l->workspace_size = get_workspace_size(*l);
+}
 
 
 void test_depthwise_convolutional_layer()
@@ -329,46 +368,6 @@ void test_depthwise_convolutional_layer()
 }
 
 
-void resize_depthwise_convolutional_layer(depthwise_convolutional_layer *l, int w, int h)
-{
-    l->w = w;
-    l->h = h;
-    int out_w = depthwise_convolutional_out_width(*l);
-    int out_h = depthwise_convolutional_out_height(*l);
-
-    l->out_w = out_w;
-    l->out_h = out_h;
-
-    l->outputs = l->out_h * l->out_w * l->out_c;
-    l->inputs = l->w * l->h * l->c;
-
-    l->output = realloc(l->output, l->batch*l->outputs*sizeof(float));
-    l->delta  = realloc(l->delta,  l->batch*l->outputs*sizeof(float));
-    if(l->batch_normalize){
-        l->x = realloc(l->x, l->batch*l->outputs*sizeof(float));
-        l->x_norm  = realloc(l->x_norm, l->batch*l->outputs*sizeof(float));
-    }
-
-#ifdef GPU
-    cuda_free(l->delta_gpu);
-    cuda_free(l->output_gpu);
-
-    l->delta_gpu =  cuda_make_array(l->delta,  l->batch*l->outputs);
-    l->output_gpu = cuda_make_array(l->output, l->batch*l->outputs);
-
-    if(l->batch_normalize){
-        cuda_free(l->x_gpu);
-        cuda_free(l->x_norm_gpu);
-
-        l->x_gpu = cuda_make_array(l->output, l->batch*l->outputs);
-        l->x_norm_gpu = cuda_make_array(l->output, l->batch*l->outputs);
-    }
-#ifdef CUDNN
-    cudnn_depthwise_convolutional_setup(l);
-#endif
-#endif
-    l->workspace_size = get_workspace_size(*l);
-}
 
 void add_bias_depthwise(float *output, float *biases, int batch, int n, int size)
 {

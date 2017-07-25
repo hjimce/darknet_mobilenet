@@ -337,7 +337,11 @@ int resize_network(network *net, int w, int h)
     //fflush(stderr);
     for (i = 0; i < net->n; ++i){
         layer l = net->layers[i];
-        if(l.type == CONVOLUTIONAL){
+		if (l.type==DEPTHWISE_CONVOLUTIONAL)
+		{
+			resize_depthwise_convolutional_layer(&l, w, h);
+		}
+		else if (l.type == CONVOLUTIONAL) {
             resize_convolutional_layer(&l, w, h);
         }else if(l.type == CROP){
             resize_crop_layer(&l, w, h);

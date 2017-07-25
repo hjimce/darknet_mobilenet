@@ -424,7 +424,7 @@ int main(int argc, char **argv)
 	int ngpus = 1;
 	gpu_index =0;
 	
-	network net= load_network("test.cfg", "", 0);
+	network net= load_network("cfg/test.cfg", "", 0);
 	net.learning_rate *= ngpus;
 
 	float data[] = { 1,1,1,1,1,

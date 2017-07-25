@@ -43,3 +43,5 @@ vs2015/x64/Debug/
 vs2015/Debug/
 *.deps
 vs2015/vs2015.VC.VC.opendb
+build/
+vs2015/vs2015/depthwise_conv_op_gpu.cu.cc

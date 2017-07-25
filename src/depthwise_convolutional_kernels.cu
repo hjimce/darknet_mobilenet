@@ -13,6 +13,196 @@ extern "C" {
 #include "cuda.h"
 }
 
+	__global__ void DepthwiseConv2dGPUKernelNCHW(
+		const float* input,const int in_rows, const int in_cols, const int in_depth,
+		const float* filter, const int filter_rows, const int filter_cols,
+		const int stride,const int pad_rows,const int pad_cols,
+		const int out_rows,const int out_cols,const int out_depth,
+		float* output, int num_outputs) {
+
+
+	int thread_id = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
+	if (thread_id >= num_outputs) return;
+
+
+	//计算当前output像素点的四维索引索引
+	const int OC = thread_id % out_cols;//width
+	const int OR = (thread_id / out_cols) % out_rows;//height
+	const int OD = (thread_id / out_cols / out_rows) % out_depth;//channel
+	const int OB = thread_id / out_cols / out_rows / out_depth;//batch size
+
+	const int in_d = OD ;
+
+
+
+	const int input_offset_temp = (OB * in_depth + in_d) * (in_rows * in_cols);//当前output channel对应的input channel 的指针
+
+
+	const int input_row_start = OR * stride - pad_rows;
+	const int input_col_start = OC * stride - pad_cols;
+	const int input_row_end = input_row_start + filter_rows;
+	const int input_col_end = input_col_start + filter_cols;
+
+	float sum = 0;
+	if (input_row_start >= 0 && input_col_start >= 0 &&
+		input_row_end < in_rows && input_col_end < in_cols)
+	{
+		#pragma unroll
+			for (int f_r = 0; f_r < filter_rows; ++f_r) {
+				const int in_r = input_row_start + f_r;
+				#pragma unroll
+				for (int f_c = 0; f_c < filter_cols; ++f_c) {
+					const int in_c = input_col_start + f_c;
+
+					const int input_offset =
+						(input_offset_temp)+(in_r * in_cols) + in_c;
+					const int filter_offset =f_c + filter_cols * f_r +OD*filter_cols*filter_rows;
+					sum += (*(input + input_offset)) * (*(filter + filter_offset));
+				}
+			}
+		}
+	else {
+		#pragma unroll
+		for (int f_r = 0; f_r < filter_rows; ++f_r) {
+				const int in_r = input_row_start + f_r;
+				#pragma unroll
+				for (int f_c = 0; f_c < filter_cols; ++f_c) {
+					const int in_c = input_col_start + f_c;
+
+					if (in_r >= 0 && in_r < in_rows && in_c >= 0 && in_c < in_cols) {
+						const int in_c = input_col_start + f_c;
+
+						const int input_offset =
+							(input_offset_temp)+(in_r * in_cols) + in_c;
+
+						const int filter_offset = f_c + filter_cols * f_r + OD*filter_cols*filter_rows;
+						sum += (*(input + input_offset)) * (*(filter + filter_offset));
+					}
+				}
+			}
+		}
+
+	output[thread_id] = sum;
+
+}
+
+__global__ void DepthwiseConv2dBackpropFilterGPUKernelNCHW(const float* out_backprop,
+			const int stride, const int pad_rows, const int pad_cols, const int out_rows, const int out_cols, const int out_depth,
+			const float* input, const int in_rows, const int in_cols, const int in_depth,
+			float* filter_backprop, const int filter_rows, const int filter_cols,
+			int num_out_backprop) {
+
+	int thread_id = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
+	if (thread_id >= num_out_backprop) return;
+
+
+	const int out_c = thread_id % out_cols;
+	const int out_r = (thread_id / out_cols) % out_rows;
+	const int out_d = (thread_id / out_cols / out_rows) % out_depth;
+
+	const int b = thread_id / out_depth / out_cols / out_rows;
+	const int in_d = out_d;
+
+
+	const int in_r_start = out_r * stride - pad_rows;
+	const int in_c_start = out_c * stride - pad_cols;
+	const int in_r_end = in_r_start + filter_rows;
+	const int in_c_end = in_c_start + filter_cols;
+
+	const int out_backprop_offset = (b * out_depth * out_rows * out_cols) +
+				(out_d * out_rows * out_cols) +(out_r * out_cols) + (out_c);
+
+	const float out_bp = *(out_backprop + out_backprop_offset);
+	if (in_r_start >= 0 && in_c_start >= 0 && in_r_end < in_rows &&in_c_end < in_cols) {
+		#pragma unroll 
+		for (int f_r = 0; f_r < filter_rows; ++f_r) {
+			const int in_r = in_r_start + f_r;
+			const int input_offset_temp = (b * in_depth * in_rows * in_cols) +
+						(in_d * in_rows * in_cols) +(in_r * in_cols);
+
+			#pragma unroll 
+			for (int f_c = 0; f_c < filter_cols; ++f_c) {
+						const int in_c = in_c_start + f_c;
+						const int input_offset = input_offset_temp + in_c;
+						float partial_sum = (*(input + input_offset)) * out_bp;
+						float* addr = filter_backprop + f_c + filter_cols * f_r + out_d*filter_cols*filter_rows;
+						atomicAdd(addr, partial_sum);
+					}
+				}
+			}
+			else {
+				#pragma unroll 
+				for (int f_r = 0; f_r < filter_rows; ++f_r) {
+					const int in_r = in_r_start + f_r;
+					const int input_offset_temp = (b * in_depth * in_rows * in_cols) +(in_d * in_rows * in_cols) +(in_r * in_cols);
+					#pragma unroll 
+					for (int f_c = 0; f_c < filter_cols; ++f_c) {
+						const int in_c = in_c_start + f_c;
+						if (in_r >= 0 && in_r < in_rows && in_c >= 0 && in_c < in_cols) {
+							const int input_offset = input_offset_temp + in_c;
+							float partial_sum = (*(input + input_offset)) * out_bp;
+							float* addr =filter_backprop + f_c + filter_cols * f_r + out_d*filter_cols*filter_rows;
+							atomicAdd(addr, partial_sum);
+						}
+					}
+				}
+
+		}
+	}
+
+
+//本函数有误，尚在调试
+__global__ void DepthwiseConv2dBackpropInputGPUKernelNCHW(
+		const float* out_backprop, const int out_rows, const int out_cols, const int out_depth,
+		const float* filter, const int filter_rows, const int filter_cols,
+		float* in_backprop, const int in_rows, const int in_cols, const int in_depth,
+		const int stride, const int pad_rows, const int pad_cols,int num_in_backprop)
+{
+		int thread_id = (blockIdx.x + blockIdx.y*gridDim.x) * blockDim.x + threadIdx.x;
+		if (thread_id >= num_in_backprop) return;
+
+		const int in_c = thread_id % in_cols;
+		const int in_r = (thread_id / in_cols) % in_rows;
+		const int in_d = (thread_id / in_cols / in_rows) % in_depth;
+		const int b = thread_id / in_depth / in_cols / in_rows;
+
+		float sum = 0;
+		const int out_d_start = in_d;
+		const int out_d_end = out_d_start + out_depth;
+
+		const int out_r_start =max(0, (in_r - filter_rows + pad_rows + stride) / stride);
+		const int out_r_end = min(out_rows - 1, (in_r + pad_rows) / stride);
+		const int out_c_start =
+			max(0, (in_c - filter_cols + pad_cols + stride) / stride);
+		const int out_c_end = min(out_cols - 1, (in_c + pad_cols) / stride);
+
+#pragma unroll 
+		for (int out_d = out_d_start; out_d < out_d_end; ++out_d) {
+		#pragma unroll 
+			for (int out_r = out_r_start; out_r <= out_r_end; ++out_r) {
+				const int f_r = in_r + pad_rows - out_r * stride;
+				const int filter_dm = out_d - out_d_start;
+
+				for (int out_c = out_c_start; out_c <= out_c_end; ++out_c) {
+					const int f_c = in_c + pad_cols - out_c * stride;
+					const int filter_offset = f_c + filter_cols * f_r + filter_dm *filter_cols*filter_rows;
+
+					const int out_backprop_offset =
+						(b * out_depth * out_rows * out_cols) +
+						(out_d * out_rows * out_cols) + (out_r * out_cols) + (out_c);
+
+					sum += (*(out_backprop + out_backprop_offset)) *
+						(*(filter + filter_offset));
+				}
+			}
+		}
+		const int in_backprop_offset = (b * in_rows * in_cols * in_depth) +
+			(in_d * in_rows * in_cols) +
+			(in_r * in_cols) + (in_c);
+		in_backprop[in_backprop_offset] = sum;
+
+}
+
 //������������
 void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, network net)
 {
@@ -36,7 +226,19 @@ void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, 
                 l.output_gpu);
 
 #else*/
-    int i;
+
+
+
+	int size = l.out_h*l.out_w*l.batch*l.n;
+	DepthwiseConv2dGPUKernelNCHW << <cuda_gridsize(size), BLOCK >> >(
+		net.input_gpu,l.h,l.w,l.c,
+		l.weights_gpu, l.size, l.size,
+		l.stride, l.pad, l.pad,
+		l.out_h, l.out_w, l.n,
+		l.output_gpu, size
+		);
+	check_error(cudaPeekAtLastError());
+    /*int i;
     int k = l.size*l.size;
     int n = l.out_w*l.out_h;
 
@@ -52,7 +254,7 @@ void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, 
 			gemm_gpu(0, 0, 1, n, k, 1, aoffset, k, boffset, n, 1, coffset, n);
 
 		}
-	}
+	}*/
 
 //#endif
 
@@ -122,17 +324,18 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
     }
 
 #else*/
+	//cuda_pull_array(net.delta_gpu, net.delta, l.batch*l.c*l.h*l.w);
     int m = l.n;
     int n = l.size*l.size;
     int k = l.out_w*l.out_h;
-	//pull_depthwise_convolutional_layer(l);//add by hjimce for debug
+	pull_depthwise_convolutional_layer(l);//add by hjimce for debug
 
 	for (int b = 0; b < l.batch; ++b) {
 		for (int c = 0; c<l.c; c++)
 		{
 
 
-			//����������
+
 			float *aoffset = l.delta_gpu + c*l.out_h*l.out_w + b*l.n*l.out_h*l.out_w;
 			float *boffset = net.workspace;
 			float *coffset = l.weight_updates_gpu + c*l.size*l.size;
@@ -144,7 +347,7 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
 			im2col_gpu(im, 1, l.h, l.w,
 				l.size, l.stride, l.pad, boffset);
 			gemm_gpu(0, 1, 1, n, k, 1, aoffset, k, boffset, k, 1, coffset, n);
-			//��������������������������������������������������������������������������
+
 
 			if (net.delta_gpu) {
 				aoffset = l.weights_gpu + c*l.size*l.size;
@@ -159,8 +362,25 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
 
 		}
 	}
+	
+	/*int out_size= l.out_h*l.out_w*l.batch*l.n;
+	DepthwiseConv2dBackpropFilterGPUKernelNCHW << <cuda_gridsize(out_size), BLOCK >> > (
+		l.delta_gpu, l.stride, l.pad, l.pad, l.out_h, l.out_w, l.c,
+		net.input_gpu, l.h, l.w, l.n,
+		l.weight_updates_gpu, l.size, l.size,
+		out_size);
+	if (net.delta_gpu)//还在调试
+	{
+		int in_size = l.h*l.w*l.batch*l.n;
+		DepthwiseConv2dBackpropInputGPUKernelNCHW << <cuda_gridsize(in_size), BLOCK >> > (
+			l.delta_gpu, l.out_h, l.out_w, l.c,
+			l.weights_gpu, l.size, l.size,
+			net.delta_gpu, l.h, l.w, l.c,
+			l.stride, l.pad, l.pad, in_size);
 
-	//pull_depthwise_convolutional_layer(l);//������������add by hjimce for debug
+	}*/
+	cuda_pull_array(net.delta_gpu, net.delta, l.batch*l.c*l.h*l.w);
+	pull_depthwise_convolutional_layer(l);//add by hjimce for debug
 
 //#endif
 }

@@ -183,9 +183,6 @@
     <ClCompile Include="..\..\examples\coco.c">
       <Filter>example</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\examples\darknet.c">
-      <Filter>example</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\examples\detector.c">
       <Filter>example</Filter>
     </ClCompile>
@@ -232,6 +229,9 @@
       <Filter>example</Filter>
     </ClCompile>
     <ClCompile Include="..\..\examples\swag.c">
+      <Filter>example</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\examples\darknet_debug.c">
       <Filter>example</Filter>
     </ClCompile>
   </ItemGroup>

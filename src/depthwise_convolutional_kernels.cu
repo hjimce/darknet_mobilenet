@@ -151,7 +151,7 @@ __global__ void DepthwiseConv2dBackpropFilterGPUKernelNCHW(const float* out_back
 	}
 
 
-//本函数有误，尚在调试
+
 __global__ void DepthwiseConv2dBackpropInputGPUKernelNCHW(
 		const float* out_backprop, const int out_rows, const int out_cols, const int out_depth,
 		const float* filter, const int filter_rows, const int filter_cols,
@@ -167,8 +167,7 @@ __global__ void DepthwiseConv2dBackpropInputGPUKernelNCHW(
 		const int b = thread_id / in_depth / in_cols / in_rows;
 
 		float sum = 0;
-		const int out_d_start = in_d;
-		const int out_d_end = out_d_start + out_depth;
+
 
 		const int out_r_start =max(0, (in_r - filter_rows + pad_rows + stride) / stride);
 		const int out_r_end = min(out_rows - 1, (in_r + pad_rows) / stride);
@@ -176,30 +175,25 @@ __global__ void DepthwiseConv2dBackpropInputGPUKernelNCHW(
 			max(0, (in_c - filter_cols + pad_cols + stride) / stride);
 		const int out_c_end = min(out_cols - 1, (in_c + pad_cols) / stride);
 
-#pragma unroll 
-		for (int out_d = out_d_start; out_d < out_d_end; ++out_d) {
+
 		#pragma unroll 
 			for (int out_r = out_r_start; out_r <= out_r_end; ++out_r) {
 				const int f_r = in_r + pad_rows - out_r * stride;
-				const int filter_dm = out_d - out_d_start;
+
 
 				for (int out_c = out_c_start; out_c <= out_c_end; ++out_c) {
 					const int f_c = in_c + pad_cols - out_c * stride;
-					const int filter_offset = f_c + filter_cols * f_r + filter_dm *filter_cols*filter_rows;
+					const int filter_offset = f_c + filter_cols * f_r + in_d *filter_cols*filter_rows;
 
 					const int out_backprop_offset =
 						(b * out_depth * out_rows * out_cols) +
-						(out_d * out_rows * out_cols) + (out_r * out_cols) + (out_c);
+						(in_d * out_rows * out_cols) + (out_r * out_cols) + (out_c);
 
 					sum += (*(out_backprop + out_backprop_offset)) *
 						(*(filter + filter_offset));
 				}
 			}
-		}
-		const int in_backprop_offset = (b * in_rows * in_cols * in_depth) +
-			(in_d * in_rows * in_cols) +
-			(in_r * in_cols) + (in_c);
-		in_backprop[in_backprop_offset] = sum;
+		in_backprop[thread_id] = sum;
 
 }
 
@@ -208,25 +202,6 @@ void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, 
 {
 	//cuda_pull_array(l.output_gpu, l.output, l.c*l.out_h*l.out_w);//add by hjimce for debug
     fill_gpu(l.outputs*l.batch, 0, l.output_gpu, 1);
-
-/*#ifdef CUDNN
-    float one = 1;
-    cudnnConvolutionForward(cudnn_handle(),
-                &one,
-                l.srcTensorDesc,
-                net.input_gpu,
-                l.weightDesc,
-                l.weights_gpu,
-                l.convDesc,
-                l.fw_algo,
-                net.workspace,
-                l.workspace_size,
-                &one,
-                l.dstTensorDesc,
-                l.output_gpu);
-
-#else*/
-
 
 
 	int size = l.out_h*l.out_w*l.batch*l.n;
@@ -289,48 +264,13 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
     }
     float *original_input = net.input_gpu;
 
-
-/*#ifdef CUDNN
-    float one = 1;
-    cudnnConvolutionBackwardFilter(cudnn_handle(),
-            &one,
-            l.srcTensorDesc,
-            net.input_gpu,
-            l.ddstTensorDesc,
-            l.delta_gpu,
-            l.convDesc,
-            l.bf_algo,
-            net.workspace,
-            l.workspace_size,
-            &one,
-            l.dweightDesc,
-            l.weight_updates_gpu);
-
-    if(net.delta_gpu){
-        cudnnConvolutionBackwardData(cudnn_handle(),
-                &one,
-                l.weightDesc,
-                l.weights_gpu,
-                l.ddstTensorDesc,
-                l.delta_gpu,
-                l.convDesc,
-                l.bd_algo,
-                net.workspace,
-                l.workspace_size,
-                &one,
-                l.dsrcTensorDesc,
-                net.delta_gpu);
-
-    }
-
-#else*/
 	//cuda_pull_array(net.delta_gpu, net.delta, l.batch*l.c*l.h*l.w);
     int m = l.n;
     int n = l.size*l.size;
     int k = l.out_w*l.out_h;
 	pull_depthwise_convolutional_layer(l);//add by hjimce for debug
 
-	for (int b = 0; b < l.batch; ++b) {
+	/*for (int b = 0; b < l.batch; ++b) {
 		for (int c = 0; c<l.c; c++)
 		{
 
@@ -361,9 +301,9 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
 
 
 		}
-	}
+	}*/
 	
-	/*int out_size= l.out_h*l.out_w*l.batch*l.n;
+	int out_size= l.out_h*l.out_w*l.batch*l.n;
 	DepthwiseConv2dBackpropFilterGPUKernelNCHW << <cuda_gridsize(out_size), BLOCK >> > (
 		l.delta_gpu, l.stride, l.pad, l.pad, l.out_h, l.out_w, l.c,
 		net.input_gpu, l.h, l.w, l.n,
@@ -378,7 +318,7 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
 			net.delta_gpu, l.h, l.w, l.c,
 			l.stride, l.pad, l.pad, in_size);
 
-	}*/
+	}
 	cuda_pull_array(net.delta_gpu, net.delta, l.batch*l.c*l.h*l.w);
 	pull_depthwise_convolutional_layer(l);//add by hjimce for debug
 

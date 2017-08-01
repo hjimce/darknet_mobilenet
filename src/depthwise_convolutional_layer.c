@@ -73,30 +73,7 @@ void cudnn_depthwise_convolutional_setup(layer *l)
     cudnnSetTensor4dDescriptor(l->normTensorDesc, CUDNN_TENSOR_NCHW, CUDNN_DATA_FLOAT, 1, l->out_c, 1, 1); 
     cudnnSetFilter4dDescriptor(l->weightDesc, CUDNN_DATA_FLOAT, CUDNN_TENSOR_NCHW, 1, l->c, l->size, l->size);
     cudnnSetConvolution2dDescriptor(l->convDesc, l->pad, l->pad, l->stride, l->stride, 1, 1, CUDNN_CROSS_CORRELATION);
-    /*cudnnGetConvolutionForwardAlgorithm(cudnn_handle(),
-            l->srcTensorDesc,
-            l->weightDesc,
-            l->convDesc,
-            l->dstTensorDesc,
-            CUDNN_CONVOLUTION_FWD_PREFER_FASTEST,
-            0,
-            &l->fw_algo);
-    cudnnGetConvolutionBackwardDataAlgorithm(cudnn_handle(),
-            l->weightDesc,
-            l->ddstTensorDesc,
-            l->convDesc,
-            l->dsrcTensorDesc,
-            CUDNN_CONVOLUTION_BWD_DATA_PREFER_FASTEST,
-            0,
-            &l->bd_algo);
-    cudnnGetConvolutionBackwardFilterAlgorithm(cudnn_handle(),
-            l->srcTensorDesc,
-            l->ddstTensorDesc,
-            l->convDesc,
-            l->dweightDesc,
-            CUDNN_CONVOLUTION_BWD_FILTER_PREFER_FASTEST,
-            0,
-            &l->bf_algo);*/
+
 }
 #endif
 #endif
@@ -130,8 +107,8 @@ depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int 
     // float scale = 1./sqrt(size*size*c);
     float scale = sqrt(2./(size*size*c));
     //scale = .02;
-   for(i = 0; i < c*size*size; ++i) l.weights[i] = 0.01*i;
-    //for(i = 0; i < l.n*l.size*l.size; ++i) l.weights[i] = scale*rand_normal();
+   //for(i = 0; i < c*size*size; ++i) l.weights[i] = 0.01*i;
+    for(i = 0; i < l.n*l.size*l.size; ++i) l.weights[i] = scale*rand_normal();
     int out_w = depthwise_convolutional_out_width(l);
     int out_h = depthwise_convolutional_out_height(l);
     l.out_h = out_h;

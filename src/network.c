@@ -118,6 +118,8 @@ float get_current_rate(network net)
 char *get_layer_string(LAYER_TYPE a)
 {
     switch(a){
+		case DEPTHWISE_CONVOLUTIONAL:
+			return "depthwise_convolutional";
         case CONVOLUTIONAL:
             return "convolutional";
         case ACTIVE:
@@ -312,6 +314,9 @@ void set_batch_network(network *net, int b)
         if(net->layers[i].type == CONVOLUTIONAL){
             cudnn_convolutional_setup(net->layers + i);
         }
+		if (net->layers[i].type == DEPTHWISE_CONVOLUTIONAL) {
+			cudnn_depthwise_convolutional_setup(net->layers + i);
+		}
         if(net->layers[i].type == DECONVOLUTIONAL){
             layer *l = net->layers + i;
             cudnnSetTensor4dDescriptor(l->dstTensorDesc, CUDNN_TENSOR_NCHW, CUDNN_DATA_FLOAT, 1, l->out_c, l->out_h, l->out_w);

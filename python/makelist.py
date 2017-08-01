@@ -1,6 +1,6 @@
 import  os
-images=os.listdir("../data/cifar/test")
+images=os.listdir("../vs2015/vs2015/cifar/test")
 with open('test.list','w') as f:
 	for image in images:
-		path="data/cifar/test/"+image+'\n'
+		path="cifar/test/"+image+'\n'
 		f.writelines(path)

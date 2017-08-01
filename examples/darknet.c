@@ -56,6 +56,16 @@ void average(int argc, char *argv[])
                     axpy_cpu(l.n, 1, l.rolling_variance, 1, out.rolling_variance, 1);
                 }
             }
+			if (l.type == DEPTHWISE_CONVOLUTIONAL) {
+				int num = l.c*l.size*l.size;
+				axpy_cpu(l.n, 1, l.biases, 1, out.biases, 1);
+				axpy_cpu(num, 1, l.weights, 1, out.weights, 1);
+				if (l.batch_normalize) {
+					axpy_cpu(l.n, 1, l.scales, 1, out.scales, 1);
+					axpy_cpu(l.n, 1, l.rolling_mean, 1, out.rolling_mean, 1);
+					axpy_cpu(l.n, 1, l.rolling_variance, 1, out.rolling_variance, 1);
+				}
+			}
             if(l.type == CONNECTED){
                 axpy_cpu(l.outputs, 1, l.biases, 1, out.biases, 1);
                 axpy_cpu(l.outputs*l.inputs, 1, l.weights, 1, out.weights, 1);
@@ -75,6 +85,16 @@ void average(int argc, char *argv[])
                     scal_cpu(l.n, 1./n, l.rolling_variance, 1);
                 }
         }
+		if (l.type == DEPTHWISE_CONVOLUTIONAL) {
+			int num = l.c*l.size*l.size;
+			scal_cpu(l.n, 1. / n, l.biases, 1);
+			scal_cpu(num, 1. / n, l.weights, 1);
+			if (l.batch_normalize) {
+				scal_cpu(l.n, 1. / n, l.scales, 1);
+				scal_cpu(l.n, 1. / n, l.rolling_mean, 1);
+				scal_cpu(l.n, 1. / n, l.rolling_variance, 1);
+			}
+		}
         if(l.type == CONNECTED){
             scal_cpu(l.outputs, 1./n, l.biases, 1);
             scal_cpu(l.outputs*l.inputs, 1./n, l.weights, 1);
@@ -234,6 +254,9 @@ void reset_normalize_net(char *cfgfile, char *weightfile, char *outfile)
     int i;
     for (i = 0; i < net.n; ++i) {
         layer l = net.layers[i];
+		if (l.type == DEPTHWISE_CONVOLUTIONAL && l.batch_normalize) {
+			denormalize_depthwise_convolutional_layer(l);
+		}
         if (l.type == CONVOLUTIONAL && l.batch_normalize) {
             denormalize_convolutional_layer(l);
         }
@@ -337,6 +360,10 @@ void denormalize_net(char *cfgfile, char *weightfile, char *outfile)
     int i;
     for (i = 0; i < net.n; ++i) {
         layer l = net.layers[i];
+		if ((l.type == DEPTHWISE_CONVOLUTIONAL) && l.batch_normalize) {
+			denormalize_depthwise_convolutional_layer(l);
+			net.layers[i].batch_normalize = 0;
+		}
         if ((l.type == DECONVOLUTIONAL || l.type == CONVOLUTIONAL) && l.batch_normalize) {
             denormalize_convolutional_layer(l);
             net.layers[i].batch_normalize=0;

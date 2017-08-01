@@ -262,6 +262,7 @@ void resize_depthwise_convolutional_layer(depthwise_convolutional_layer *l, int 
 	}
 #ifdef CUDNN
 	cudnn_depthwise_convolutional_setup(l);
+
 #endif
 #endif
 	l->workspace_size = get_workspace_size(*l);
@@ -550,7 +551,20 @@ void update_depthwise_convolutional_layer(depthwise_convolutional_layer l, updat
     axpy_cpu(size, learning_rate/batch, l.weight_updates, 1, l.weights, 1);
     scal_cpu(size, momentum, l.weight_updates, 1);
 }
-
+void denormalize_depthwise_convolutional_layer(depthwise_convolutional_layer l)
+{
+	int i, j;
+	for (i = 0; i < l.n; ++i) {
+		float scale = l.scales[i] / sqrt(l.rolling_variance[i] + .00001);
+		for (j = 0; j < l.size*l.size; ++j) {
+			l.weights[i*l.size*l.size + j] *= scale;
+		}
+		l.biases[i] -= l.rolling_mean[i] * scale;
+		l.scales[i] = 1;
+		l.rolling_mean[i] = 0;
+		l.rolling_variance[i] = 1;
+	}
+}
 
 
 

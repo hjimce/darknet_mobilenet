@@ -6,4 +6,9 @@
     <LocalDebuggerCommandArguments>classifier train cfg/cifar.data cfg/cifar_mobilenet.cfg</LocalDebuggerCommandArguments>
     <LocalDebuggerWorkingDirectory>F:\darknet_mobilenet\vs2015\vs2015</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerWorkingDirectory>F:\darknet_mobilenet\vs2015\vs2015</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>classifier train cfg/cifar.data cfg/cifar.cfg</LocalDebuggerCommandArguments>
+  </PropertyGroup>
 </Project>

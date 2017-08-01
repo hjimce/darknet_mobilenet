@@ -389,11 +389,34 @@ data load_data_captcha_encode(char **paths, int n, int m, int w, int h)
 
 void fill_truth(char *path, char **labels, int k, float *truth)
 {
+/*
+	labels[0] = "airplane";
+	labels[1] = "automobile";
+	labels[2] = "bird";
+	labels[3] = "cat";
+	labels[4] = "deer";
+	labels[5] = "dog";
+	labels[6] = "frog";
+	labels[7] = "horse";
+	labels[8] = "ship";
+	labels[9] = "truck";*/
+
+	
+		
+		
+		
+		
+		
+		
+		
+	
+
     int i;
     memset(truth, 0, k*sizeof(float));
     int count = 0;
     for(i = 0; i < k; ++i){
         if(strstr(path, labels[i])){
+			//printf("labels: %d \t", i);
             truth[i] = 1;
             ++count;
         }

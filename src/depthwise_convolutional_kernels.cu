@@ -197,14 +197,14 @@ __global__ void DepthwiseConv2dBackpropInputGPUKernelNCHW(
 
 }
 
-//������������
+
 void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, network net)
 {
-	//cuda_pull_array(l.output_gpu, l.output, l.c*l.out_h*l.out_w);//add by hjimce for debug
+
     fill_gpu(l.outputs*l.batch, 0, l.output_gpu, 1);
 
 
-	/*int size = l.out_h*l.out_w*l.batch*l.n;
+	int size = l.out_h*l.out_w*l.batch*l.n;
 	DepthwiseConv2dGPUKernelNCHW << <cuda_gridsize(size), BLOCK >> >(
 		net.input_gpu,l.h,l.w,l.c,
 		l.weights_gpu, l.size, l.size,
@@ -212,8 +212,8 @@ void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, 
 		l.out_h, l.out_w, l.n,
 		l.output_gpu, size
 		);
-	check_error(cudaPeekAtLastError());*/
-    int i;
+	check_error(cudaPeekAtLastError());
+    /*int i;
     int k = l.size*l.size;
     int n = l.out_w*l.out_h;
 
@@ -229,9 +229,9 @@ void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, 
 			gemm_gpu(0, 0, 1, n, k, 1, aoffset, k, boffset, n, 1, coffset, n);
 
 		}
-	}
+	}*/
 
-//#endif
+
 
     if (l.batch_normalize) {
         forward_batchnorm_layer_gpu(l, net);
@@ -243,13 +243,11 @@ void forward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, 
     activate_array_gpu(l.output_gpu, l.outputs*l.batch, l.activation);
 
 
-	//cuda_pull_array(l.output_gpu, l.output, l.c*l.out_h*l.out_w);//add by hjimce for debug
 
-	
 
 }
 
-//������������
+
 void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, network net)
 {
 
@@ -264,12 +262,10 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
     }
     float *original_input = net.input_gpu;
 
-	//cuda_pull_array(net.delta_gpu, net.delta, l.batch*l.c*l.h*l.w);
-    int m = l.n;
+
+   /* int m = l.n;
     int n = l.size*l.size;
     int k = l.out_w*l.out_h;
-	//pull_depthwise_convolutional_layer(l);//add by hjimce for debug
-
 	for (int b = 0; b < l.batch; ++b) {
 		for (int c = 0; c<l.c; c++)
 		{
@@ -301,15 +297,15 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
 
 
 		}
-	}
+	}*/
 	
-	/*int out_size= l.out_h*l.out_w*l.batch*l.n;
+	int out_size= l.out_h*l.out_w*l.batch*l.n;
 	DepthwiseConv2dBackpropFilterGPUKernelNCHW << <cuda_gridsize(out_size), BLOCK >> > (
 		l.delta_gpu, l.stride, l.pad, l.pad, l.out_h, l.out_w, l.c,
 		net.input_gpu, l.h, l.w, l.n,
 		l.weight_updates_gpu, l.size, l.size,
 		out_size);
-	if (net.delta_gpu)//还在调试
+	if (net.delta_gpu)
 	{
 		int in_size = l.h*l.w*l.batch*l.n;
 		DepthwiseConv2dBackpropInputGPUKernelNCHW << <cuda_gridsize(in_size), BLOCK >> > (
@@ -318,13 +314,10 @@ void backward_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l,
 			net.delta_gpu, l.h, l.w, l.c,
 			l.stride, l.pad, l.pad, in_size);
 
-	}*/
-	//cuda_pull_array(net.delta_gpu, net.delta, l.batch*l.c*l.h*l.w);
-	//pull_depthwise_convolutional_layer(l);//add by hjimce for debug
+	}
 
-//#endif
 }
-//������������
+
 void pull_depthwise_convolutional_layer(depthwise_convolutional_layer layer)
 {
     cuda_pull_array(layer.weights_gpu, layer.weights, layer.n*layer.size*layer.size);
@@ -337,7 +330,7 @@ void pull_depthwise_convolutional_layer(depthwise_convolutional_layer layer)
         cuda_pull_array(layer.rolling_variance_gpu, layer.rolling_variance, layer.n);
     }
 }
-//������������
+
 void push_depthwise_convolutional_layer(depthwise_convolutional_layer layer)
 {
     cuda_push_array(layer.weights_gpu, layer.weights, layer.n*layer.size*layer.size);
@@ -351,7 +344,7 @@ void push_depthwise_convolutional_layer(depthwise_convolutional_layer layer)
     }
 }
 
-void update_depthwise_convolutional_layer_gpu(layer l, update_args a)
+void update_depthwise_convolutional_layer_gpu(depthwise_convolutional_layer l, update_args a)
 {
     float learning_rate = a.learning_rate*l.learning_rate_scale;
     float momentum = a.momentum;

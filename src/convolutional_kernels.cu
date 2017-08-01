@@ -251,7 +251,7 @@ void backward_convolutional_layer_gpu(convolutional_layer l, network net)
         }
     }
 #endif
-	//cuda_pull_array(l.weight_updates_gpu, l.weight_updates, l.c*l.n*l.size*l.size);//add by hjimce for debug
+
 
 }
 
@@ -282,8 +282,9 @@ void push_convolutional_layer(convolutional_layer layer)
 }
 
 
-void update_convolutional_layer_gpu(layer l, update_args a)
-{
+void update_convolutional_layer_gpu(convolutional_layer l, update_args a)
+{	
+
     float learning_rate = a.learning_rate*l.learning_rate_scale;
     float momentum = a.momentum;
     float decay = a.decay;
@@ -310,6 +311,7 @@ void update_convolutional_layer_gpu(layer l, update_args a)
             scal_gpu(l.n, momentum, l.scale_updates_gpu, 1);
         }
     }
+
 }
 
 

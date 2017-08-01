@@ -23,7 +23,7 @@ int depthwise_convolutional_out_width(depthwise_convolutional_layer l)
 }
 
 
-//��ʱ���ݿռ���?
+
 static size_t get_workspace_size(layer l){
 #ifdef CUDNN
     if(gpu_index >= 0){
@@ -130,8 +130,8 @@ depthwise_convolutional_layer make_depthwise_convolutional_layer(int batch, int 
     // float scale = 1./sqrt(size*size*c);
     float scale = sqrt(2./(size*size*c));
     //scale = .02;
-   //for(i = 0; i < c*size*size; ++i) l.weights[i] = 0.01*i;
-    for(i = 0; i < l.n*l.size*l.size; ++i) l.weights[i] = scale*rand_normal();
+   for(i = 0; i < c*size*size; ++i) l.weights[i] = 0.01*i;
+    //for(i = 0; i < l.n*l.size*l.size; ++i) l.weights[i] = scale*rand_normal();
     int out_w = depthwise_convolutional_out_width(l);
     int out_h = depthwise_convolutional_out_height(l);
     l.out_h = out_h;
@@ -356,16 +356,13 @@ void test_depthwise_convolutional_layer()
 		else {
 			layer prev = net.layers[i - 1];
 			net.input = prev.output;
-			net.delta = prev.delta;//�м������ָ�븳ֵ����������backward��ʱ����ʵ�Ǹ����˵�ǰ�����ǰ��һ�����������?
+			net.delta = prev.delta;
 		}
 		net.index = i;
 		l.backward(l, net);
 	}
 
 
-	
-
-    //forward_depthwise_convolutional_layer(l,net);
 }
 
 
@@ -434,20 +431,9 @@ void forward_depthwise_convolutional_layer(depthwise_convolutional_layer l, netw
 
 
 
-			for (int i = 0; i < l.size*l.size; i++)
-			{
-				//fprintf(stderr, "w %f \t", aoffset[i]);
-			}
 		
 		}
     }
-
-/*
-	for (int i = 0; i < l.batch*l.c*l.out_h*l.out_w; i++)
-	{
-		fprintf(stderr, "%f \t", l.output[i]);
-	}
-*/
 
 
 
@@ -461,12 +447,8 @@ void forward_depthwise_convolutional_layer(depthwise_convolutional_layer l, netw
     }
 
 	int m = l.n;
-    activate_array(l.output, m*n*l.batch, l.activation);//�����ǰ�򴫵�
-/*
-	for (int i = 0; i < l.batch*l.c*l.out_h*l.out_w; i++)
-	{
-		fprintf(stderr, "%f \t", l.output[i]);
-	}*/
+    activate_array(l.output, m*n*l.batch, l.activation);
+
 
 }
 
@@ -476,7 +458,7 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
     int m = l.n;
     int n = l.size*l.size;
     int k = l.out_w*l.out_h;
-	//�����������
+
     gradient_array(l.output, m*k*l.batch, l.activation, l.delta);
 
     if(l.batch_normalize){
@@ -491,7 +473,7 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
 		{
 
 
-			//��Ȩ����
+	
 			float *aoffset = l.delta + c*l.out_h*l.out_w + b*l.n*l.out_h*l.out_w;
 			float *boffset = net.workspace;
 			float *coffset = l.weight_updates + c*l.size*l.size;
@@ -503,7 +485,7 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
 			im2col_cpu(im, 1, l.h, l.w,
 				l.size, l.stride, l.pad, boffset);
 			gemm(0, 1, 1, n, k, 1, aoffset, k, boffset, k, 1, coffset, n);
-			//�Ա������������󵼣�Ҳ������ԭʼ��Ȩ�أ������������΢������ͼ���о������
+
 
 			if (net.delta) {
 				aoffset = l.weights+ c*l.size*l.size;
@@ -519,13 +501,6 @@ void backward_depthwise_convolutional_layer(depthwise_convolutional_layer l, net
 		}
 	}
 
-
-/*
-	for (int i = 0; i < l.c*l.size*l.size; i++)
-	{
-		fprintf(stderr, "weight_updates:%f \t", l.weight_updates[i]);
-	}
-*/
 
 
 

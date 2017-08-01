@@ -231,7 +231,7 @@
     <ClCompile Include="..\..\examples\swag.c">
       <Filter>example</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\examples\darknet.c">
+    <ClCompile Include="..\..\examples\darknet_debug.c">
       <Filter>example</Filter>
     </ClCompile>
   </ItemGroup>

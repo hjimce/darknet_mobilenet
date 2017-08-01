@@ -398,7 +398,7 @@ void visualize(char *cfgfile, char *weightfile)
 
 int main(int argc, char **argv)
 {
-#include "classifier.h"
+//#include "classifier.h"
     //test_resize("data/bad.jpg");
     //test_box();
    // test_depthwise_convolutional_layer();
@@ -425,11 +425,11 @@ int main(int argc, char **argv)
 	gpu_index =0;
 	
 	network net= load_network("cfg/test.cfg", "", 0);
-	net.learning_rate *= ngpus;
+	net.learning_rate *= 0.1;
 
-	float data[] = { 1,1,1,1,1,
-		1,1,1,1,1,
-		1,1,1,1,1,
+	float data[] = { 0.1,1,1,1,1,
+		0.2,1,1,1,1,
+		0.3,1,1,1,1,
 		1,1,1,1,1,
 		1,1,1,1,1,
 		2,2,2,2,2,
@@ -462,6 +462,7 @@ int main(int argc, char **argv)
 		forward_network_gpu(net);
 		fprintf(stderr, "**********************cost:%f ***************", *net.cost);
 		backward_network_gpu(net);
+		update_network_gpu(net);
 
 
 	}
@@ -470,6 +471,7 @@ int main(int argc, char **argv)
 		forward_network(net);
 		fprintf(stderr, "**********************cost:%f ***************", *net.cost);
 		backward_network(net);
+		update_network(net);
 		float error = *net.cost;
 
 	}

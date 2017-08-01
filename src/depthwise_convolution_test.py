@@ -31,9 +31,9 @@ kenel_height = 3
 kenel_widht = 3
 out_channel=3
 
-bottom=tf.constant([1,1,1,1,1,
-        1,1,1,1,1,
-        1,1,1,1,1,
+bottom=tf.constant([0.1,1,1,1,1,
+        0.2,1,1,1,1,
+        0.3,1,1,1,1,
         1,1,1,1,1,
         1,1,1,1,1,
         2,2,2,2,2,
@@ -66,7 +66,7 @@ print (gradient)
 
 with tf.Session() as sess:
 	sess.run(tf.global_variables_initializer())
-	print (sess.run(weights))
+	print (sess.run(loss))
 	#print(sess.run([sotfmax]))
 
 	print (sess.run([gradient]))

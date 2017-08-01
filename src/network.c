@@ -14,6 +14,7 @@
 #include "crnn_layer.h"
 #include "local_layer.h"
 #include "convolutional_layer.h"
+#include "depthwise_convolutional_layer.h"
 #include "activation_layer.h"
 #include "detection_layer.h"
 #include "region_layer.h"

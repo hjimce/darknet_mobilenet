@@ -29,6 +29,7 @@
 #include "shortcut_layer.h"
 #include "parser.h"
 #include "data.h"
+#include "depthwise_convolutional_layer.h"
 
 load_args get_base_args(network net)
 {
@@ -118,6 +119,8 @@ float get_current_rate(network net)
 char *get_layer_string(LAYER_TYPE a)
 {
     switch(a){
+		case DEPTHWISE_CONVOLUTIONAL:
+			return "depthwise_convolutional";
         case CONVOLUTIONAL:
             return "convolutional";
         case ACTIVE:
@@ -312,6 +315,9 @@ void set_batch_network(network *net, int b)
         if(net->layers[i].type == CONVOLUTIONAL){
             cudnn_convolutional_setup(net->layers + i);
         }
+		if (net->layers[i].type == DEPTHWISE_CONVOLUTIONAL) {
+			cudnn_depthwise_convolutional_setup(net->layers + i);
+		}
         if(net->layers[i].type == DECONVOLUTIONAL){
             layer *l = net->layers + i;
             cudnnSetTensor4dDescriptor(l->dstTensorDesc, CUDNN_TENSOR_NCHW, CUDNN_DATA_FLOAT, 1, l->out_c, l->out_h, l->out_w);
@@ -337,7 +343,11 @@ int resize_network(network *net, int w, int h)
     //fflush(stderr);
     for (i = 0; i < net->n; ++i){
         layer l = net->layers[i];
-        if(l.type == CONVOLUTIONAL){
+		if (l.type==DEPTHWISE_CONVOLUTIONAL)
+		{
+			resize_depthwise_convolutional_layer(&l, w, h);
+		}
+		else if (l.type == CONVOLUTIONAL) {
             resize_convolutional_layer(&l, w, h);
         }else if(l.type == CROP){
             resize_crop_layer(&l, w, h);

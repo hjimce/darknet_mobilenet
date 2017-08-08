@@ -171,6 +171,7 @@ extern "C" void smooth_layer(layer l, int size, float rate)
 
 void backward_convolutional_layer_gpu(convolutional_layer l, network net)
 {
+
     if(l.smooth){
         smooth_layer(l, 5, l.smooth);
     }
@@ -310,6 +311,8 @@ void update_convolutional_layer_gpu(layer l, update_args a)
             scal_gpu(l.n, momentum, l.scale_updates_gpu, 1);
         }
     }
+
+
 }
 
 

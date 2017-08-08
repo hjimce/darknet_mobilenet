@@ -3,7 +3,6 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <depthwise_convolutional_layer.h>
 
 extern void predict_classifier(char *datacfg, char *cfgfile, char *weightfile, char *filename, int top);
 extern void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh, char *outfile, int fullscreen);
@@ -17,14 +16,8 @@ extern void run_nightmare(int argc, char **argv);
 extern void run_dice(int argc, char **argv);
 extern void run_compare(int argc, char **argv);
 extern void run_classifier(int argc, char **argv);
-extern void run_regressor(int argc, char **argv);
-extern void run_segmenter(int argc, char **argv);
-extern void run_char_rnn(int argc, char **argv);
-extern void run_vid_rnn(int argc, char **argv);
 extern void run_tag(int argc, char **argv);
 extern void run_cifar(int argc, char **argv);
-extern void run_go(int argc, char **argv);
-extern void run_art(int argc, char **argv);
 extern void run_super(int argc, char **argv);
 extern void run_lsd(int argc, char **argv);
 
@@ -57,16 +50,6 @@ void average(int argc, char *argv[])
                     axpy_cpu(l.n, 1, l.rolling_variance, 1, out.rolling_variance, 1);
                 }
             }
-			if (l.type == DEPTHWISE_CONVOLUTIONAL) {
-				int num = l.c*l.size*l.size;
-				axpy_cpu(l.n, 1, l.biases, 1, out.biases, 1);
-				axpy_cpu(num, 1, l.weights, 1, out.weights, 1);
-				if (l.batch_normalize) {
-					axpy_cpu(l.n, 1, l.scales, 1, out.scales, 1);
-					axpy_cpu(l.n, 1, l.rolling_mean, 1, out.rolling_mean, 1);
-					axpy_cpu(l.n, 1, l.rolling_variance, 1, out.rolling_variance, 1);
-				}
-			}
             if(l.type == CONNECTED){
                 axpy_cpu(l.outputs, 1, l.biases, 1, out.biases, 1);
                 axpy_cpu(l.outputs*l.inputs, 1, l.weights, 1, out.weights, 1);
@@ -86,16 +69,6 @@ void average(int argc, char *argv[])
                     scal_cpu(l.n, 1./n, l.rolling_variance, 1);
                 }
         }
-		if (l.type == DEPTHWISE_CONVOLUTIONAL) {
-			int num = l.c*l.size*l.size;
-			scal_cpu(l.n, 1. / n, l.biases, 1);
-			scal_cpu(num, 1. / n, l.weights, 1);
-			if (l.batch_normalize) {
-				scal_cpu(l.n, 1. / n, l.scales, 1);
-				scal_cpu(l.n, 1. / n, l.rolling_mean, 1);
-				scal_cpu(l.n, 1. / n, l.rolling_variance, 1);
-			}
-		}
         if(l.type == CONNECTED){
             scal_cpu(l.outputs, 1./n, l.biases, 1);
             scal_cpu(l.outputs*l.inputs, 1./n, l.weights, 1);
@@ -255,9 +228,6 @@ void reset_normalize_net(char *cfgfile, char *weightfile, char *outfile)
     int i;
     for (i = 0; i < net.n; ++i) {
         layer l = net.layers[i];
-		if (l.type == DEPTHWISE_CONVOLUTIONAL && l.batch_normalize) {
-			denormalize_depthwise_convolutional_layer(l);
-		}
         if (l.type == CONVOLUTIONAL && l.batch_normalize) {
             denormalize_convolutional_layer(l);
         }
@@ -361,10 +331,6 @@ void denormalize_net(char *cfgfile, char *weightfile, char *outfile)
     int i;
     for (i = 0; i < net.n; ++i) {
         layer l = net.layers[i];
-		if ((l.type == DEPTHWISE_CONVOLUTIONAL) && l.batch_normalize) {
-			denormalize_depthwise_convolutional_layer(l);
-			net.layers[i].batch_normalize = 0;
-		}
         if ((l.type == DECONVOLUTIONAL || l.type == CONVOLUTIONAL) && l.batch_normalize) {
             denormalize_convolutional_layer(l);
             net.layers[i].batch_normalize=0;
@@ -432,9 +398,11 @@ void visualize(char *cfgfile, char *weightfile)
 
 int main(int argc, char **argv)
 {
+//#include "classifier.h"
     //test_resize("data/bad.jpg");
     //test_box();
-    //test_convolutional_layer();
+   // test_depthwise_convolutional_layer();
+/*
     if(argc < 2){
         fprintf(stderr, "usage: %s <function>\n", argv[0]);
         return 0;
@@ -452,7 +420,74 @@ int main(int argc, char **argv)
     }
 #endif
 
-    if (0 == strcmp(argv[1], "average")){
+*/
+	int ngpus = 1;
+	gpu_index =0;
+	
+	network net= load_network("cfg/test.cfg", "", 0);
+	net.learning_rate *= 0.1;
+
+	float data[] = { 0.1,1,1,1,1,
+		0.2,1,1,1,1,
+		0.3,1,1,1,1,
+		1,1,1,1,1,
+		1,1,1,1,1,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		2,2,2,2,2,
+		3,3,3,3,3,
+		3,3,3,3,3,
+		3,3,3,3,3,
+		3,3,3,3,3,
+		3,3,3,3,3 };
+	float truth[] = { 0,0,1 };
+	float delta[75] = { 0 };
+
+
+
+	net.input = data;
+
+	net.truth = truth;
+	net.train = 1;
+	if (gpu_index>=0)
+	{
+		int x_size = net.inputs*net.batch;
+		int y_size = net.truths*net.batch;
+		cuda_push_array(net.input_gpu, net.input, x_size);
+		cuda_push_array(net.truth_gpu, net.truth, y_size);
+
+		net.train = 1;
+		forward_network_gpu(net);
+		fprintf(stderr, "**********************cost:%f ***************", *net.cost);
+		backward_network_gpu(net);
+		update_network_gpu(net);
+
+
+	}
+	else
+	{	
+		forward_network(net);
+		fprintf(stderr, "**********************cost:%f ***************", *net.cost);
+		backward_network(net);
+		update_network(net);
+		float error = *net.cost;
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  if (0 == strcmp(argv[1], "average")){
         average(argc, argv);
     } else if (0 == strcmp(argv[1], "yolo")){
         run_yolo(argc, argv);
@@ -472,23 +507,13 @@ int main(int argc, char **argv)
         test_detector("cfg/coco.data", argv[2], argv[3], filename, thresh, .5, outfile, fullscreen);
     } else if (0 == strcmp(argv[1], "cifar")){
         run_cifar(argc, argv);
-    }else if (0 == strcmp(argv[1], "rnn")){
-        run_char_rnn(argc, argv);
-    } else if (0 == strcmp(argv[1], "vid")){
-        run_vid_rnn(argc, argv);
-    } else if (0 == strcmp(argv[1], "coco")){
+    }else if (0 == strcmp(argv[1], "coco")){
         run_coco(argc, argv);
     } else if (0 == strcmp(argv[1], "classify")){
         predict_classifier("cfg/imagenet1k.data", argv[2], argv[3], argv[4], 5);
     } else if (0 == strcmp(argv[1], "classifier")){
         run_classifier(argc, argv);
-    } else if (0 == strcmp(argv[1], "regressor")){
-        run_regressor(argc, argv);
-    } else if (0 == strcmp(argv[1], "segmenter")){
-        run_segmenter(argc, argv);
-    } else if (0 == strcmp(argv[1], "art")){
-        run_art(argc, argv);
-    } else if (0 == strcmp(argv[1], "tag")){
+    }else if (0 == strcmp(argv[1], "tag")){
         run_tag(argc, argv);
     } else if (0 == strcmp(argv[1], "compare")){
         run_compare(argc, argv);
@@ -536,7 +561,7 @@ int main(int argc, char **argv)
         test_resize(argv[2]);
     } else {
         fprintf(stderr, "Not an option: %s\n", argv[1]);
-    }
+    }*/
     return 0;
 }
 

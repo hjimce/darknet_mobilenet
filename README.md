@@ -6,4 +6,6 @@ Implement  the paper:MobileNets: Efficient Convolutional Neural Networks for Mob
 
 2、open Makefile ,set GPU=1 、CUDNN=1 and make compile
 
-3、network example:cfg/mobilet_imagenet.cfg 
+3、network example:cfg/mobilenet_imagenet.cfg 
+
+4、

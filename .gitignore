@@ -30,7 +30,6 @@ backup/
 pretrain/
 results/
 imagenet/
-*.weights
 *.json
 temp/
 *.pdb

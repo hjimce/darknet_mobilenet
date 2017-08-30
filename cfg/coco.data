@@ -1,0 +1,8 @@
+classes= 80
+train  = /home/research/disk1/compress_yolo/COCO/train.txt
+#valid  = coco_testdev
+valid = /home/research/disk1/compress_yolo/COCO/test-dev.txt
+names = data/coco.names
+backup = backup
+eval=coco
+

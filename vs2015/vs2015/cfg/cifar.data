@@ -1,0 +1,6 @@
+classes=10
+train  = cifar/train.list
+valid  = cifar/test.list
+labels = cifar/labels.txt
+backup = backup/
+top=2
